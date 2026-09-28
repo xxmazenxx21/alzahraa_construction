@@ -3,15 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAGE TITLE — Al Zahraa Construction</title>
-  <meta name="description" content="">
+
+  <title>Our Services — Roads, Bridges &amp; Civil Works | Al Zahraa</title>
+  <meta name="description" content="Al Zahraa General Contracting delivers six integrated engineering disciplines — from road and bridge construction to strategic planning, project execution and quality assurance — under one contract since 1995.">
 
   <link rel="canonical" href="https://alzahraa-construction.com/pages/en/our-services/">
   <link rel="alternate" hreflang="en" href="https://alzahraa-construction.com/pages/en/our-services/">
   <link rel="alternate" hreflang="ar" href="https://alzahraa-construction.com/pages/ar/our-services/">
   <link rel="alternate" hreflang="x-default" href="https://alzahraa-construction.com/">
 
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://alzahraa-construction.com/pages/en/our-services/">
+  <meta property="og:title"       content="Our Services — Roads, Bridges &amp; Civil Works | Al Zahraa">
+  <meta property="og:description" content="Six integrated engineering disciplines delivered under one contract since 1995.">
+  <meta property="og:image"       content="https://alzahraa-construction.com/assets/images/shared/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Our Services | Al Zahraa General Contracting">
+  <meta name="twitter:description" content="Roads, bridges, project management, strategic planning, quality assurance and heavy machinery — delivered under one contract.">
+  <meta name="twitter:image"       content="https://alzahraa-construction.com/assets/images/shared/og-image.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "LocalBusiness"],
+        "@id": "https://alzahraa-construction.com/#organization",
+        "name": "Al Zahraa General Contracting, Import & Export Company",
+        "url": "https://alzahraa-construction.com",
+        "foundingDate": "1995",
+        "founder": { "@type": "Person", "name": "Eng. Hesham Zidan" },
+        "description": "Egyptian general contracting company specialising in roads, bridges and civil infrastructure since 1995.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "127 Mohamed Farid St., Al-Bustan Building, Apt. 53, 5th Floor",
+          "addressLocality": "Abdin",
+          "addressRegion": "Cairo",
+          "addressCountry": "EG"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",     "item": "https://alzahraa-construction.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alzahraa-construction.com/pages/en/our-services/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="icon" href="/assets/images/logo/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/variables.css">
@@ -26,13 +74,809 @@
   <script type="module" src="/assets/js/main.js" defer></script>
   <script type="module" src="/pages/en/our-services/our-services.js" defer></script>
 </head>
-<body class="page-our-services">
+<body class="page-services">
   <a class="skip-link" href="#content">Skip to content</a>
 
   <div id="site-navbar" data-partial="navbar"></div>
 
   <main id="content">
-    <!-- TODO: page sections -->
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 01 — HERO
+         ═══════════════════════════════════════════════════════ -->
+    <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+    <section id="services-hero" class="services-hero" aria-label="Services hero">
+
+      <!-- TODO(media): replace with Al Zahraa project footage after local download -->
+      <video
+        class="services-hero__bg"
+        muted
+        autoplay
+        loop
+        playsinline
+        preload="metadata"
+        poster="https://cdn.pixabay.com/video/2024/04/03/206692_tiny.jpg"
+        data-az-asset="hero-construction-aerial-video.mp4"
+        width="1920"
+        height="1080"
+        aria-hidden="true"
+      >
+        <source src="https://cdn.pixabay.com/video/2024/04/03/206692_large.mp4" type="video/mp4">
+      </video>
+      <div class="services-hero__overlay" aria-hidden="true"></div>
+
+      <div class="services-hero__inner">
+        <nav aria-label="Breadcrumb">
+          <ol class="services-hero__breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li aria-hidden="true" class="services-hero__breadcrumb-sep">›</li>
+            <li aria-current="page">Services</li>
+          </ol>
+        </nav>
+
+        <span class="eyebrow services-hero__eyebrow">WHAT WE DO</span>
+        <hr class="section-rule" aria-hidden="true">
+
+        <h1>Engineering, Building and<br>Delivering Egypt's Corridors</h1>
+
+        <p class="services-hero__lead">
+          Al Zahraa General Contracting is a single-discipline roads-and-bridges main contractor executing complex civil infrastructure under the supervision of Egypt's ministries and public authorities — continuously since 1995.
+        </p>
+
+        <div class="services-hero__ctas">
+          <a href="/pages/en/contact-us/" class="btn-accent">Request a Quote</a>
+          <a href="/pages/en/our-projects/" class="btn-ghost">View Our Projects</a>
+        </div>
+      </div>
+
+      <button
+        class="services-hero__scroll-cue"
+        aria-label="Scroll down"
+        onclick="document.getElementById('services-intro').scrollIntoView({behavior:'smooth'})"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 02 — INTRO
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-intro" class="services-section services-intro" aria-labelledby="intro-heading">
+      <div class="services-intro__grid">
+
+        <div class="services-intro__copy reveal">
+          <span class="section-index">02</span>
+          <span class="eyebrow">OUR APPROACH</span>
+          <hr class="section-rule" aria-hidden="true">
+          <h2 id="intro-heading">Our approach to infrastructure delivery</h2>
+          <p>
+            Since our founding in 1995, Al Zahraa General Contracting has built its reputation on a single principle: complete accountability from ground-break to ribbon-cutting. We do not act as a coordinator between sub-contractors — we self-perform the critical path of every project using our own engineers, supervisors and owned heavy fleet.
+          </p>
+          <p>
+            Our engineering teams are embedded on-site from the day the survey crew stakes the first control point to the day the bituminous wearing course cools under traffic. Every phase — subgrade preparation, aggregate base compaction, structural concrete, bridge deck forming and asphalt surfacing — is managed by Al Zahraa personnel holding direct accountability to the client authority.
+          </p>
+          <p>
+            This integrated model reduces co-ordination risk, preserves quality at every construction hold point, and gives our clients a single point of contact for schedule, budget and certification — the combination that has kept us on the approved vendor lists of Egypt's ministries and public works authorities for three consecutive decades.
+          </p>
+          <a href="/pages/en/about-us/" class="btn-primary">More About Al Zahraa</a>
+        </div>
+
+        <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+        <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+        <div class="services-intro__image-wrap reveal" style="--reveal-delay: 120ms">
+          <img
+            src="https://images.unsplash.com/photo-1602497485099-e41a116a272c?auto=format&fit=crop&w=1920&q=80"
+            data-az-asset="services-intro-new-capital-construction.webp"
+            alt="Aerial view of high-rise buildings under construction at Egypt's New Administrative Capital"
+            width="1920"
+            height="1280"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 03 — PROCESS STRIP (full-bleed dark navy)
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-process" class="services-process" aria-labelledby="process-heading">
+      <div class="services-process__inner">
+
+        <header class="services-process__header reveal">
+          <span class="section-index">03</span>
+          <span class="eyebrow eyebrow--invert">HOW WE WORK</span>
+          <hr class="section-rule section-rule--invert" aria-hidden="true">
+          <h2 id="process-heading">From feasibility to open traffic</h2>
+        </header>
+
+        <ol class="services-process__steps" role="list">
+
+          <li class="services-process__step reveal" style="--reveal-delay: 0ms">
+            <div class="services-process__step-icon" aria-hidden="true">
+              <span class="services-process__step-num" aria-hidden="true">01</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Feasibility &amp; Route Study</h4>
+              <p>Geotechnical survey, traffic-demand modelling and route-option comparison.</p>
+            </div>
+          </li>
+
+          <li class="services-process__step reveal" style="--reveal-delay: 80ms">
+            <div class="services-process__step-icon" aria-hidden="true">
+              <span class="services-process__step-num" aria-hidden="true">02</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Design &amp; Technical Review</h4>
+              <p>Structural calculation, pavement design and authority submissions for approval.</p>
+            </div>
+          </li>
+
+          <li class="services-process__step reveal" style="--reveal-delay: 160ms">
+            <div class="services-process__step-icon" aria-hidden="true">
+              <span class="services-process__step-num" aria-hidden="true">03</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Mobilisation</h4>
+              <p>Fleet deployment, labour camp set-up, material procurement and traffic-diversion planning.</p>
+            </div>
+          </li>
+
+          <li class="services-process__step reveal" style="--reveal-delay: 240ms">
+            <div class="services-process__step-icon" aria-hidden="true">
+              <span class="services-process__step-num" aria-hidden="true">04</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Execution</h4>
+              <p>Subgrade, sub-base, base, structural works and asphalt courses laid to specification.</p>
+            </div>
+          </li>
+
+          <li class="services-process__step reveal" style="--reveal-delay: 320ms">
+            <div class="services-process__step-icon" aria-hidden="true">
+              <span class="services-process__step-num" aria-hidden="true">05</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Quality Assurance &amp; Handover</h4>
+              <p>Material testing at hold points, compaction density certification and formal client handover.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 04 — SERVICES GRID
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-grid" class="services-section services-grid" aria-labelledby="grid-heading">
+      <div class="services-grid__inner">
+
+        <header class="services-grid__header reveal">
+          <span class="section-index">04</span>
+          <span class="eyebrow">SIX INTEGRATED DISCIPLINES</span>
+          <hr class="section-rule" aria-hidden="true">
+          <h2 id="grid-heading">Comprehensive capability, single contract</h2>
+          <p class="section-lead">Every service Al Zahraa delivers is backed by three decades of on-site practice, an owned heavy fleet and a permanently-employed engineering team.</p>
+        </header>
+
+        <ul class="services-grid__cards" role="list">
+
+          <!-- Card 1: Road & Bridge Construction -->
+          <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+          <li>
+            <a href="/pages/en/our-services/road-and-bridge-construction/" class="service-card" aria-label="Road and Bridge Construction — Learn more">
+              <div class="service-card__image-frame">
+                <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+                <img
+                  src="https://images.pexels.com/photos/19394246/pexels-photo-19394246.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  data-az-asset="service-card-road-bridge-construction.webp"
+                  alt="Asphalt paving machine resurfacing a rural highway"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                >
+                <div class="service-card__icon-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="service-card__body">
+                <span class="service-card__index">01</span>
+                <h3>Road &amp; Bridge Construction</h3>
+                <p class="service-card__desc">Full-scope delivery of roads and bridge structures — from earthworks and structural concrete to final surfacing and road markings.</p>
+                <span class="service-card__link" aria-hidden="true">
+                  Learn more
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+
+          <!-- Card 2: Project Management -->
+          <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+          <li>
+            <a href="/pages/en/our-services/project-management/" class="service-card" aria-label="Project Management — Learn more">
+              <div class="service-card__image-frame">
+                <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+                <img
+                  src="https://images.pexels.com/photos/37125635/pexels-photo-37125635.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  data-az-asset="service-card-project-management.webp"
+                  alt="Site supervisor reviewing construction plans at a road project"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                >
+                <div class="service-card__icon-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="service-card__body">
+                <span class="service-card__index">02</span>
+                <h3>Project Management</h3>
+                <p class="service-card__desc">Integrated control of schedule, cost and quality — ensuring every phase of a road or bridge project is delivered on time and within contract.</p>
+                <span class="service-card__link" aria-hidden="true">
+                  Learn more
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+
+          <!-- Card 3: Strategic Planning -->
+          <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+          <li>
+            <a href="/pages/en/our-services/strategic-planning/" class="service-card" aria-label="Strategic Planning — Learn more">
+              <div class="service-card__image-frame">
+                <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+                <img
+                  src="https://images.pexels.com/photos/34338597/pexels-photo-34338597.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  data-az-asset="service-card-strategic-planning.webp"
+                  alt="Engineers studying technical drawings and plans for a civil works project"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                >
+                <div class="service-card__icon-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="service-card__body">
+                <span class="service-card__index">03</span>
+                <h3>Strategic Planning</h3>
+                <p class="service-card__desc">Long-range programme planning that aligns project scope, resource allocation and authority timelines with Egypt's infrastructure development priorities.</p>
+                <span class="service-card__link" aria-hidden="true">
+                  Learn more
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+
+          <!-- Card 4: Project Execution -->
+          <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+          <li>
+            <a href="/pages/en/our-services/project-execution/" class="service-card" aria-label="Project Execution — Learn more">
+              <div class="service-card__image-frame">
+                <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+                <img
+                  src="https://images.pexels.com/photos/34053335/pexels-photo-34053335.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  data-az-asset="service-card-project-execution.webp"
+                  alt="Paving crew laying asphalt on a highway construction project"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                >
+                <div class="service-card__icon-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="service-card__body">
+                <span class="service-card__index">04</span>
+                <h3>Project Execution</h3>
+                <p class="service-card__desc">Transforming approved designs into operational infrastructure — with self-performed construction crews, owned plant and direct site accountability.</p>
+                <span class="service-card__link" aria-hidden="true">
+                  Learn more
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+
+          <!-- Card 5: Quality Assurance -->
+          <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+          <li>
+            <a href="/pages/en/our-services/quality-assurance/" class="service-card" aria-label="Quality Assurance — Learn more">
+              <div class="service-card__image-frame">
+                <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+                <img
+                  src="https://images.pexels.com/photos/37125646/pexels-photo-37125646.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  data-az-asset="service-card-quality-assurance.webp"
+                  alt="Surveyor with theodolite taking measurements at a road construction site"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                >
+                <div class="service-card__icon-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="service-card__body">
+                <span class="service-card__index">05</span>
+                <h3>Quality Assurance</h3>
+                <p class="service-card__desc">Stringent quality control at every construction hold point — from material testing and layer thickness verification to final surface tolerances.</p>
+                <span class="service-card__link" aria-hidden="true">
+                  Learn more
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+
+          <!-- Card 6: Machinery & Equipment -->
+          <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+          <li>
+            <a href="/pages/en/our-services/machinery-and-equipment/" class="service-card" aria-label="Machinery and Equipment — Learn more">
+              <div class="service-card__image-frame">
+                <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+                <img
+                  src="https://images.pexels.com/photos/1145465/pexels-photo-1145465.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  data-az-asset="service-card-machinery-equipment.webp"
+                  alt="Heavy construction equipment fleet staged at a road project site"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                >
+                <div class="service-card__icon-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="service-card__body">
+                <span class="service-card__index">06</span>
+                <h3>Machinery &amp; Equipment</h3>
+                <p class="service-card__desc">An owned fleet of asphalt pavers, rollers, motor graders, excavators and batching plants — maintained to production-ready standard in our own workshop.</p>
+                <span class="service-card__link" aria-hidden="true">
+                  Learn more
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 05 — ROAD & BRIDGE CONSTRUCTION (feature, image-left)
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-road-bridge" class="services-section feature-block feature-block--img-left" aria-labelledby="rb-heading">
+      <div class="feature-block__inner">
+
+        <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+        <div class="feature-block__image-wrap reveal">
+          <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+          <img
+            src="https://www.presidency.eg/media/112112/%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9-%D8%A7%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%B5%D8%AD%D8%B1%D8%A7%D9%88%D9%89jpg.jpg"
+            data-az-asset="road-bridge-cairo-alexandria-desert-road.webp"
+            alt="Cairo–Alexandria Desert Road — major Egyptian highway infrastructure"
+            width="850"
+            height="477"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="feature-block__copy reveal" style="--reveal-delay: 100ms">
+          <span class="section-index">05</span>
+          <span class="eyebrow">CORE DISCIPLINE</span>
+          <hr class="section-rule" aria-hidden="true">
+          <h2 id="rb-heading">Road &amp; Bridge Construction</h2>
+          <p>
+            Our company delivers comprehensive services for road and bridge projects — from planning and design coordination through structural construction to the final asphalt wearing course. Every kilometre we build is self-performed: our own engineers, our own foremen and our own plant, working to the specifications issued by Egypt's public works authorities.
+          </p>
+          <p>
+            We have been executing roads and bridges on behalf of the General Authority for Roads &amp; Bridges, the Ministry of Housing's Central Agency for Reconstruction and the Engineering Authority of the Armed Forces since 1995. In three decades we have built and upgraded highways, dual carriageways and bridge structures across multiple governorates.
+          </p>
+
+          <ul class="capability-list" aria-label="Road and bridge construction capabilities">
+            <li>Earthworks, subgrade preparation and proof-rolling</li>
+            <li>Sub-base and base course gradation and compaction</li>
+            <li>Asphalt binder and wearing-course paving to tolerances</li>
+            <li>Reinforced-concrete bridge decks, piers and abutments</li>
+            <li>Bearings, expansion joints and deck waterproofing</li>
+            <li>Traffic-diversion phasing and road-safety systems</li>
+          </ul>
+
+          <div class="why-matters">
+            <p><strong>Why it matters:</strong> A single contractor accountable for the full pavement stack — from subgrade to surface — removes the layer-by-layer disputes that delay certification. The client gets one sign-off, not six.</p>
+          </div>
+
+          <a href="/pages/en/our-services/road-and-bridge-construction/" class="btn-primary">Explore this service</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 06 — PROJECT MANAGEMENT (feature, image-right, alt bg)
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-management" class="services-section feature-block feature-block--alt feature-block--img-right" aria-labelledby="mgmt-heading">
+      <div class="feature-block__inner">
+
+        <div class="feature-block__copy reveal">
+          <span class="section-index">06</span>
+          <span class="eyebrow">CONTROL & ACCOUNTABILITY</span>
+          <hr class="section-rule" aria-hidden="true">
+          <h2 id="mgmt-heading">Project Management</h2>
+          <p>
+            Our project management services are a cornerstone of our success in road and bridge projects. We ensure that every phase — from mobilisation through construction to handover — is controlled against the contract programme, the approved budget and the authority-mandated quality plan.
+          </p>
+          <p>
+            Al Zahraa's project managers are civil engineers who have spent years on the site, not in a back-office. They hold direct authority over crew allocation, material procurement and subcontractor (if any) co-ordination, and they report daily to the client's resident engineer. This gives owners real-time visibility without management overhead.
+          </p>
+
+          <ul class="capability-list" aria-label="Project management capabilities">
+            <li>Contract baseline scheduling with critical-path analysis</li>
+            <li>Earned-value tracking and monthly progress reporting</li>
+            <li>Resource levelling and fleet-utilisation optimisation</li>
+            <li>Risk register and change-order management</li>
+            <li>Authority liaison and permit co-ordination</li>
+            <li>Defects-liability management and final account preparation</li>
+          </ul>
+
+          <div class="why-matters">
+            <p><strong>Why it matters:</strong> A managed project does not mean a slower one. Early identification of float erosion, proactive re-sequencing and on-site decision authority consistently bring Al Zahraa projects in on or ahead of the agreed completion date.</p>
+          </div>
+
+          <a href="/pages/en/our-services/project-management/" class="btn-primary">Explore this service</a>
+        </div>
+
+        <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+        <div class="feature-block__image-wrap reveal" style="--reveal-delay: 100ms">
+          <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+          <img
+            src="https://images.pexels.com/photos/37125635/pexels-photo-37125635.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            data-az-asset="project-management-feature.webp"
+            alt="Senior project engineer reviewing construction site documentation"
+            width="1920"
+            height="1280"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 07 — STRATEGIC PLANNING (feature, image-left, warm bg)
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-planning" class="services-section feature-block feature-block--warm feature-block--img-left" aria-labelledby="plan-heading">
+      <div class="feature-block__inner">
+
+        <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+        <div class="feature-block__image-wrap reveal">
+          <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+          <img
+            src="https://images.pexels.com/photos/34338597/pexels-photo-34338597.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            data-az-asset="strategic-planning-feature.webp"
+            alt="Engineering team working over technical drawings and project plans"
+            width="1920"
+            height="1280"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="feature-block__copy reveal" style="--reveal-delay: 100ms">
+          <span class="section-index">07</span>
+          <span class="eyebrow">LONG-RANGE PROGRAMME</span>
+          <hr class="section-rule" aria-hidden="true">
+          <h2 id="plan-heading">Strategic Planning</h2>
+          <p>
+            Our strategic planning service lays the groundwork for successful road and bridge projects by aligning long-term vision with actionable strategies. Before a single machine moves, our planning engineers study corridor options, environmental constraints, utility-crossing risks and phasing logic to produce a programme that is achievable — not aspirational.
+          </p>
+          <p>
+            We work closely with client authorities to translate national infrastructure mandates into project-level work breakdown structures, procurement windows and resource-deployment calendars. The output is a living plan that survives the first contact with site conditions and still delivers on the promised programme.
+          </p>
+
+          <ul class="capability-list" aria-label="Strategic planning capabilities">
+            <li>Corridor option analysis and route-selection reports</li>
+            <li>Phased programme development aligned to funding tranches</li>
+            <li>Resource and plant-mobilisation scheduling</li>
+            <li>Environmental and utility-conflict pre-assessment</li>
+            <li>Stakeholder co-ordination with contracting authorities</li>
+            <li>Value-engineering review prior to tender or mobilisation</li>
+          </ul>
+
+          <div class="why-matters">
+            <p><strong>Why it matters:</strong> A programme built on accurate data — not optimistic assumptions — prevents the acceleration orders, abortive works and extension-of-time claims that inflate the final cost of poorly planned infrastructure projects.</p>
+          </div>
+
+          <a href="/pages/en/our-services/strategic-planning/" class="btn-primary">Explore this service</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 08 — PROJECT EXECUTION (full-bleed dark navy + video)
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-execution" class="services-execution" aria-labelledby="exec-heading">
+      <div class="services-execution__inner">
+
+        <div class="services-execution__copy reveal">
+          <span class="section-index">08</span>
+          <span class="eyebrow eyebrow--invert">PLANS INTO ROADS</span>
+          <hr class="section-rule section-rule--invert" aria-hidden="true">
+          <h2 id="exec-heading">Project Execution</h2>
+          <p>
+            Our project execution phase is where strategic plans come to life. We focus on transforming approved blueprints into robust infrastructure with precision and efficiency — using self-performed construction crews working under direct Al Zahraa engineering supervision, with no critical-path work delegated.
+          </p>
+          <p>
+            From subgrade trimming and proof-rolling through aggregate base compaction, structural concrete and bridge-deck forming to the final bituminous wearing course, each construction layer is checked at its designated hold point by our quality team before the next layer is authorised. The result is infrastructure that meets the design life from day one.
+          </p>
+
+          <ul class="capability-list" aria-label="Project execution capabilities">
+            <li>Subgrade preparation, lime or cement stabilisation</li>
+            <li>Sub-base and crushed-stone base course placement</li>
+            <li>Reinforced-concrete works: piers, decks, culverts</li>
+            <li>Hot-mix asphalt binder and wearing-course paving</li>
+            <li>Bridge bearings, joints and waterproofing installation</li>
+            <li>Line markings, safety barriers and drainage structures</li>
+          </ul>
+
+          <div class="why-matters">
+            <p><strong>Why it matters:</strong> Self-performance means one quality standard, one safety culture and one chain of command — eliminating the interface disputes between sub-contractors that are the leading cause of road-project defects.</p>
+          </div>
+
+          <a href="/pages/en/our-services/project-execution/" class="btn-primary">Explore this service</a>
+        </div>
+
+        <!-- Click-to-play video card -->
+        <!-- TODO(media): placeholder — replace with real Al Zahraa footage after local download -->
+        <div class="video-card reveal" style="--reveal-delay: 100ms" id="execution-video-card" role="group" aria-label="Project execution video">
+          <video
+            id="execution-video"
+            preload="metadata"
+            muted
+            playsinline
+            loop
+            poster="https://images.pexels.com/photos/34053335/pexels-photo-34053335.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            data-az-asset="project-execution-aerial-paving.mp4"
+            data-az-poster="project-execution-video-poster.webp"
+            width="1920"
+            height="1080"
+          >
+            <source src="https://videos.pexels.com/video-files/3858830/3858830-hd_1920_1080_24fps.mp4" type="video/mp4">
+            Your browser does not support the video element.
+          </video>
+          <div class="video-card__overlay" id="execution-video-overlay">
+            <button
+              class="video-card__play-btn"
+              id="execution-video-play"
+              aria-label="Play project execution video"
+              type="button"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true" focusable="false">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+            <span class="video-card__label">Watch Our Execution Process</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 09 — QUALITY ASSURANCE (feature, image-right, alt bg)
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-quality" class="services-section feature-block feature-block--alt feature-block--img-right" aria-labelledby="qa-heading">
+      <div class="feature-block__inner">
+
+        <div class="feature-block__copy reveal">
+          <span class="section-index">09</span>
+          <span class="eyebrow">BUILT-IN, NOT BOLTED ON</span>
+          <hr class="section-rule" aria-hidden="true">
+          <h2 id="qa-heading">Quality Assurance</h2>
+          <p>
+            Our commitment to quality is the backbone of every road and bridge project we undertake. We adhere to stringent quality control measures at every stage of construction — not as an after-the-fact inspection layer, but as an integral part of how we build.
+          </p>
+          <p>
+            Quality at Al Zahraa is enforced at each construction hold point: before a layer is covered, our QC team confirms that the compaction density, aggregate gradation, pavement thickness and surface regularity meet the contract specification. Nothing progresses until the records are signed.
+          </p>
+
+          <!-- TODO(content): ISO and other certifications go here once the client supplies the certificate numbers and issue dates. Do not list any certification without written confirmation. -->
+
+          <ul class="capability-list" aria-label="Quality assurance capabilities">
+            <li>In-situ compaction testing (sand-cone, nuclear gauge)</li>
+            <li>Aggregate gradation and Los Angeles abrasion testing</li>
+            <li>Asphalt core extraction and Marshall stability verification</li>
+            <li>Bridge structural concrete cube and cylinder sampling</li>
+            <li>Layer-thickness verification and surface regularity checks</li>
+            <li>Hold-point inspection records and non-conformance reporting</li>
+          </ul>
+
+          <div class="why-matters">
+            <p><strong>Why it matters:</strong> A road that passes every hold-point inspection does not need a defects-liability programme to carry the load the designer intended. It simply performs — on year one and on year ten.</p>
+          </div>
+
+          <a href="/pages/en/our-services/quality-assurance/" class="btn-primary">Explore this service</a>
+        </div>
+
+        <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+        <div class="feature-block__image-wrap reveal" style="--reveal-delay: 100ms">
+          <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+          <img
+            src="https://images.pexels.com/photos/37125646/pexels-photo-37125646.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            data-az-asset="quality-assurance-feature.webp"
+            alt="Surveyor with theodolite taking precision measurements at a construction site"
+            width="1920"
+            height="1280"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 10 — MACHINERY & EQUIPMENT (feature, image-left)
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-machinery" class="services-section feature-block feature-block--img-left" aria-labelledby="mach-heading">
+      <div class="feature-block__inner">
+
+        <!-- TODO(media): placeholder — replace with real Al Zahraa photography/footage after local download -->
+        <div class="feature-block__image-wrap reveal">
+          <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
+          <img
+            src="https://images.pexels.com/photos/17605960/pexels-photo-17605960.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            data-az-asset="machinery-equipment-feature.webp"
+            alt="Heavy road-construction machinery and equipment lined up at a project site"
+            width="1920"
+            height="1280"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="feature-block__copy reveal" style="--reveal-delay: 100ms">
+          <span class="section-index">10</span>
+          <span class="eyebrow">OWNED FLEET & WORKSHOP</span>
+          <hr class="section-rule" aria-hidden="true">
+          <h2 id="mach-heading">Machinery &amp; Equipment</h2>
+          <p>
+            Our company boasts a state-of-the-art fleet of heavy machinery specifically designed to streamline road and bridge construction. Every machine in the Al Zahraa fleet is owned outright — not hired for a project — and maintained by our permanent workshop team to production-ready standard before mobilisation.
+          </p>
+          <p>
+            Owned plant gives Al Zahraa a critical commercial and operational advantage: we can mobilise faster than competitors dependent on external hire, we absorb no hire-rate volatility, and we maintain the machinery according to our own preventative-maintenance schedule rather than a rental company's convenience.
+          </p>
+
+          <ul class="capability-list" aria-label="Machinery and equipment capabilities">
+            <li>Asphalt pavers and tandem vibratory rollers</li>
+            <li>Motor graders and pneumatic-tyre rollers</li>
+            <li>Hydraulic excavators and wheeled loaders</li>
+            <li>Mobile crushing and screening plants</li>
+            <li>Asphalt batching and concrete batching plants</li>
+            <li>In-house maintenance workshop and spare-parts store</li>
+          </ul>
+
+          <div class="why-matters">
+            <p><strong>Why it matters:</strong> An owned, maintained fleet removes the single most common cause of road-project delays — plant breakdown. Al Zahraa's workshop team ensures machines are repaired on-site, not shipped to a hire company's depot.</p>
+          </div>
+
+          <a href="/pages/en/equipment/" class="btn-primary">Explore the fleet</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 11 — STATS BAND (full-bleed dark navy)
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-stats" class="services-stats" aria-labelledby="stats-heading">
+      <div class="services-stats__inner">
+
+        <header class="services-stats__header reveal">
+          <span class="section-index">11</span>
+          <span class="eyebrow eyebrow--invert">THREE DECADES OF DELIVERY</span>
+          <hr class="section-rule section-rule--invert" aria-hidden="true">
+          <h2 id="stats-heading">The scale behind the service</h2>
+        </header>
+
+        <ul class="services-stats__grid reveal" role="list" aria-label="Company statistics">
+
+          <li class="stat-item">
+            <span class="stat-item__value" aria-label="Founded 1995">1995</span>
+            <span class="stat-item__label">Year founded</span>
+          </li>
+
+          <li class="stat-item">
+            <span class="stat-item__value">
+              <span data-az-count="30" aria-label="Over 30">0</span><span class="stat-item__suffix">+</span>
+            </span>
+            <span class="stat-item__label">Years in operation</span>
+          </li>
+
+          <!-- TODO(content): placeholder figure — MUST be confirmed with client before launch -->
+          <li class="stat-item" data-az-placeholder="true">
+            <span class="stat-item__value">
+              <span data-az-count="0" aria-label="[TBC]">[TBC]</span>
+            </span>
+            <span class="stat-item__label">Projects completed</span>
+          </li>
+
+          <!-- TODO(content): placeholder figure — MUST be confirmed with client before launch -->
+          <li class="stat-item" data-az-placeholder="true">
+            <span class="stat-item__value">
+              <span data-az-count="0" aria-label="[TBC]">[TBC]</span><span class="stat-item__suffix">+</span>
+            </span>
+            <span class="stat-item__label">km of roads delivered</span>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 12 — CTA BAND
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services-cta" class="services-cta" aria-labelledby="cta-heading">
+      <div class="services-cta__inner">
+        <span class="section-index">12</span>
+        <span class="eyebrow eyebrow--invert reveal">READY TO BUILD</span>
+        <hr class="section-rule section-rule--invert" aria-hidden="true">
+        <h2 id="cta-heading" class="reveal">Tell us about your project</h2>
+        <p class="reveal" style="--reveal-delay: 80ms">
+          Whether you are tendering a new highway, upgrading an existing carriageway or planning a bridge crossing, Al Zahraa's team is ready to review the scope and respond with a technical proposal.
+        </p>
+        <div class="services-cta__actions reveal" style="--reveal-delay: 160ms">
+          <a href="/pages/en/contact-us/" class="btn-accent">Request a Quote</a>
+          <a href="/pages/en/our-projects/" class="btn-ghost">See completed projects</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="site-footer" data-partial="footer"></div>
