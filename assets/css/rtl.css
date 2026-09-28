@@ -1,0 +1,34 @@
+/* =============================================================
+   RTL — Arabic-only overrides. Loaded LAST on Arabic pages only.
+   Handles what CSS logical properties CANNOT: icon/arrow flips,
+   directional transforms, background-position, shadow x-offsets.
+   Font-family/line-height for Arabic live in variables.css.
+   Depends on: everything above it in the cascade.
+   ============================================================= */
+
+/* Mirror directional glyphs (arrows, chevrons) */
+[dir="rtl"] .icon-arrow,
+[dir="rtl"] [data-flip-rtl] { transform: scaleX(-1); }
+
+/* Hamburger toggle rotations already work symmetrically; the
+   drawer slide direction is handled in navbar.css via
+   html[dir="rtl"] .navbar__nav. Nothing extra needed here. */
+
+/* The navbar underline uses transform-origin: inline-start, which
+   already respects direction — no override needed. */
+
+/* Breadcrumb divider: use a mirrored slash so it reads naturally */
+[dir="rtl"] .breadcrumb li + li::before { content: "\\"; }
+
+/* Keep western digits, phone numbers, emails and URLs LTR even
+   inside RTL flow. Pair with the .ltr-inline utility in markup. */
+[dir="rtl"] .ltr-inline,
+[dir="rtl"] a[href^="tel:"],
+[dir="rtl"] a[href^="mailto:"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Social icons row stays visually left-to-right (brand marks are
+   not directional), so reset the flex direction if it inherited. */
+[dir="rtl"] .footer__socials { flex-direction: row; }

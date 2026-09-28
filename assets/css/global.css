@@ -1,0 +1,120 @@
+/* =============================================================
+   GLOBAL — base element styles, .container widths, section
+   rhythm, skip-link, and the shared page scaffolding every page
+   inherits. Builds on reset.css + variables.css + typography.css.
+   Depends on: variables.css, reset.css, typography.css
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   Page shell: keep footer pinned to the bottom on short pages,
+   and make the navbar's fixed height not overlap content.
+   ------------------------------------------------------------- */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  overflow-x: hidden;
+}
+
+#content {
+  flex: 1 0 auto;
+}
+
+/* Inner pages push content below the fixed navbar. Pages whose
+   hero sits UNDER a transparent navbar opt out with
+   <body data-transparent-nav>. */
+body:not([data-transparent-nav]) #content {
+  padding-block-start: var(--navbar-h);
+}
+
+/* -------------------------------------------------------------
+   Containers
+   ------------------------------------------------------------- */
+.container,
+.container-wide {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.container      { max-width: var(--container); }
+.container-wide { max-width: var(--container-wide); }
+.container-text { max-width: var(--container-text); margin-inline: auto; }
+
+/* -------------------------------------------------------------
+   Section rhythm + alternating backgrounds
+   ------------------------------------------------------------- */
+.section { padding-block: var(--section-y); }
+.section--sm { padding-block: var(--section-y-sm); }
+
+.section--alt  { background-color: var(--color-bg-alt); }
+.section--warm { background-color: var(--color-bg-warm); }
+.section--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-invert);
+}
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 { color: var(--color-text-invert); }
+.section--dark .lead { color: var(--az-gray-400); }
+
+/* A section intro block: eyebrow + H2 + lead */
+.section__head { max-width: var(--container-text); margin-block-end: var(--space-10); }
+.section__head--center { margin-inline: auto; text-align: center; }
+.section__head .eyebrow { margin-block-end: var(--space-3); }
+.section__head h2 { margin-block-end: var(--space-4); }
+
+/* Thin amber rule used under headings */
+.rule-accent {
+  width: 64px;
+  height: 3px;
+  border: 0;
+  margin: var(--space-4) 0;
+  background-color: var(--color-accent);
+}
+.section__head--center .rule-accent { margin-inline: auto; }
+
+/* -------------------------------------------------------------
+   Skip-to-content link (a11y)
+   ------------------------------------------------------------- */
+.skip-link {
+  position: fixed;
+  inset-block-start: var(--space-2);
+  inset-inline-start: var(--space-2);
+  z-index: var(--z-toast);
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  transform: translateY(-150%);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus-visible { transform: translateY(0); }
+
+/* -------------------------------------------------------------
+   Images inside content default to cover-friendly behaviour
+   ------------------------------------------------------------- */
+figure { margin: 0; }
+img { border-style: none; }
+
+/* -------------------------------------------------------------
+   Reveal-on-scroll (driven by animations.js → .is-revealed)
+   ------------------------------------------------------------- */
+[data-az-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+  will-change: opacity, transform;
+}
+[data-az-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced-motion: neutralise any transform-based reveals */
+@media (prefers-reduced-motion: reduce) {
+  /* !important: must beat the transform above regardless of reveal state */
+  [data-az-reveal] { opacity: 1 !important; transform: none !important; }
+}

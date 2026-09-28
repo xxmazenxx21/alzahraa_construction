@@ -1,0 +1,255 @@
+/* =============================================================
+   NAVBAR — shared, JS-injected navigation.
+   Transparent over hero → solid navy on scroll; shrinks on scroll;
+   full-screen slide-in drawer below lg; .is-active amber underline.
+   SHARED FILE — coordinate before editing (see CLAUDE.md §12).
+   Depends on: variables.css, components.css
+   Scope: .navbar  ·  Behaviour classes: .is-scrolled / .is-open
+   ============================================================= */
+
+.navbar {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: var(--z-navbar);
+  background-color: var(--color-primary);
+  border-block-end: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    background-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+}
+
+/* Transparent over hero — only when the page opts in AND we're at
+   the very top. Toggled off (solid) by .is-scrolled from navbar.js */
+body[data-transparent-nav] .navbar:not(.is-scrolled) {
+  background-color: transparent;
+  border-block-end-color: transparent;
+}
+.navbar.is-scrolled { box-shadow: var(--shadow-md); }
+
+/* -------------------------------------------------------------
+   Bar layout
+   ------------------------------------------------------------- */
+.navbar__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  height: var(--navbar-h);
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  transition: height var(--dur-base) var(--ease-out);
+}
+.navbar.is-scrolled .navbar__bar { height: var(--navbar-h-scrolled); }
+
+/* -------------------------------------------------------------
+   Brand / logo
+   ------------------------------------------------------------- */
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+.navbar__brand img,
+.navbar__brand svg { height: 40px; width: auto; }
+.navbar.is-scrolled .navbar__brand img,
+.navbar.is-scrolled .navbar__brand svg { height: 34px; }
+.navbar__brand-text {
+  display: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--fs-h4);
+  color: var(--color-text-invert);
+  line-height: 1;
+  letter-spacing: var(--ls-tight);
+}
+@media (min-width: 480px) { .navbar__brand-text { display: inline-block; } }
+
+/* -------------------------------------------------------------
+   NAV — desktop: inline row · mobile: slide-in drawer
+   ------------------------------------------------------------- */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+}
+
+.navbar__link {
+  position: relative;
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-invert);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  inset-block-end: -2px;
+  inset-inline-start: var(--space-3);
+  inset-inline-end: var(--space-3);
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: inline-start;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.navbar__link:hover { color: var(--color-accent); }
+.navbar__link:hover::after,
+.navbar__item.is-active .navbar__link::after { transform: scaleX(1); }
+.navbar__item.is-active .navbar__link { color: var(--color-accent); }
+
+/* Right-hand actions (lang switch + CTA) */
+.navbar__nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Language switch */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+.lang-switch a {
+  padding: var(--space-1) var(--space-2);
+  color: var(--az-gray-400);
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.lang-switch a:hover { color: var(--color-accent); }
+.lang-switch a[aria-current="true"] { color: var(--color-text-invert); }
+.lang-switch__sep { color: rgba(255, 255, 255, 0.25); }
+
+/* -------------------------------------------------------------
+   Hamburger toggle (hidden on desktop)
+   ------------------------------------------------------------- */
+.navbar__toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: none;
+}
+.navbar__toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-invert);
+  border-radius: 2px;
+  transition: transform var(--dur-base) var(--ease-out),
+              opacity var(--dur-fast) var(--ease-out);
+}
+.navbar.is-open .navbar__toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar.is-open .navbar__toggle-bar:nth-child(2) { opacity: 0; }
+.navbar.is-open .navbar__toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* -------------------------------------------------------------
+   MOBILE (< lg): drawer
+   ------------------------------------------------------------- */
+@media (max-width: 1023.98px) {
+  .navbar__nav {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-end: 0;
+    z-index: var(--z-overlay);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: var(--space-6);
+    width: min(88vw, 380px);
+    padding: calc(var(--navbar-h) + var(--space-6)) var(--gutter) var(--space-10);
+    background-color: var(--az-navy-900);
+    overflow-y: auto;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform var(--dur-base) var(--ease-out),
+                visibility 0s linear var(--dur-base);
+  }
+  html[dir="rtl"] .navbar__nav { transform: translateX(-100%); }
+
+  .navbar.is-open .navbar__nav {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform var(--dur-base) var(--ease-out), visibility 0s;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+  .navbar__item { border-block-end: 1px solid rgba(255, 255, 255, 0.08); }
+  .navbar__link {
+    display: block;
+    padding: var(--space-4) var(--space-2);
+    font-size: var(--fs-lead);
+  }
+  .navbar__link::after {
+    inset-block-end: auto;
+    inset-inline: 0;
+    inset-block: 0;
+    width: 3px;
+    height: auto;
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+    transform: scaleY(0);
+    transform-origin: center;
+  }
+  .navbar__item.is-active .navbar__link::after,
+  .navbar__link:hover::after { transform: scaleY(1); }
+
+  .navbar__nav-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-5);
+    margin-block-start: var(--space-4);
+  }
+  .navbar__nav-actions .btn { width: 100%; }
+  .lang-switch { justify-content: flex-start; }
+
+  /* Backdrop behind the drawer */
+  .navbar__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-overlay);
+    background-color: rgba(10, 26, 47, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--dur-base) var(--ease-out),
+                visibility 0s linear var(--dur-base);
+  }
+  .navbar.is-open .navbar__backdrop {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--dur-base) var(--ease-out);
+  }
+}
+
+/* -------------------------------------------------------------
+   DESKTOP (>= lg): no drawer, no hamburger, no backdrop
+   ------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .navbar__toggle,
+  .navbar__backdrop { display: none; }
+}

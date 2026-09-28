@@ -1,0 +1,40 @@
+<!-- =============================================================
+     NAVBAR (AR) — shared partial, injected by include.js.
+     Nav links + CTA target are populated from site-data.js by
+     navbar.js. Only structural markup + static labels live here.
+     ============================================================= -->
+<header class="navbar" aria-label="ترويسة الموقع">
+  <div class="navbar__bar">
+    <a class="navbar__brand" href="/pages/ar/home/" aria-label="الزهراء — الرئيسية">
+      <img src="/assets/images/logo/logo-white.svg" alt="شركة الزهراء للمقاولات العمومية" width="220" height="48">
+    </a>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navbar-nav"
+      aria-label="فتح القائمة">
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+    </button>
+
+    <nav class="navbar__nav" id="navbar-nav" aria-label="التنقل الرئيسي">
+      <ul class="navbar__menu" data-az-nav>
+        <!-- تُبنى بواسطة navbar.js من SITE.nav -->
+      </ul>
+
+      <div class="navbar__nav-actions">
+        <div class="lang-switch" data-lang-switch aria-label="اللغة">
+          <a data-lang="en" hreflang="en" lang="en" href="/">EN</a>
+          <span class="lang-switch__sep" aria-hidden="true">/</span>
+          <a data-lang="ar" hreflang="ar" lang="ar" href="/pages/ar/home/">ع</a>
+        </div>
+        <a class="btn btn-accent btn--sm" data-az-cta href="/pages/ar/contact-us/">اطلب عرض سعر</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="navbar__backdrop" aria-hidden="true"></div>
+</header>

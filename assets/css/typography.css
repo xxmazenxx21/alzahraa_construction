@@ -1,0 +1,93 @@
+/* =============================================================
+   TYPOGRAPHY — font application + heading/body scale.
+   Fonts are loaded per-page via <link> to Google Fonts in <head>
+   (preconnect + display=swap). This file only WIRES the tokens
+   from variables.css onto elements — no @font-face / @import here
+   (keeps it non-render-blocking).
+   Depends on: variables.css
+   ============================================================= */
+
+html {
+  font-family: var(--font-body);
+  font-size: 100%; /* 16px base — the --fs-* clamps scale from here */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ---- Headings ---------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-tight);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-snug); }
+h4 { font-size: var(--fs-h4); line-height: var(--lh-snug); }
+h5 { font-size: var(--fs-lead); line-height: var(--lh-snug); }
+h6 {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+}
+
+/* English headings read best a touch condensed + heavier */
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3 { font-weight: 700; }
+
+/* Arabic headings: never uppercase, never negative-tracked (tokens
+   already zero these), and h6 must not uppercase Arabic */
+html[lang="ar"] h6 { text-transform: none; }
+
+/* ---- Body copy --------------------------------------------- */
+p { font-size: var(--fs-body); }
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-base);
+  color: var(--color-text-muted);
+}
+
+small, .text-sm { font-size: var(--fs-sm); }
+.text-xs { font-size: var(--fs-xs); }
+
+strong, b { font-weight: 700; }
+
+/* ---- Links (in body content) ------------------------------- */
+a { color: inherit; }
+
+.prose a {
+  color: var(--az-navy-600);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.prose a:hover { color: var(--color-accent-hover); }
+
+/* ---- Eyebrow label (uppercase micro-heading over an H2) ---- */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--color-accent-hover);
+}
+html[lang="ar"] .eyebrow { text-transform: none; }
+
+/* Long-form paragraphs get a comfortable measure */
+.prose p { max-width: var(--container-text); }
+.prose p + p { margin-block-start: var(--space-5); }

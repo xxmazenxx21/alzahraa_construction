@@ -1,0 +1,40 @@
+<!-- =============================================================
+     NAVBAR (EN) — shared partial, injected by include.js.
+     Nav links + CTA target are populated from site-data.js by
+     navbar.js. Only structural markup + static labels live here.
+     ============================================================= -->
+<header class="navbar" aria-label="Site header">
+  <div class="navbar__bar">
+    <a class="navbar__brand" href="/" aria-label="Al Zahraa — Home">
+      <img src="/assets/images/logo/logo-white.svg" alt="Al Zahraa General Contracting" width="220" height="48">
+    </a>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navbar-nav"
+      aria-label="Open menu">
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+      <span class="navbar__toggle-bar"></span>
+    </button>
+
+    <nav class="navbar__nav" id="navbar-nav" aria-label="Primary navigation">
+      <ul class="navbar__menu" data-az-nav>
+        <!-- populated by navbar.js from SITE.nav -->
+      </ul>
+
+      <div class="navbar__nav-actions">
+        <div class="lang-switch" data-lang-switch aria-label="Language">
+          <a data-lang="en" hreflang="en" lang="en" href="/">EN</a>
+          <span class="lang-switch__sep" aria-hidden="true">/</span>
+          <a data-lang="ar" hreflang="ar" lang="ar" href="/pages/ar/home/">ع</a>
+        </div>
+        <a class="btn btn-accent btn--sm" data-az-cta href="/pages/en/contact-us/">Get a Quote</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="navbar__backdrop" aria-hidden="true"></div>
+</header>

@@ -1,0 +1,148 @@
+/* =============================================================
+   FOOTER — shared, JS-injected footer.
+   4-column layout (blurb+socials, quick links, services, contact)
+   + bottom copyright bar. Contact data is injected from
+   site-data.js by footer.js — never hard-code it here.
+   SHARED FILE — coordinate before editing (see CLAUDE.md §12).
+   Depends on: variables.css
+   Scope: .footer
+   ============================================================= */
+
+.footer {
+  background-color: var(--az-navy-900);
+  color: var(--az-gray-400);
+  font-size: var(--fs-sm);
+}
+
+.footer__inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  padding-block: var(--section-y-sm);
+  display: grid;
+  gap: var(--space-10);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px)  { .footer__inner { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) {
+  .footer__inner {
+    grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+    gap: var(--space-12);
+  }
+}
+
+/* -------------------------------------------------------------
+   Column headings + links
+   ------------------------------------------------------------- */
+.footer__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  color: var(--color-text-invert);
+  margin-block-end: var(--space-5);
+}
+.footer__heading {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--color-text-invert);
+  margin-block-end: var(--space-5);
+}
+html[lang="ar"] .footer__heading { text-transform: none; }
+
+.footer__links { list-style: none; display: grid; gap: var(--space-3); }
+.footer__links a {
+  color: var(--az-gray-400);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.footer__links a:hover,
+.footer__links a:focus-visible { color: var(--color-accent); }
+
+/* -------------------------------------------------------------
+   Brand column
+   ------------------------------------------------------------- */
+.footer__brand img,
+.footer__brand svg { height: 44px; width: auto; margin-block-end: var(--space-5); }
+.footer__blurb { max-width: 34ch; margin-block-end: var(--space-6); line-height: var(--lh-base); }
+
+/* -------------------------------------------------------------
+   Social icons
+   ------------------------------------------------------------- */
+.footer__socials { display: flex; gap: var(--space-3); }
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  color: var(--az-gray-400);
+  transition: background-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+.footer__social:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+.footer__social svg { width: 18px; height: 18px; }
+
+/* -------------------------------------------------------------
+   Contact column
+   ------------------------------------------------------------- */
+.footer__contact { display: grid; gap: var(--space-4); font-style: normal; }
+.footer__contact-item { display: flex; gap: var(--space-3); align-items: flex-start; }
+.footer__contact-item svg {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  margin-block-start: 3px;
+  color: var(--color-accent);
+}
+.footer__contact a { color: var(--az-gray-400); }
+.footer__contact a:hover { color: var(--color-accent); }
+/* Stack each phone / email on its own line + let long addresses wrap */
+.footer__phones a,
+[data-az-emails] a { display: block; word-break: break-word; }
+[data-az-emails] a + a { margin-block-start: var(--space-2); }
+
+/* Newsletter stub */
+.footer__newsletter { margin-block-start: var(--space-6); }
+.footer__newsletter-form {
+  display: flex;
+  gap: var(--space-2);
+  margin-block-start: var(--space-3);
+}
+.footer__newsletter-input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-3);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-invert);
+}
+.footer__newsletter-input::placeholder { color: var(--az-gray-400); }
+.footer__newsletter-input:focus-visible { border-color: var(--color-accent); }
+
+/* -------------------------------------------------------------
+   Bottom bar
+   ------------------------------------------------------------- */
+.footer__bottom {
+  border-block-start: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer__bottom-inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  padding-block: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+}
+.footer__bottom-links { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.footer__bottom-links a:hover { color: var(--color-accent); }

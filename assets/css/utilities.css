@@ -1,0 +1,53 @@
+/* =============================================================
+   UTILITIES — small single-purpose helpers. Generic + composable.
+   No page-specific rules.
+   Depends on: variables.css
+   ============================================================= */
+
+/* ---- Accessibility ----------------------------------------- */
+.visually-hidden,
+.sr-only {
+  position: absolute !important; /* !important: helper must win over layout */
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Keep numbers / phones / emails / URLs LTR in Arabic --- */
+.ltr-inline {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* ---- Text alignment (logical) ------------------------------ */
+.text-start  { text-align: start; }
+.text-center { text-align: center; }
+.text-end    { text-align: end; }
+
+/* ---- Display helpers --------------------------------------- */
+.hidden { display: none !important; } /* !important: state helper */
+.block  { display: block; }
+.flex   { display: flex; }
+.grid   { display: grid; }
+
+/* ---- Flow / stacking spacing ------------------------------- */
+.stack > * + * { margin-block-start: var(--space-4); }
+.stack-lg > * + * { margin-block-start: var(--space-8); }
+
+/* ---- Colour helpers ---------------------------------------- */
+.text-accent  { color: var(--color-accent); }
+.text-muted   { color: var(--color-text-muted); }
+.text-invert  { color: var(--color-text-invert); }
+.bg-dark      { background-color: var(--color-bg-dark); color: var(--color-text-invert); }
+
+/* ---- Aspect ratios for media ------------------------------- */
+.ratio-16x9 { aspect-ratio: 16 / 9; }
+.ratio-4x3  { aspect-ratio: 4 / 3; }
+.ratio-1x1  { aspect-ratio: 1 / 1; }
+.cover { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---- No-scroll lock (set on <body> when a drawer/modal open) */
+.no-scroll { overflow: hidden; }
