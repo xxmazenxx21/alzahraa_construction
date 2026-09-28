@@ -25,7 +25,8 @@ jobs:
           port: 21
 
           local-dir: ./
-          server-dir: ./public_html/
+          server-dir: ./
+
           exclude: |
             **/.git*
             **/.git*/**
@@ -33,4 +34,4 @@ jobs:
             .github/**
 
           timeout: 120000
-          dry-run: true
+          dry-run: false
