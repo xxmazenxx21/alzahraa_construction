@@ -1,4 +1,4 @@
-name: Deploy to Namecheap
+﻿name: Deploy to Namecheap
 
 on:
   push:
@@ -14,16 +14,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build website
-        run: npm run build
-
       - name: Deploy to Namecheap via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
@@ -34,7 +24,13 @@ jobs:
           protocol: ftps
           port: 21
 
-          local-dir: ./dist/
+          local-dir: ./
           server-dir: /home/alzajbey/alzahraa-construction.com/usercpanel/
+
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
 
           timeout: 120000
