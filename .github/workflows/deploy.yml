@@ -25,8 +25,7 @@ jobs:
           port: 21
 
           local-dir: ./
-          server-dir: /home/alzajbey/alzahraa-construction.com/
-
+          server-dir: ./
           exclude: |
             **/.git*
             **/.git*/**
