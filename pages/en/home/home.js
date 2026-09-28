@@ -341,11 +341,15 @@ function setupForm() {
 
     if (!status) return;
     status.hidden = false;
+    // Localised messages come from the form's data-* attributes (English fallback),
+    // so the shared handler serves both the EN and AR pages.
     if (ok) {
-      status.textContent = "Thank you — your inquiry has been received. Our team will be in touch shortly.";
+      status.textContent = form.dataset.thanks ||
+        "Thank you — your inquiry has been received. Our team will be in touch shortly.";
       form.reset();
     } else {
-      status.textContent = "Please complete the required fields with a valid email address.";
+      status.textContent = form.dataset.error ||
+        "Please complete the required fields with a valid email address.";
     }
   });
 }
