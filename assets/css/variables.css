@@ -174,8 +174,11 @@
   /* ==========================================================
      NAVBAR HEIGHTS
      ========================================================== */
-  --navbar-h: 84px;
-  --navbar-h-scrolled: 64px;
+  /* Sized to contain the stacked logo lockup at its current visual size:
+     visible artwork is 125.6px tall at the 200px <img> box (113px at 180px
+     when scrolled) + --space-3 / --space-2 padding above and below. */
+  --navbar-h: 150px;
+  --navbar-h-scrolled: 130px;
 }
 
 /* =============================================================

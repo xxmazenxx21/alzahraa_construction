@@ -106,6 +106,11 @@ html[lang="ar"] .footer__heading { text-transform: none; }
 .footer__phones a,
 [data-az-emails] a { display: block; word-break: break-word; }
 [data-az-emails] a + a { margin-block-start: var(--space-2); }
+/* Office lines (Tel / Fax, Sharqia summary) — one entry per line */
+.footer__lines { display: grid; gap: var(--space-1); }
+.footer__branch { padding-block-start: var(--space-4); border-block-start: 1px solid var(--az-navy-700); }
+.footer__contact .footer__branch-link { color: var(--color-accent); font-weight: 600; }
+.footer__contact .footer__branch-link:hover { color: var(--az-amber-400); }
 
 /* Newsletter stub */
 .footer__newsletter { margin-block-start: var(--space-6); }

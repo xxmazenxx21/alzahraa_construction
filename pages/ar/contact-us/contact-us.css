@@ -1,10 +1,11 @@
 /* =============================================================
-   CONTACT US — page styles
-   Scope : .page-contact-us
-   Owner : TBD
-   Depends on: variables.css, global.css, components.css
+   CONTACT US (AR) — page styles
+   Scope : .page-contact-us (Arabic)
+   Owner : Ahmed
+   Depends on: /pages/en/contact-us/contact-us.css (shared keyframes),
+               tailwind.css, rtl.css
+   Intentionally empty: the Arabic page is covered by Tailwind's
+   logical utilities (start-/end-, text-start) and rtl: variants,
+   plus the shared rtl.css. Add a rule here only for an Arabic-only
+   override those genuinely can't express.
    ============================================================= */
-
-.page-contact-us {
-  /* TODO: page sections */
-}
