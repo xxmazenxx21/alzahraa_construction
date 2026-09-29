@@ -15,6 +15,7 @@
   --az-navy-800: #0f2742; /* primary surfaces */
   --az-navy-700: #163457; /* hover on navy */
   --az-navy-600: #1e4d7b; /* secondary / links on light */
+  --az-navy-100: #e6edf5; /* light navy tint — chip hover, subtle fills */
 
   /* ---- Accent: safety amber (roads & signage) ---- */
   --az-amber-600: #c98900;

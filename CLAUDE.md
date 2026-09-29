@@ -530,6 +530,34 @@ Every page follows this skeleton, then adds its own sections:
 
 Home uses a **full-height (100vh)** hero with looping muted background video instead.
 
+### §8.1 Placeholder Numbers (Temporary Data)
+
+Do NOT use `[TBC]` as visible text on the page — it looks unfinished 
+and unprofessional if a stakeholder previews the site before real 
+data arrives.
+
+Instead, use a realistic-looking placeholder number, and mark it 
+with an HTML comment immediately after it so it stays traceable:
+
+```html
+<span class="stat-number">42</span>
+<!-- PLACEHOLDER: confirm real fleet count with client -->
+```
+
+Rules for placeholder numbers:
+- The number must look plausible for the context (a "Rollers & Compactors" 
+  count should be a realistic small number, not 9999 or 1).
+- Every placeholder number MUST have a `<!-- PLACEHOLDER: ... -->` comment 
+  right after it, describing what needs confirming.
+- Never place a placeholder number without its comment — the comment is 
+  what makes it findable later.
+- Before any page is marked "done" (§14 Definition of Done), run a 
+  project-wide search for `PLACEHOLDER` and confirm zero results remain, 
+  or list any remaining ones explicitly to the client/owner.
+- This applies to fleet counts, spec-table values, percentages, hours, 
+  capacities, model numbers — any figure not explicitly confirmed by 
+  the client.
+
 ### 7.1 Home — `/index.html`
 
 1. Full-screen video hero, headline, dual CTA, scroll cue, social rail
