@@ -3,15 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAGE TITLE — Al Zahraa Construction</title>
-  <meta name="description" content="">
+  <title>About Us — Al Zahraa General Contracting | Roads & Bridges</title>
+  <meta name="description" content="Al Zahraa General Contracting has delivered roads, bridges and civil infrastructure across Egypt since 1995. Founded and chaired by Eng. Hesham Zidan.">
 
   <link rel="canonical" href="https://alzahraa-construction.com/pages/en/about-us/">
-  <link rel="alternate" hreflang="en" href="https://alzahraa-construction.com/pages/en/about-us/">
-  <link rel="alternate" hreflang="ar" href="https://alzahraa-construction.com/pages/ar/about-us/">
+  <link rel="alternate" hreflang="en"      href="https://alzahraa-construction.com/pages/en/about-us/">
+  <link rel="alternate" hreflang="ar"      href="https://alzahraa-construction.com/pages/ar/about-us/">
   <link rel="alternate" hreflang="x-default" href="https://alzahraa-construction.com/">
 
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://alzahraa-construction.com/pages/en/about-us/">
+  <meta property="og:title"       content="About Us — Al Zahraa General Contracting | Roads & Bridges">
+  <meta property="og:description" content="Al Zahraa General Contracting has delivered roads, bridges and civil infrastructure across Egypt since 1995. Founded and chaired by Eng. Hesham Zidan.">
+  <meta property="og:image"       content="https://images.pexels.com/videos/4430419/pexels-photo-4430419.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <meta name="twitter:card"       content="summary_large_image">
+
   <link rel="icon" href="/assets/images/logo/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/variables.css">
@@ -21,18 +33,910 @@
   <link rel="stylesheet" href="/assets/css/components.css">
   <link rel="stylesheet" href="/assets/css/navbar.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/pages/en/about-us/about-us.css">
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Al Zahraa General Contracting, Import & Export Company",
+        "url": "https://alzahraa-construction.com",
+        "logo": "https://alzahraa-construction.com/assets/images/logo/logo-full.svg",
+        "foundingDate": "1995",
+        "founder": { "@type": "Person", "name": "Eng. Hesham Zidan" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "127 Mohamed Farid St., Al-Bustan Building, Apartment 53, 5th Floor",
+          "addressLocality": "Abdin, Cairo",
+          "addressCountry": "EG"
+        },
+        "contactPoint": [
+          { "@type": "ContactPoint", "telephone": "+201031764534", "contactType": "customer service" },
+          { "@type": "ContactPoint", "telephone": "+201080005220", "contactType": "customer service" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alzahraa-construction.com/" },
+          { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://alzahraa-construction.com/pages/en/about-us/" }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <script type="module" src="/assets/js/main.js" defer></script>
   <script type="module" src="/pages/en/about-us/about-us.js" defer></script>
 </head>
-<body class="page-about-us">
+<body class="page-about" data-transparent-nav>
   <a class="skip-link" href="#content">Skip to content</a>
 
   <div id="site-navbar" data-partial="navbar"></div>
 
   <main id="content">
-    <!-- TODO: page sections -->
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 1 — HERO
+    ════════════════════════════════════════════════════════ -->
+    <section class="about-hero" aria-labelledby="hero-heading">
+      <div class="about-hero__media" aria-hidden="true">
+        <!-- LOCAL: /pages/en/about-us/videos/about-hero.mp4 -->
+        <!-- LOCAL: /pages/en/about-us/images/about-hero-poster.jpg -->
+        <video
+          class="about-hero__video"
+          muted autoplay loop playsinline preload="metadata"
+          poster="https://images.pexels.com/videos/4430419/pexels-photo-4430419.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop">
+          <source src="https://videos.pexels.com/video-files/4430419/4430419-uhd_2560_1440_24fps.mp4" type="video/mp4">
+          <!-- Poster fallback for prefers-reduced-motion / no-video -->
+          <!-- LOCAL: /pages/en/about-us/images/about-hero-poster.jpg -->
+          <img
+            class="about-hero__poster"
+            src="https://images.pexels.com/videos/4430419/pexels-photo-4430419.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+            alt=""
+            width="1920" height="1080"
+            loading="eager" fetchpriority="high">
+        </video>
+        <div class="about-hero__overlay"></div>
+      </div>
+
+      <div class="container about-hero__content">
+        <nav class="about-hero__breadcrumb breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><span aria-current="page">About Us</span></li>
+          </ol>
+        </nav>
+
+        <div class="about-hero__headline">
+          <h1 id="hero-heading">Building Egypt's Infrastructure Since 1995</h1>
+          <p class="about-hero__sub">Roads, bridges, and civil works delivered for the ministries that shape the country.</p>
+          <div class="about-hero__ctas">
+            <a href="/pages/en/our-projects/" class="btn btn-accent btn--lg">
+              Explore Our Projects
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="/pages/en/contact-us/" class="btn btn-ghost btn-ghost--invert btn--lg">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="about-hero__scroll-cue" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <span>Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 2 — WHO WE ARE (INTRO)
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="intro-heading">
+      <div class="container">
+        <div class="about-intro__grid">
+
+          <div class="about-intro__text" data-az-reveal>
+            <div class="section__head">
+              <span class="eyebrow">Who We Are</span>
+              <hr class="rule-accent" aria-hidden="true">
+              <h2 id="intro-heading">Three decades of building what Egypt runs on.</h2>
+              <p class="lead">
+                Al Zahraa General Contracting, Import &amp; Export Company has been part of Egypt's road and bridge programme since <strong>1995</strong>. Founded and chaired by <strong>Eng. Hesham Zidan</strong>, the firm has grown from a specialist contractor into a full-scope civil infrastructure partner — trusted by the Ministry of Housing, the Ministry of Transport, and the Engineering Authority of the Armed Forces to deliver projects that carry traffic, freight, and daily life across the country.
+              </p>
+            </div>
+
+            <div class="about-intro__prose" data-az-reveal data-az-reveal-delay="80">
+              <p>
+                Our work spans the complete spectrum of road and bridge construction: from initial design support and programme planning through to multi-phase execution, quality assurance, and final handover. We maintain a fully self-owned heavy machinery fleet — asphalt pavers, rollers, excavators, loaders, graders, crushers, transport vehicles, and batching plants — which gives us schedule certainty that sub-contracting cannot match.
+              </p>
+              <p>
+                Geographically, our projects have taken us across infrastructure corridors in the Nile Delta, the Cairo metropolitan region, and broader national programmes. We have worked in Tanta, Al-Hussania, Abo-Hammad, Al-Nofaa, Al-Salhia, and on some of Egypt's most significant connecting roads and bridges.
+              </p>
+              <p>
+                How we work is as deliberate as what we build. In-house engineering, long-tenured project teams, and direct leadership accountability on every job — these are the operating choices that have kept us on the approved vendor registers of Egypt's ministries and public works authorities for over three decades.
+              </p>
+            </div>
+
+            <div class="about-intro__pills" data-az-reveal data-az-reveal-delay="160">
+              <span class="about-intro__pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l4-8 4 4 4-6 4 8"/><path d="M3 20h18"/></svg>
+                Roads &amp; Bridges
+              </span>
+              <span class="about-intro__pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                Civil Infrastructure
+              </span>
+              <span class="about-intro__pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/><path d="M16.5 9.4 7.55 4.24"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/><circle cx="18.5" cy="15.5" r="2.5"/><path d="M20.27 17.27 22 19"/></svg>
+                Import &amp; Export
+              </span>
+              <span class="about-intro__pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v3"/><circle cx="18" cy="18" r="3"/><path d="M18 14v1M18 21v1M22 18h-1M15 18h-1M20.66 15.34l-.71.71M16.05 20.63l-.71.71M20.66 20.66l-.71-.71M16.05 15.37l-.71-.71"/></svg>
+                Heavy Machinery
+              </span>
+            </div>
+          </div>
+
+          <figure class="about-intro__image" data-az-reveal data-az-reveal-delay="120">
+            <!-- LOCAL: /pages/en/about-us/images/about-intro.webp -->
+            <picture>
+              <source srcset="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=900&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+              <img
+                src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=900&q=80&auto=format&fit=crop"
+                alt="Overhead view of heavy construction equipment operating on a project site"
+                width="900" height="1125"
+                loading="lazy">
+            </picture>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 3 — STATS BAND
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--dark about-stats" aria-labelledby="stats-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow eyebrow--invert">By the Numbers</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="stats-heading" class="sr-only">Our track record in numbers</h2>
+        </div>
+
+        <div class="stats stats--6">
+          <div class="stat" data-az-reveal data-az-reveal-delay="0">
+            <strong class="stat__num" data-az-count data-az-target="30+">30+</strong>
+            <span class="stat__label">Years of Continuous Operation</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="60">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">Kilometres of Roads Delivered</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="120">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">Bridges Constructed</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="180">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">Major Projects Completed</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="240">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">Engineers, Technicians &amp; Workforce</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="300">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">Heavy Equipment Units in Fleet</span>
+          </div>
+        </div>
+        <!-- TODO(content): confirm all figures with client before launch -->
+        <p class="about-stats__note" data-az-reveal>Figures updated annually — full project register available on request.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 4 — COMPANY STORY
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="about-story__grid">
+
+          <div data-az-reveal>
+            <div class="section__head">
+              <span class="eyebrow">Our Story</span>
+              <hr class="rule-accent" aria-hidden="true">
+              <h2 id="story-heading">From a first contract in 1995 to a national contractor today.</h2>
+              <p class="lead">
+                Al Zahraa was founded in 1995 on a straightforward proposition: build well, deliver on time, and keep the client's word above everything else. Three decades on, the proposition has not changed — the scale of the work has.
+              </p>
+            </div>
+
+            <div class="about-story__prose prose">
+              <p>
+                <strong>Foundation.</strong> Established in the mid-1990s as Egypt began a sustained programme of road and bridge modernisation, Al Zahraa took on early contracts alongside the Ministry of Housing and the General Authority for Roads and Bridges. What set the firm apart from the start was a decision to invest in its own heavy machinery fleet rather than sub-contract — a decision that still defines how we work today.
+              </p>
+              <p>
+                <strong>Growth through the 2000s.</strong> As demand for regional connectivity grew, so did our capability. New categories of work — dual-carriageway rehabilitation, bridge superstructures, drainage-integrated highway upgrades — became part of the standard scope, and the firm's headquarters at 127 Mohamed Farid Street in Abdin became the coordination hub for a workforce spread across active sites in the Delta and beyond.
+              </p>
+              <p>
+                <strong>The last decade.</strong> The last ten years have seen Al Zahraa involved in flagship national infrastructure — including work on the <strong>Regional Ring Road</strong>, <strong>Al-Mehwar</strong>, the <strong>Al-Masoura Bridge at km 10+160</strong>, and multi-phase corridor programmes in <strong>Tanta</strong>, <strong>Al-Hussania</strong>, <strong>Abo-Hammad</strong>, <strong>Al-Nofaa</strong>, and <strong>Al-Salhia</strong>. Each project has added to a technical library the firm now brings to every new tender.
+              </p>
+              <p>
+                <strong>Today.</strong> We remain independently chaired, family-anchored, and technically led. That combination — long-view ownership plus engineering-first management — is what our clients tell us they value most.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-story__collage" data-az-reveal data-az-reveal-delay="80" aria-hidden="true">
+            <!-- LOCAL: /pages/en/about-us/images/story-01.webp -->
+            <figure class="about-story__img">
+              <picture>
+                <source srcset="https://images.unsplash.com/photo-1503708928676-1cb796a0891e?w=800&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+                <img src="https://images.unsplash.com/photo-1503708928676-1cb796a0891e?w=800&q=80&auto=format&fit=crop"
+                  alt="Excavator operating on a road preparation site"
+                  width="800" height="500" loading="lazy">
+              </picture>
+            </figure>
+            <!-- LOCAL: /pages/en/about-us/images/story-02.webp -->
+            <figure class="about-story__img">
+              <picture>
+                <source srcset="https://images.unsplash.com/photo-1670912461796-81819c1e525b?w=800&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+                <img src="https://images.unsplash.com/photo-1670912461796-81819c1e525b?w=800&q=80&auto=format&fit=crop"
+                  alt="Bridge construction crane working over water"
+                  width="800" height="500" loading="lazy">
+              </picture>
+            </figure>
+            <!-- LOCAL: /pages/en/about-us/images/story-03.webp -->
+            <figure class="about-story__img">
+              <picture>
+                <source srcset="https://images.unsplash.com/photo-1507415710579-79b32edf8a78?w=800&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+                <img src="https://images.unsplash.com/photo-1507415710579-79b32edf8a78?w=800&q=80&auto=format&fit=crop"
+                  alt="Aerial view of a completed dual-carriageway highway in operation"
+                  width="800" height="500" loading="lazy">
+              </picture>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 5 — CHAIRMAN'S MESSAGE
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="chairman-heading">
+      <div class="container">
+        <div class="about-chairman__grid">
+
+          <!-- TODO(content): replace with official portrait of Eng. Hesham Zidan
+               (old site: /wp-content/uploads/2025/05/chairman-photo.png — migrate,
+               rename to /pages/en/about-us/images/chairman-hesham-zidan.webp, re-compress) -->
+          <div class="about-chairman__portrait-wrap" data-az-reveal>
+            <!-- LOCAL: /pages/en/about-us/images/chairman-hesham-zidan.webp -->
+            <figure class="about-chairman__portrait">
+              <picture>
+                <source srcset="https://images.unsplash.com/photo-1593436878048-92622a77d315?w=640&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+                <img
+                  src="https://images.unsplash.com/photo-1593436878048-92622a77d315?w=640&q=80&auto=format&fit=crop"
+                  alt="Eng. Hesham Zidan, Chairman and Founder of Al Zahraa General Contracting — placeholder portrait"
+                  width="640" height="800"
+                  loading="lazy">
+              </picture>
+            </figure>
+          </div>
+
+          <div class="about-chairman__body" data-az-reveal data-az-reveal-delay="80">
+            <div class="section__head">
+              <span class="eyebrow">Chairman's Message</span>
+              <hr class="rule-accent" aria-hidden="true">
+              <h2 id="chairman-heading">A word from our Chairman &amp; Founder.</h2>
+            </div>
+
+            <blockquote class="about-chairman__quote">
+              <p>"From the establishment of Al Zahraa Construction Company in 1995 until today, we have stood by the principles of discipline, technical excellence, and integrity. These values have guided our journey and shaped every project we've delivered. Our mission has always been to contribute meaningfully to Egypt's construction sector and to build lasting partnerships through quality, reliability, and trust.</p>
+              <p>With over three decades of leadership in Egypt's construction industry, I take pride in seeing Al Zahraa grow into a trusted name known for its consistent performance and strong client relationships. We remain committed to delivering high-impact projects across roads, bridges, and civil works — while setting benchmarks in execution, safety, and sustainability.</p>
+              <p>The work that lies ahead of Egypt — in transport corridors, in urban expansion, in cross-governorate connectivity — is significant. Al Zahraa intends to be part of it, with the same standards we started with in 1995."</p>
+            </blockquote>
+
+            <div class="about-chairman__sig">
+              <p class="about-chairman__name">Eng. Hesham Zidan</p>
+              <p class="about-chairman__title">Chairman &amp; Founder, Al Zahraa General Contracting</p>
+            </div>
+
+            <div style="margin-block-start: var(--space-6)">
+              <a href="#leadership" class="btn btn-ghost">
+                Meet the Leadership Team
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 6 — VISION, MISSION & PURPOSE
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="vmv-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow">Our Direction</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="vmv-heading">Vision, Mission &amp; Purpose.</h2>
+        </div>
+
+        <div class="about-vmv__grid">
+          <article class="about-vmv__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-vmv__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+            </div>
+            <div>
+              <h3>Where we're going.</h3>
+              <p>To be recognised across the Middle East as a leading civil-infrastructure contractor — the partner ministries and authorities turn to when a project must be built to specification, on schedule, and to last. We aspire to expand Egypt's engineering export capacity through selective regional work, while continuing to invest in the people and equipment that make delivery possible at home.</p>
+            </div>
+          </article>
+
+          <article class="about-vmv__card" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-vmv__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <h3>What we do every day.</h3>
+              <p>To design, manage, and execute high-quality road and bridge projects that improve mobility, safety, and economic connectivity — using advanced construction methods, a fully-owned heavy machinery fleet, and a workforce trained to international standards. We measure ourselves on three things: technical quality, delivery discipline, and the durability of the built asset over its full service life.</p>
+            </div>
+          </article>
+
+          <article class="about-vmv__card" data-az-reveal data-az-reveal-delay="160">
+            <div class="about-vmv__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h3>Why we exist.</h3>
+              <p>Because the roads and bridges we build carry other people's lives — commuters, freight, emergency response, national supply chains. That responsibility sits at the centre of every decision we make, from the tender room to the last kilometre of asphalt.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 7 — CORE VALUES
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section__head" data-az-reveal>
+          <span class="eyebrow">Our Core Values</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="values-heading">The principles behind every project.</h2>
+          <p class="lead">Six values, chosen deliberately, held consistently — the ones that decide how we tender, staff, build, and hand over.</p>
+        </div>
+
+        <div class="about-values__grid">
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3>Integrity</h3>
+            <p>We commit only to what we can deliver, and we deliver what we commit to. Our word to a client is contractual before any signature is applied.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="60">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3>Engineering Excellence</h3>
+            <p>Every design decision is defensible on drawings, on site, and in the finished asset. We build to specification, not to shortcut.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="120">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Safety First</h3>
+            <p>No project schedule is more important than the person executing it. Our HSE culture is a hiring standard, not a training slide.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Precision &amp; Discipline</h3>
+            <p>Programme control, cost control, quality control — the three disciplines that separate a contract completed from a contract closed properly.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="60">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Innovation in Practice</h3>
+            <p>We adopt new methods when they measurably improve safety, quality, or speed — not because they are new.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="120">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Enduring Partnership</h3>
+            <p>Our longest-standing client relationships have run through more than a decade of consecutive projects. That is not accidental — it is a strategy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 8 — MILESTONES TIMELINE
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--dark about-timeline-section" aria-labelledby="timeline-heading">
+      <div class="about-timeline-bg" aria-hidden="true">
+        <!-- LOCAL: /pages/en/about-us/images/milestones-bg.webp -->
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1559843788-693858bf7338?w=1920&q=60&auto=format&fit=crop&fm=webp" type="image/webp">
+          <img src="https://images.unsplash.com/photo-1559843788-693858bf7338?w=1920&q=60&auto=format&fit=crop"
+            alt=""
+            width="1920" height="1080"
+            loading="lazy">
+        </picture>
+      </div>
+
+      <div class="container" style="position:relative; z-index:1;">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow eyebrow--invert">Our Journey</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="timeline-heading">Three decades. One direction of travel.</h2>
+        </div>
+        <p class="about-timeline-note" data-az-reveal>Timeline reflects publicly disclosed milestones; full project register available to prospective clients on request.</p>
+
+        <ol class="about-timeline" aria-label="Company milestones">
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true">
+              <div class="about-timeline__dot"></div>
+            </div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">1995</p>
+              <p class="about-timeline__text">Al Zahraa General Contracting, Import &amp; Export Company is founded by <strong>Eng. Hesham Zidan</strong> in Cairo. First contracts secured with public-sector clients in the road sector.</p>
+            </div>
+            <div aria-hidden="true"></div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true">
+              <div class="about-timeline__dot"></div>
+            </div>
+            <div aria-hidden="true"></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">Late 1990s <span class="text-muted" style="font-size:var(--fs-xs)">[TBC year]</span></p>
+              <p class="about-timeline__text">Strategic decision to build an in-house heavy machinery fleet, rather than rely on sub-contracted equipment — a defining move for the firm's later delivery capability.</p>
+            </div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true">
+              <div class="about-timeline__dot"></div>
+            </div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">2000s <span class="text-muted" style="font-size:var(--fs-xs)">[TBC specific projects]</span></p>
+              <p class="about-timeline__text">Expansion into bridge construction and dual-carriageway rehabilitation. Firm establishes recurring work with the General Authority for Roads and Bridges.</p>
+            </div>
+            <div aria-hidden="true"></div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true">
+              <div class="about-timeline__dot"></div>
+            </div>
+            <div aria-hidden="true"></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">2010s <span class="text-muted" style="font-size:var(--fs-xs)">[TBC exact dates]</span></p>
+              <p class="about-timeline__text">Involvement in flagship corridor and ring-road programmes. Regional Ring Road, Al-Mehwar, and multi-phase Delta corridor works enter the portfolio.</p>
+            </div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true">
+              <div class="about-timeline__dot"></div>
+            </div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">Mid-2010s <span class="text-muted" style="font-size:var(--fs-xs)">[TBC year]</span></p>
+              <p class="about-timeline__text">Delivery of the <strong>Al-Masoura Bridge at km 10+160</strong>.</p>
+            </div>
+            <div aria-hidden="true"></div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true">
+              <div class="about-timeline__dot"></div>
+            </div>
+            <div aria-hidden="true"></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">Late 2010s <span class="text-muted" style="font-size:var(--fs-xs)">[TBC year]</span></p>
+              <p class="about-timeline__text">Tanta corridor works — Sandal → Zefta, Phase 1: <span dir="ltr">10</span> km of dual-way road.</p>
+            </div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true">
+              <div class="about-timeline__dot"></div>
+            </div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">2020s <span class="text-muted" style="font-size:var(--fs-xs)">[TBC scope details]</span></p>
+              <p class="about-timeline__text">Continued expansion of workforce and fleet; concurrent execution across Al-Hussania, Abo-Hammad, Al-Nofaa, and Al-Salhia corridors.</p>
+            </div>
+            <div aria-hidden="true"></div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true">
+              <div class="about-timeline__dot"></div>
+            </div>
+            <div aria-hidden="true"></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">Today</p>
+              <p class="about-timeline__text">Over three decades of continuous operation, delivering for the ministries and authorities that shape the country's infrastructure.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 9 — ORGANISATIONAL CAPABILITY
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="capability-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow">What We Bring</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="capability-heading">An integrated delivery organisation.</h2>
+          <p class="lead">Al Zahraa is deliberately structured so a single contract can be delivered end-to-end without external hand-offs — engineering, project management, execution, machinery, and QA all sit under one roof.</p>
+        </div>
+
+        <div class="about-capability__grid">
+
+          <article class="about-capability__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-capability__image">
+              <!-- LOCAL: /pages/en/about-us/images/capability-01.webp -->
+              <picture>
+                <source srcset="https://images.unsplash.com/photo-1673978481178-b4d72cfd2fb9?w=800&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+                <img src="https://images.unsplash.com/photo-1673978481178-b4d72cfd2fb9?w=800&q=80&auto=format&fit=crop"
+                  alt="Tower crane on an active construction structure"
+                  width="800" height="450" loading="lazy">
+              </picture>
+            </div>
+            <div class="about-capability__body">
+              <h3>In-house Engineering &amp; Design Support</h3>
+              <p>Working alongside client-side designers and consultants, our engineering team validates constructability, sequences the programme, and closes the gap between drawing office and site.</p>
+              <a href="/pages/en/our-services/strategic-planning/" class="about-capability__link">
+                Learn more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="about-capability__card" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-capability__image">
+              <!-- LOCAL: /pages/en/about-us/images/capability-02.webp -->
+              <picture>
+                <source srcset="https://images.unsplash.com/photo-1529792083865-d23889753466?w=800&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+                <img src="https://images.unsplash.com/photo-1529792083865-d23889753466?w=800&q=80&auto=format&fit=crop"
+                  alt="Site engineer supervising road works"
+                  width="800" height="450" loading="lazy">
+              </picture>
+            </div>
+            <div class="about-capability__body">
+              <h3>Project Management &amp; Execution Discipline</h3>
+              <p>Programme control, cost control, and QA integrated from tender through handover — with a single accountable project manager on every job.</p>
+              <a href="/pages/en/our-services/project-management/" class="about-capability__link">
+                Learn more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="about-capability__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-capability__image">
+              <!-- LOCAL: /pages/en/about-us/images/capability-03.webp -->
+              <picture>
+                <source srcset="https://images.unsplash.com/photo-1534097575056-ddba81f714c8?w=800&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+                <img src="https://images.unsplash.com/photo-1534097575056-ddba81f714c8?w=800&q=80&auto=format&fit=crop"
+                  alt="Aerial view of heavy machinery loading at a construction site"
+                  width="800" height="450" loading="lazy">
+              </picture>
+            </div>
+            <div class="about-capability__body">
+              <h3>Self-Owned Heavy Machinery Fleet</h3>
+              <p>Asphalt pavers, rollers, excavators, loaders, graders, crushers, transport fleet, batching plants — owned, maintained in-house, and available on the schedule the project needs.</p>
+              <a href="/pages/en/equipment/" class="about-capability__link">
+                Learn more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="about-capability__card" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-capability__image">
+              <!-- LOCAL: /pages/en/about-us/images/capability-04.webp -->
+              <picture>
+                <source srcset="https://images.unsplash.com/photo-1583024011792-b165975b52f5?w=800&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+                <img src="https://images.unsplash.com/photo-1583024011792-b165975b52f5?w=800&q=80&auto=format&fit=crop"
+                  alt="Heavy equipment being operated under safety supervision"
+                  width="800" height="450" loading="lazy">
+              </picture>
+            </div>
+            <div class="about-capability__body">
+              <h3>Quality, Safety &amp; Environment (QHSE)</h3>
+              <p>Documented QA/QC at every construction stage, laboratory-tested materials, an active HSE programme, and environmental controls appropriate to the works.</p>
+              <a href="/pages/en/quality-safety/" class="about-capability__link">
+                Learn more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 10 — WHY CHOOSE AL ZAHRAA
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section__head" data-az-reveal>
+          <span class="eyebrow">Why Clients Choose Us</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="why-heading">The reasons repeat, project after project.</h2>
+        </div>
+
+        <div class="about-why__grid">
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="0">
+            <span class="about-why__num" aria-hidden="true">01</span>
+            <h4>Three decades of continuous operation</h4>
+            <p>No gaps, no restructurings, no rebrands. The company that signs the contract is the company that finishes it.</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="60">
+            <span class="about-why__num" aria-hidden="true">02</span>
+            <h4>Public-sector track record</h4>
+            <p>Recurring work with the Ministry of Housing (Central Agency for Reconstruction), the Ministry of Transport (General Authority for Roads and Bridges), and the Ministry of Defense (Engineering Authority).</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="120">
+            <span class="about-why__num" aria-hidden="true">03</span>
+            <h4>A fully-owned fleet</h4>
+            <p>Schedule certainty because we don't queue for equipment.</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="0">
+            <span class="about-why__num" aria-hidden="true">04</span>
+            <h4>In-house engineering</h4>
+            <p>We don't outsource judgment on constructability, sequencing, or method.</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="60">
+            <span class="about-why__num" aria-hidden="true">05</span>
+            <h4>Programme discipline</h4>
+            <p>Earned-value tracking, weekly cost-loaded schedules, and monthly client reporting are standard on every job.</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="120">
+            <span class="about-why__num" aria-hidden="true">06</span>
+            <h4>Long-view ownership</h4>
+            <p>Independently chaired, technically led, and structured for continuity.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 11 — CERTIFICATIONS & CLASSIFICATIONS
+    ════════════════════════════════════════════════════════ -->
+    <!-- TODO(content): confirm each classification, class level, and certification body with client before launch. Do NOT publish invented certifications. -->
+    <section class="section section--alt" aria-labelledby="certs-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow">Accreditations</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="certs-heading">Classified, certified, and audited.</h2>
+          <p class="lead">Al Zahraa holds the contractor classifications and management-system certifications required by the public-sector authorities we work with. Detailed accreditation documents are available to prospective clients on request.</p>
+        </div>
+
+        <div class="about-certs__grid">
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <p class="about-certs__caption">Egyptian Federation for Construction &amp; Building Contractors – Class [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="60">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <p class="about-certs__caption">ISO 9001:2015 Quality Management – [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="120">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <p class="about-certs__caption">ISO 14001:2015 Environmental Management – [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <p class="about-certs__caption">ISO 45001:2018 Occupational Health &amp; Safety – [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="60">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <p class="about-certs__caption">Ministry of Housing – Approved Contractor Register – [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="120">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <p class="about-certs__caption">Additional accreditations available on request</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 12 — LEADERSHIP
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" id="leadership" aria-labelledby="leadership-heading">
+      <div class="container">
+        <div class="section__head" data-az-reveal>
+          <span class="eyebrow">Leadership</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="leadership-heading">The team behind three decades of delivery.</h2>
+          <p class="lead">Long-tenured, engineering-led, and directly involved in every major tender and delivery.</p>
+        </div>
+
+        <!-- Featured: Chairman -->
+        <div class="about-leadership__featured" data-az-reveal>
+          <!-- TODO(content): replace with official chairman portrait -->
+          <!-- LOCAL: /pages/en/about-us/images/chairman-hesham-zidan.webp -->
+          <figure class="about-leadership__portrait">
+            <picture>
+              <source srcset="https://images.unsplash.com/photo-1593436878048-92622a77d315?w=480&q=80&auto=format&fit=crop&fm=webp" type="image/webp">
+              <img src="https://images.unsplash.com/photo-1593436878048-92622a77d315?w=480&q=80&auto=format&fit=crop"
+                alt="Eng. Hesham Zidan — Chairman and Founder, Al Zahraa General Contracting (placeholder)"
+                width="480" height="600" loading="lazy">
+            </picture>
+          </figure>
+          <div class="about-leadership__info">
+            <h3>Eng. Hesham Zidan</h3>
+            <p class="about-leadership__role">Chairman &amp; Founder</p>
+            <blockquote class="about-leadership__quote">
+              "Every project we deliver is a promise kept — to the client, to the ministry, and to the people who will use the road or cross the bridge."
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Department heads row -->
+        <!-- TODO(content): confirm leadership names, titles, and portraits with client -->
+        <div class="about-leadership__team">
+
+          <div class="about-leadership__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-leadership__card-img" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="about-leadership__card-body">
+              <h4>[TBC]</h4>
+              <p class="about-leadership__role">Chief Engineer</p>
+              <p>[TBC — awaiting client input]</p>
+            </div>
+          </div>
+
+          <div class="about-leadership__card" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-leadership__card-img" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="about-leadership__card-body">
+              <h4>[TBC]</h4>
+              <p class="about-leadership__role">Head of Operations</p>
+              <p>[TBC — awaiting client input]</p>
+            </div>
+          </div>
+
+          <div class="about-leadership__card" data-az-reveal data-az-reveal-delay="160">
+            <div class="about-leadership__card-img" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="about-leadership__card-body">
+              <h4>[TBC]</h4>
+              <p class="about-leadership__role">Head of QHSE</p>
+              <p>[TBC — awaiting client input]</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 13 — GOVERNMENT PARTNERS & CLIENTS
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow">Partners &amp; Clients</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="partners-heading">Trusted by the authorities that build the country.</h2>
+          <p class="lead">We work with the ministries and public-sector authorities responsible for Egypt's road, bridge, and civil infrastructure programmes.</p>
+        </div>
+
+        <!-- TODO(assets): copy partner logos from old site into /assets/images/partners/ and rename:
+             ministry-of-housing.png, ministry-of-transport.png, ministry-of-defense.png -->
+        <div class="about-partners__grid">
+
+          <div class="about-partners__tile" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-partners__tile-logo" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--az-gray-600)"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12.01"/><path d="M8 12h8"/></svg>
+              <!-- Swap to: <img src="/assets/images/partners/ministry-of-housing.png" alt="" width="120" height="72" loading="lazy"> -->
+            </div>
+            <p class="about-partners__tile-name">Ministry of Housing</p>
+            <p class="about-partners__tile-sub">Central Agency for Reconstruction</p>
+          </div>
+
+          <div class="about-partners__tile" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-partners__tile-logo" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--az-gray-600)"><path d="M3 17l4-8 4 4 4-6 4 8"/><path d="M3 20h18"/></svg>
+              <!-- Swap to: <img src="/assets/images/partners/ministry-of-transport.png" alt="" width="120" height="72" loading="lazy"> -->
+            </div>
+            <p class="about-partners__tile-name">Ministry of Transport</p>
+            <p class="about-partners__tile-sub">General Authority for Roads &amp; Bridges</p>
+          </div>
+
+          <div class="about-partners__tile" data-az-reveal data-az-reveal-delay="160">
+            <div class="about-partners__tile-logo" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--az-gray-600)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <!-- Swap to: <img src="/assets/images/partners/ministry-of-defense.png" alt="" width="120" height="72" loading="lazy"> -->
+            </div>
+            <p class="about-partners__tile-name">Ministry of Defense</p>
+            <p class="about-partners__tile-sub">Engineering Authority of the Armed Forces</p>
+          </div>
+
+        </div>
+        <p class="about-partners__note" data-az-reveal>Additional public-sector relationships available on request.</p>
+
+        <!-- TODO(content): DO NOT publish additional partners until client confirms in writing (§7.8, §15 of CLAUDE.md) -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 14 — CTA BAND
+    ════════════════════════════════════════════════════════ -->
+    <div class="cta-band" role="complementary" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading" data-az-reveal>Have a project? Let's talk.</h2>
+        <p class="lead" data-az-reveal>Roads, bridges, civil works — from planning through handover. We'd welcome the conversation.</p>
+        <div class="cta-band__actions" data-az-reveal>
+          <a href="/pages/en/contact-us/" class="btn btn-accent btn--lg">
+            Contact Us
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="/pages/en/our-projects/" class="btn btn-ghost btn-ghost--invert btn--lg">Explore Our Projects</a>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <div id="site-footer" data-partial="footer"></div>

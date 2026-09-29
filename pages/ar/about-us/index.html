@@ -3,15 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عنوان الصفحة — الزهراء للمقاولات</title>
-  <meta name="description" content="">
+  <title>من نحن — شركة الزهراء للمقاولات العامة | طرق وكباري</title>
+  <meta name="description" content="شركة الزهراء للمقاولات العامة تُنفّذ مشاريع الطرق والكباري والبنية التحتية المدنية في مصر منذ عام 1995، تحت قيادة المهندس هشام زيدان.">
 
   <link rel="canonical" href="https://alzahraa-construction.com/pages/ar/about-us/">
-  <link rel="alternate" hreflang="en" href="https://alzahraa-construction.com/pages/en/about-us/">
-  <link rel="alternate" hreflang="ar" href="https://alzahraa-construction.com/pages/ar/about-us/">
+  <link rel="alternate" hreflang="en"        href="https://alzahraa-construction.com/pages/en/about-us/">
+  <link rel="alternate" hreflang="ar"        href="https://alzahraa-construction.com/pages/ar/about-us/">
   <link rel="alternate" hreflang="x-default" href="https://alzahraa-construction.com/">
 
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://alzahraa-construction.com/pages/ar/about-us/">
+  <meta property="og:title"       content="من نحن — شركة الزهراء للمقاولات العامة">
+  <meta property="og:description" content="شركة الزهراء للمقاولات العامة تُنفّذ مشاريع الطرق والكباري والبنية التحتية المدنية في مصر منذ عام 1995.">
+  <meta property="og:image"       content="https://images.pexels.com/videos/4430419/pexels-photo-4430419.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <meta name="twitter:card"       content="summary_large_image">
+
   <link rel="icon" href="/assets/images/logo/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/reset.css">
   <link rel="stylesheet" href="/assets/css/variables.css">
@@ -21,19 +33,851 @@
   <link rel="stylesheet" href="/assets/css/components.css">
   <link rel="stylesheet" href="/assets/css/navbar.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/pages/ar/about-us/about-us.css">
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
   <link rel="stylesheet" href="/assets/css/rtl.css">
 
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "شركة الزهراء للمقاولات العامة للاستيراد والتصدير",
+        "url": "https://alzahraa-construction.com",
+        "foundingDate": "1995",
+        "founder": { "@type": "Person", "name": "المهندس هشام زيدان" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://alzahraa-construction.com/pages/ar/home/" },
+          { "@type": "ListItem", "position": 2, "name": "من نحن", "item": "https://alzahraa-construction.com/pages/ar/about-us/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <script type="module" src="/assets/js/main.js" defer></script>
-  <script type="module" src="/pages/ar/about-us/about-us.js" defer></script>
+  <script type="module" src="/pages/en/about-us/about-us.js" defer></script>
 </head>
-<body class="page-about-us">
-  <a class="skip-link" href="#content">تخطَّ إلى المحتوى</a>
+<body class="page-about" data-transparent-nav>
+  <a class="skip-link" href="#content">تخطّ إلى المحتوى</a>
 
   <div id="site-navbar" data-partial="navbar"></div>
 
   <main id="content">
-    <!-- TODO: page sections -->
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 1 — HERO
+    ════════════════════════════════════════════════════════ -->
+    <section class="about-hero" aria-labelledby="hero-heading">
+      <div class="about-hero__media" aria-hidden="true">
+        <!-- Video and poster shared from English folder — no duplication per §3.1 -->
+        <video
+          class="about-hero__video"
+          muted autoplay loop playsinline preload="metadata"
+          poster="/pages/en/about-us/images/about-hero-poster.jpg">
+          <source src="/pages/en/about-us/videos/about-hero.mp4" type="video/mp4">
+          <img
+            class="about-hero__poster"
+            src="https://images.pexels.com/videos/4430419/pexels-photo-4430419.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+            alt=""
+            width="1920" height="1080"
+            loading="eager" fetchpriority="high">
+        </video>
+        <div class="about-hero__overlay"></div>
+      </div>
+
+      <div class="container about-hero__content">
+        <nav class="about-hero__breadcrumb breadcrumb" aria-label="مسار التنقل">
+          <ol>
+            <li><a href="/pages/ar/home/">الرئيسية</a></li>
+            <li><span aria-current="page">من نحن</span></li>
+          </ol>
+        </nav>
+
+        <div class="about-hero__headline">
+          <h1 id="hero-heading">نبني البنية التحتية لمصر منذ عام 1995</h1>
+          <p class="about-hero__sub">طرق وكباري وأعمال مدنية تُنفَّذ لصالح الوزارات التي تُشكّل ملامح الوطن.</p>
+          <div class="about-hero__ctas">
+            <a href="/pages/ar/our-projects/" class="btn btn-accent btn--lg">
+              استعرض مشاريعنا
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="/pages/ar/contact-us/" class="btn btn-ghost btn-ghost--invert btn--lg">تواصل معنا</a>
+          </div>
+        </div>
+
+        <div class="about-hero__scroll-cue" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <span>انتقل للأسفل</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 2 — WHO WE ARE (INTRO)
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="intro-heading">
+      <div class="container">
+        <div class="about-intro__grid">
+
+          <div class="about-intro__text" data-az-reveal>
+            <div class="section__head">
+              <span class="eyebrow">من نحن</span>
+              <hr class="rule-accent" aria-hidden="true">
+              <h2 id="intro-heading">ثلاثة عقود من بناء ما تسير عليه مصر.</h2>
+              <p class="lead">
+                شركة الزهراء للمقاولات العامة للاستيراد والتصدير شريكٌ فاعل في برنامج مصر للطرق والكباري منذ عام <strong>1995</strong>. تأسّست الشركة على يد <strong>المهندس هشام زيدان</strong> الذي يترأسها حتى اليوم، ونمت من مقاول متخصص إلى شريك تنفيذي متكامل للبنية التحتية المدنية — تثق فيه وزارة الإسكان ووزارة النقل والهيئة الهندسية للقوات المسلحة لتنفيذ مشاريع تحمل حركة المرور والبضائع والحياة اليومية عبر ربوع الوطن.
+              </p>
+            </div>
+
+            <div class="about-intro__prose" data-az-reveal data-az-reveal-delay="80">
+              <p>
+                تمتد أعمالنا عبر الطيف الكامل لإنشاء الطرق والكباري: من الدعم التصميمي الأوّلي وتخطيط البرنامج، مروراً بمراحل التنفيذ المتعددة وضمان الجودة، وصولاً إلى التسليم النهائي. ونمتلك أسطولاً ضخماً من آليات الحفر والردم الثقيلة — أسفلت، ومدحلات، وحفّارات، وروافع، ومُسوّيات، وكسّارات، وعربات نقل، ومحطات خلط — وهو ما يمنحنا يقيناً في التسليم لا يتوفر في النموذج المعتمد على التعاقد من الباطن.
+              </p>
+              <p>
+                جغرافياً، امتدت مشاريعنا عبر ممرات البنية التحتية في دلتا النيل وإقليم القاهرة الكبرى وبرامج وطنية أوسع نطاقاً. عملنا في طنطا والحسينية وأبو حمّاد والنوفعة والصالحية، وعلى بعض أهم الطرق والكباري في مصر.
+              </p>
+              <p>
+                كيفية العمل لدينا بالغة الأهمية بقدر ما ننجزه. الهندسة الداخلية وفِرق المشاريع طويلة الخبرة والمسؤولية المباشرة للقيادة في كل موقع — هذه خيارات تشغيلية أبقت اسمنا في سجلات المورّدين المعتمدين لدى وزارات مصر وهيئات الأشغال العامة على مدى أكثر من ثلاثة عقود.
+              </p>
+            </div>
+
+            <div class="about-intro__pills" data-az-reveal data-az-reveal-delay="160">
+              <span class="about-intro__pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l4-8 4 4 4-6 4 8"/><path d="M3 20h18"/></svg>
+                طرق وكباري
+              </span>
+              <span class="about-intro__pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                بنية تحتية مدنية
+              </span>
+              <span class="about-intro__pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/><path d="M16.5 9.4 7.55 4.24"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/><circle cx="18.5" cy="15.5" r="2.5"/><path d="M20.27 17.27 22 19"/></svg>
+                استيراد وتصدير
+              </span>
+              <span class="about-intro__pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v3"/><circle cx="18" cy="18" r="3"/><path d="M18 14v1M18 21v1M22 18h-1M15 18h-1M20.66 15.34l-.71.71M16.05 20.63l-.71.71M20.66 20.66l-.71-.71M16.05 15.37l-.71-.71"/></svg>
+                آليات ثقيلة
+              </span>
+            </div>
+          </div>
+
+          <figure class="about-intro__image" data-az-reveal data-az-reveal-delay="120">
+            <!-- Image shared from English folder -->
+            <picture>
+              <source srcset="/pages/en/about-us/images/about-intro.webp" type="image/webp">
+              <img
+                src="/pages/en/about-us/images/about-intro.jpg"
+                alt="منظر علوي لآليات بناء ثقيلة تعمل في موقع مشروع"
+                width="900" height="1125"
+                loading="lazy">
+            </picture>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 3 — STATS BAND
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--dark about-stats" aria-labelledby="stats-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow eyebrow--invert">بالأرقام</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="stats-heading" class="sr-only">إنجازاتنا بالأرقام</h2>
+        </div>
+
+        <div class="stats stats--6">
+          <div class="stat" data-az-reveal data-az-reveal-delay="0">
+            <strong class="stat__num" data-az-count data-az-target="30+">30+</strong>
+            <span class="stat__label">عاماً من العمل المتواصل</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="60">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">كيلومترات طرق تم تسليمها</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="120">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">كوبري تم إنشاؤه</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="180">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">مشروع كبير مكتمل</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="240">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">مهندس وفني وعامل</span>
+          </div>
+          <div class="stat" data-az-reveal data-az-reveal-delay="300">
+            <strong class="stat__num">[TBC]</strong>
+            <span class="stat__label">وحدة آليات ثقيلة في الأسطول</span>
+          </div>
+        </div>
+        <!-- TODO(content): confirm all figures with client before launch -->
+        <p class="about-stats__note" data-az-reveal>الأرقام تُحدَّث سنوياً — سجل المشاريع الكامل متاح عند الطلب.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 4 — COMPANY STORY
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="about-story__grid">
+
+          <div data-az-reveal>
+            <div class="section__head">
+              <span class="eyebrow">قصتنا</span>
+              <hr class="rule-accent" aria-hidden="true">
+              <h2 id="story-heading">من أوّل عقد في 1995 إلى مقاول وطني اليوم.</h2>
+              <p class="lead">
+                تأسّست الزهراء عام 1995 على فكرة بسيطة: ابنِ بجودة، سلّم في الموعد، وضع كلمة العميل فوق كل شيء. بعد ثلاثة عقود، لم تتغير الفكرة — الذي تغيّر هو حجم العمل.
+              </p>
+            </div>
+
+            <div class="about-story__prose prose">
+              <p>
+                <strong>التأسيس.</strong> في منتصف تسعينيات القرن الماضي، حين بدأت مصر برنامجاً مستداماً لتحديث الطرق والكباري، انتزعت الزهراء أولى عقودها مع وزارة الإسكان والهيئة العامة للطرق والكباري. ما ميّز الشركة من البداية كان قرار الاستثمار في أسطول آليات ثقيلة خاص بدلاً من الاعتماد على التعاقد من الباطن — قرار لا يزال يُحدّد طريقة عملنا حتى اليوم.
+              </p>
+              <p>
+                <strong>النمو في العقد الأول من الألفية.</strong> مع تنامي الطلب على الربط الإقليمي، ازداد نطاق قدرتنا التنفيذية. فئات جديدة من الأعمال — تأهيل الطرق المزدوجة، هياكل علوية للكباري، ترقيات الطرق السريعة المتكاملة مع الصرف — أصبحت جزءاً من النطاق المعتاد، وباتت مقراتنا في ١٢٧ شارع محمد فريد بعابدين محوراً لتنسيق قوى عاملة منتشرة عبر مواقع نشطة في الدلتا وما بعدها.
+              </p>
+              <p>
+                <strong>العقد الأخير.</strong> شهدت السنوات العشر الأخيرة مشاركة الزهراء في البنية التحتية الوطنية الكبرى — بما فيها <strong>الطريق الدائري الإقليمي</strong> و<strong>المحور</strong> و<strong>كوبري المصورة عند الكيلو ١٠+١٦٠</strong> وبرامج الممرات المتعددة المراحل في <strong>طنطا</strong> و<strong>الحسينية</strong> و<strong>أبو حمّاد</strong> و<strong>النوفعة</strong> و<strong>الصالحية</strong>. كل مشروع أضاف إلى المكتبة التقنية التي تحملها الشركة اليوم إلى كل منافسة جديدة.
+              </p>
+              <p>
+                <strong>اليوم.</strong> نبقى مستقلّين في إدارتنا، راسخين في موروثنا العائلي، مدفوعين بالهندسة في كل قرار. هذا الجمع — ملكية تنظر إلى المدى البعيد، وإدارة تضع الهندسة أولاً — هو ما يؤكد لنا عملاؤنا أنهم يُقدّرونه أكثر من أي شيء آخر.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-story__collage" data-az-reveal data-az-reveal-delay="80" aria-hidden="true">
+            <figure class="about-story__img">
+              <picture>
+                <source srcset="/pages/en/about-us/images/story-01.webp" type="image/webp">
+                <img src="/pages/en/about-us/images/story-01.jpg"
+                  alt="حفّارة تعمل في موقع تجهيز طريق"
+                  width="800" height="500" loading="lazy">
+              </picture>
+            </figure>
+            <figure class="about-story__img">
+              <picture>
+                <source srcset="/pages/en/about-us/images/story-02.webp" type="image/webp">
+                <img src="/pages/en/about-us/images/story-02.jpg"
+                  alt="رافعة بناء الكوبري تعمل فوق الماء"
+                  width="800" height="500" loading="lazy">
+              </picture>
+            </figure>
+            <figure class="about-story__img">
+              <picture>
+                <source srcset="/pages/en/about-us/images/story-03.webp" type="image/webp">
+                <img src="/pages/en/about-us/images/story-03.jpg"
+                  alt="منظر جوي لطريق مزدوج مكتمل وقيد التشغيل"
+                  width="800" height="500" loading="lazy">
+              </picture>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 5 — CHAIRMAN'S MESSAGE
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="chairman-heading">
+      <div class="container">
+        <div class="about-chairman__grid">
+
+          <div class="about-chairman__portrait-wrap" data-az-reveal>
+            <figure class="about-chairman__portrait">
+              <picture>
+                <source srcset="/pages/en/about-us/images/chairman-hesham-zidan.webp" type="image/webp">
+                <img
+                  src="/pages/en/about-us/images/chairman-hesham-zidan.jpg"
+                  alt="المهندس هشام زيدان، رئيس مجلس الإدارة ومؤسس شركة الزهراء للمقاولات العامة"
+                  width="640" height="800"
+                  loading="lazy">
+              </picture>
+            </figure>
+          </div>
+
+          <div class="about-chairman__body" data-az-reveal data-az-reveal-delay="80">
+            <div class="section__head">
+              <span class="eyebrow">كلمة رئيس مجلس الإدارة</span>
+              <hr class="rule-accent" aria-hidden="true">
+              <h2 id="chairman-heading">كلمة من مؤسّسنا ورئيسنا.</h2>
+            </div>
+
+            <blockquote class="about-chairman__quote">
+              <p>"منذ تأسيس شركة الزهراء للمقاولات عام 1995 وحتى اليوم، تمسّكنا بمبادئ الانضباط والتميّز التقني والنزاهة. هذه القيم هي التي قادت مسيرتنا وشكّلت كل مشروع أنجزناه. كانت مهمتنا دائماً المساهمة بشكل حقيقي في قطاع البناء في مصر وبناء شراكات راسخة من خلال الجودة والموثوقية والثقة.</p>
+              <p>بعد أكثر من ثلاثة عقود من القيادة في صناعة البناء والتشييد في مصر، يسعدني أن أرى الزهراء تنمو لتصبح اسماً موثوقاً يُعرف بأدائه المتسق وعلاقاته القوية مع العملاء. ونبقى ملتزمين بتنفيذ مشاريع عالية الأثر في الطرق والكباري والأعمال المدنية — مع رسم معايير في التنفيذ والسلامة والاستدامة.</p>
+              <p>العمل الذي ينتظر مصر — في ممرات النقل والتوسع العمراني والربط بين المحافظات — ضخم وعظيم. وتعزم الزهراء أن تكون جزءاً منه، بنفس المعايير التي بدأنا بها عام 1995."</p>
+            </blockquote>
+
+            <div class="about-chairman__sig">
+              <p class="about-chairman__name">المهندس هشام زيدان</p>
+              <p class="about-chairman__title">رئيس مجلس الإدارة والمؤسس، شركة الزهراء للمقاولات العامة</p>
+            </div>
+
+            <div style="margin-block-start: var(--space-6)">
+              <a href="#leadership" class="btn btn-ghost">
+                تعرّف على فريق القيادة
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 6 — VISION, MISSION & PURPOSE
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="vmv-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow">توجّهنا</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="vmv-heading">الرؤية والرسالة والغاية.</h2>
+        </div>
+
+        <div class="about-vmv__grid">
+          <article class="about-vmv__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-vmv__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+            </div>
+            <div>
+              <h3>إلى أين نتجه.</h3>
+              <p>أن يُعترف بنا عبر الشرق الأوسط باعتبارنا مقاولاً رائداً في البنية التحتية المدنية — الشريك الذي تلجأ إليه الوزارات والهيئات حين يجب تشييد مشروع وفق المواصفات وفي الموعد وبما يصمد عبر الزمن.</p>
+            </div>
+          </article>
+
+          <article class="about-vmv__card" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-vmv__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <h3>ما نفعله كل يوم.</h3>
+              <p>تصميم وإدارة وتنفيذ مشاريع طرق وكباري عالية الجودة تُحسّن التنقل والسلامة والترابط الاقتصادي — باستخدام أساليب إنشاء متقدمة وأسطول آليات مملوك بالكامل وقوى عاملة مُدرَّبة وفق معايير دولية.</p>
+            </div>
+          </article>
+
+          <article class="about-vmv__card" data-az-reveal data-az-reveal-delay="160">
+            <div class="about-vmv__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h3>لماذا نوجد.</h3>
+              <p>لأن الطرق والكباري التي نبنيها تحمل أرواح الناس — المسافرون والبضائع والاستجابة للطوارئ وسلاسل الإمداد الوطنية. هذه المسؤولية تقع في صميم كل قرار نتخذه.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 7 — CORE VALUES
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section__head" data-az-reveal>
+          <span class="eyebrow">قيمنا الأساسية</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="values-heading">المبادئ وراء كل مشروع.</h2>
+          <p class="lead">ست قيم، اختيرت بوعي، ومُحكمة الحضور — هي التي تُقرّر كيف نُقدّم العطاءات ونُكوّن الفِرق ونبني ونُسلّم.</p>
+        </div>
+
+        <div class="about-values__grid">
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3>النزاهة</h3>
+            <p>نلتزم فقط بما يمكننا تسليمه، ونُسلّم ما التزمنا به. كلمتنا للعميل تعاقد قبل أي توقيع.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="60">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3>التميّز الهندسي</h3>
+            <p>كل قرار تصميمي يمكن الدفاع عنه على الرسومات وفي الموقع وفي الأصل المُشيَّد.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="120">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>السلامة أولاً</h3>
+            <p>لا يوجد جدول مشروع أهم من الإنسان الذي يُنفّذه. ثقافة السلامة المهنية لدينا معيار توظيف، لا شريحة تدريب.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>الدقة والانضباط</h3>
+            <p>ضبط البرنامج والتكلفة والجودة — الانضباطات الثلاث التي تُفرّق بين عقد مكتمل وعقد مُغلق بصورة سليمة.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="60">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>الابتكار التطبيقي</h3>
+            <p>نتبنّى الأساليب الجديدة حين تُحسّن قياساً السلامة أو الجودة أو السرعة — لا لأنها جديدة فحسب.</p>
+          </article>
+
+          <article class="about-values__card" data-az-reveal data-az-reveal-delay="120">
+            <div class="about-values__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>الشراكة المستدامة</h3>
+            <p>تمتد أقدم علاقاتنا مع العملاء عبر أكثر من عقد من المشاريع المتتالية. هذا ليس مصادفة — إنه استراتيجية.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 8 — MILESTONES TIMELINE
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--dark about-timeline-section" aria-labelledby="timeline-heading">
+      <div class="about-timeline-bg" aria-hidden="true">
+        <picture>
+          <source srcset="/pages/en/about-us/images/milestones-bg.webp" type="image/webp">
+          <img src="/pages/en/about-us/images/milestones-bg.jpg"
+            alt="" width="1920" height="1080" loading="lazy">
+        </picture>
+      </div>
+
+      <div class="container" style="position:relative; z-index:1;">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow eyebrow--invert">مسيرتنا</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="timeline-heading">ثلاثة عقود. اتجاه واحد.</h2>
+        </div>
+        <p class="about-timeline-note" data-az-reveal>يعكس الجدول الزمني المعالم المُعلنة رسمياً؛ سجل المشاريع الكامل متاح للعملاء المحتملين عند الطلب.</p>
+
+        <ol class="about-timeline" aria-label="معالم الشركة">
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true"><div class="about-timeline__dot"></div></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year" dir="ltr">1995</p>
+              <p class="about-timeline__text">تأسيس شركة الزهراء للمقاولات العامة للاستيراد والتصدير على يد <strong>المهندس هشام زيدان</strong> في القاهرة. أولى العقود مع عملاء القطاع العام في قطاع الطرق.</p>
+            </div>
+            <div aria-hidden="true"></div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true"><div class="about-timeline__dot"></div></div>
+            <div aria-hidden="true"></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">أواخر التسعينيات <span class="text-muted" style="font-size:var(--fs-xs)">[TBC year]</span></p>
+              <p class="about-timeline__text">قرار استراتيجي ببناء أسطول آليات ثقيلة داخلي بدلاً من الاعتماد على المعدات المستأجرة — قرار محوري في قدرة الشركة التنفيذية لاحقاً.</p>
+            </div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true"><div class="about-timeline__dot"></div></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">الألفية الثالثة <span class="text-muted" style="font-size:var(--fs-xs)">[TBC specific projects]</span></p>
+              <p class="about-timeline__text">توسّع في إنشاء الكباري وتأهيل الطرق المزدوجة. الشركة ترسّخ أعمالها المتكررة مع الهيئة العامة للطرق والكباري.</p>
+            </div>
+            <div aria-hidden="true"></div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true"><div class="about-timeline__dot"></div></div>
+            <div aria-hidden="true"></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">العقد الثاني من الألفية <span class="text-muted" style="font-size:var(--fs-xs)">[TBC exact dates]</span></p>
+              <p class="about-timeline__text">مشاركة في برامج الممرات والطرق الدائرية الكبرى. الطريق الدائري الإقليمي والمحور وأعمال ممرات الدلتا متعددة المراحل تدخل محفظة الشركة.</p>
+            </div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true"><div class="about-timeline__dot"></div></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">منتصف العقد الثاني <span class="text-muted" style="font-size:var(--fs-xs)">[TBC year]</span></p>
+              <p class="about-timeline__text">تسليم <strong>كوبري المصورة عند الكيلو <span dir="ltr">10+160</span></strong>.</p>
+            </div>
+            <div aria-hidden="true"></div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true"><div class="about-timeline__dot"></div></div>
+            <div aria-hidden="true"></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">أواخر العقد الثاني <span class="text-muted" style="font-size:var(--fs-xs)">[TBC year]</span></p>
+              <p class="about-timeline__text">أعمال ممر طنطا — سندل إلى زفتى، المرحلة الأولى: <span dir="ltr">10</span> كيلومترات من الطريق المزدوج.</p>
+            </div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true"><div class="about-timeline__dot"></div></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">العقد الثالث <span class="text-muted" style="font-size:var(--fs-xs)">[TBC scope details]</span></p>
+              <p class="about-timeline__text">استمرار توسّع القوى العاملة والأسطول؛ تنفيذ متزامن عبر ممرات الحسينية وأبو حمّاد والنوفعة والصالحية.</p>
+            </div>
+            <div aria-hidden="true"></div>
+          </li>
+
+          <li class="about-timeline__item" data-az-reveal>
+            <div class="about-timeline__dot-col" aria-hidden="true"><div class="about-timeline__dot"></div></div>
+            <div aria-hidden="true"></div>
+            <div class="about-timeline__card">
+              <p class="about-timeline__year">اليوم</p>
+              <p class="about-timeline__text">أكثر من ثلاثة عقود من العمل المتواصل، نُنجز للوزارات والهيئات التي تُشكّل بنية الوطن التحتية.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 9 — ORGANISATIONAL CAPABILITY
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="capability-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow">ما نُحضره معنا</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="capability-heading">منظومة تنفيذ متكاملة.</h2>
+          <p class="lead">الزهراء مُبنية عمداً لتنفيذ عقد واحد من البداية للنهاية دون تسليمات خارجية — الهندسة وإدارة المشاريع والتنفيذ والآليات وضمان الجودة كلها تحت سقف واحد.</p>
+        </div>
+
+        <div class="about-capability__grid">
+
+          <article class="about-capability__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-capability__image">
+              <picture>
+                <source srcset="/pages/en/about-us/images/capability-01.webp" type="image/webp">
+                <img src="/pages/en/about-us/images/capability-01.jpg"
+                  alt="رافعة برجية على هيكل إنشاء نشط" width="800" height="450" loading="lazy">
+              </picture>
+            </div>
+            <div class="about-capability__body">
+              <h3>الهندسة الداخلية ودعم التصميم</h3>
+              <p>بالتعاون مع مصممي العميل والمستشارين، يتحقّق فريقنا الهندسي من قابلية التنفيذ ويُرتّب تسلسل البرنامج ويُغلق الفجوة بين مكتب الرسم والموقع.</p>
+              <a href="/pages/ar/our-services/strategic-planning/" class="about-capability__link">
+                اعرف أكثر
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="about-capability__card" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-capability__image">
+              <picture>
+                <source srcset="/pages/en/about-us/images/capability-02.webp" type="image/webp">
+                <img src="/pages/en/about-us/images/capability-02.jpg"
+                  alt="مهندس ميدان يشرف على أعمال طريق" width="800" height="450" loading="lazy">
+              </picture>
+            </div>
+            <div class="about-capability__body">
+              <h3>إدارة المشاريع وانضباط التنفيذ</h3>
+              <p>ضبط البرنامج والتكلفة وضمان الجودة مُدمج من المناقصة حتى التسليم — مع مدير مشروع واحد مسؤول أمام العميل في كل عمل.</p>
+              <a href="/pages/ar/our-services/project-management/" class="about-capability__link">
+                اعرف أكثر
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="about-capability__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-capability__image">
+              <picture>
+                <source srcset="/pages/en/about-us/images/capability-03.webp" type="image/webp">
+                <img src="/pages/en/about-us/images/capability-03.jpg"
+                  alt="منظر جوي لآليات ثقيلة تعمل في موقع" width="800" height="450" loading="lazy">
+              </picture>
+            </div>
+            <div class="about-capability__body">
+              <h3>أسطول آليات ثقيلة مملوك بالكامل</h3>
+              <p>ماكينات أسفلت ومدحلات وحفّارات وشوّيل ومُسوّيات وكسّارات وأسطول نقل ومحطات خلط — مملوكة وتُصان داخلياً ومتاحة وفق جدول المشروع.</p>
+              <a href="/pages/ar/equipment/" class="about-capability__link">
+                اعرف أكثر
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="about-capability__card" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-capability__image">
+              <picture>
+                <source srcset="/pages/en/about-us/images/capability-04.webp" type="image/webp">
+                <img src="/pages/en/about-us/images/capability-04.jpg"
+                  alt="معدة ثقيلة تعمل تحت إشراف السلامة" width="800" height="450" loading="lazy">
+              </picture>
+            </div>
+            <div class="about-capability__body">
+              <h3>الجودة والسلامة والبيئة (QHSE)</h3>
+              <p>ضمان جودة موثّق في كل مرحلة إنشائية، ومواد مختبرة، وبرنامج <span dir="ltr">HSE</span> فاعل، وضوابط بيئية ملائمة للأعمال.</p>
+              <a href="/pages/ar/quality-safety/" class="about-capability__link">
+                اعرف أكثر
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 10 — WHY CHOOSE AL ZAHRAA
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section__head" data-az-reveal>
+          <span class="eyebrow">لماذا يختارنا العملاء</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="why-heading">الأسباب تتكرر، مشروعاً بعد مشروع.</h2>
+        </div>
+
+        <div class="about-why__grid">
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="0">
+            <span class="about-why__num" aria-hidden="true">01</span>
+            <h4>ثلاثة عقود من العمل المتواصل</h4>
+            <p>لا انقطاعات، لا إعادة هيكلة، لا إعادة علامة تجارية. الشركة التي توقّع العقد هي التي تُنهيه.</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="60">
+            <span class="about-why__num" aria-hidden="true">02</span>
+            <h4>سجل حافل مع القطاع الحكومي</h4>
+            <p>أعمال متكررة مع وزارة الإسكان (الجهاز المركزي للتعمير)، ووزارة النقل (الهيئة العامة للطرق والكباري)، ووزارة الدفاع (الهيئة الهندسية).</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="120">
+            <span class="about-why__num" aria-hidden="true">03</span>
+            <h4>أسطول مملوك بالكامل</h4>
+            <p>يقين في الجدول الزمني لأننا لا ننتظر توفّر معدات.</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="0">
+            <span class="about-why__num" aria-hidden="true">04</span>
+            <h4>هندسة داخلية</h4>
+            <p>لا نُفوّض الحكم في قابلية التنفيذ والتسلسل والأسلوب.</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="60">
+            <span class="about-why__num" aria-hidden="true">05</span>
+            <h4>انضباط البرنامج</h4>
+            <p>تتبّع القيمة المكتسبة وجداول أسبوعية محمّلة بالتكاليف وتقارير شهرية للعميل معيار في كل عمل.</p>
+          </div>
+
+          <div class="about-why__item" data-az-reveal data-az-reveal-delay="120">
+            <span class="about-why__num" aria-hidden="true">06</span>
+            <h4>ملكية تنظر للأمد البعيد</h4>
+            <p>مستقلة في إدارتها، مدفوعة هندسياً، ومبنية على الاستمرارية.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 11 — CERTIFICATIONS & CLASSIFICATIONS
+    ════════════════════════════════════════════════════════ -->
+    <!-- TODO(content): confirm each classification, class level, and certification body with client before launch -->
+    <section class="section section--alt" aria-labelledby="certs-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow">الاعتمادات</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="certs-heading">مُصنَّفون ومعتمدون ومُراجَعون.</h2>
+          <p class="lead">تحمل الزهراء تصنيفات المقاولين وشهادات أنظمة الإدارة التي تشترطها جهات القطاع العام التي نعمل معها. وثائق الاعتماد التفصيلية متاحة للعملاء المحتملين عند الطلب.</p>
+        </div>
+
+        <div class="about-certs__grid">
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <p class="about-certs__caption">الاتحاد المصري لمقاولي البناء والتشييد – الفئة [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="60">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <p class="about-certs__caption"><span dir="ltr">ISO 9001:2015</span> إدارة الجودة – [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="120">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <p class="about-certs__caption"><span dir="ltr">ISO 14001:2015</span> إدارة البيئة – [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <p class="about-certs__caption"><span dir="ltr">ISO 45001:2018</span> الصحة والسلامة المهنية – [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="60">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <p class="about-certs__caption">وزارة الإسكان – سجل المقاولين المعتمدين – [TBC]</p>
+          </div>
+
+          <div class="about-certs__tile" data-az-reveal data-az-reveal-delay="120">
+            <div class="about-certs__tile-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <p class="about-certs__caption">اعتمادات إضافية متاحة عند الطلب</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 12 — LEADERSHIP
+    ════════════════════════════════════════════════════════ -->
+    <section class="section" id="leadership" aria-labelledby="leadership-heading">
+      <div class="container">
+        <div class="section__head" data-az-reveal>
+          <span class="eyebrow">القيادة</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="leadership-heading">الفريق وراء ثلاثة عقود من التنفيذ.</h2>
+          <p class="lead">خبرات راسخة، قيادة هندسية، ومشاركة مباشرة في كل مناقصة كبرى وكل تسليم.</p>
+        </div>
+
+        <div class="about-leadership__featured" data-az-reveal>
+          <figure class="about-leadership__portrait">
+            <picture>
+              <source srcset="/pages/en/about-us/images/chairman-hesham-zidan.webp" type="image/webp">
+              <img src="/pages/en/about-us/images/chairman-hesham-zidan.jpg"
+                alt="المهندس هشام زيدان — رئيس مجلس الإدارة ومؤسس شركة الزهراء للمقاولات العامة"
+                width="480" height="600" loading="lazy">
+            </picture>
+          </figure>
+          <div class="about-leadership__info">
+            <h3>المهندس هشام زيدان</h3>
+            <p class="about-leadership__role">رئيس مجلس الإدارة والمؤسس</p>
+            <blockquote class="about-leadership__quote">
+              "كل مشروع نُنجزه هو وعد نُنفّذه — للعميل والوزارة وللناس الذين سيسلكون الطريق أو يعبرون الكوبري."
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="about-leadership__team">
+          <!-- TODO(content): confirm leadership names, titles, and portraits with client -->
+          <div class="about-leadership__card" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-leadership__card-img" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="about-leadership__card-body">
+              <h4>[TBC]</h4>
+              <p class="about-leadership__role">كبير المهندسين</p>
+              <p>[TBC — في انتظار بيانات العميل]</p>
+            </div>
+          </div>
+
+          <div class="about-leadership__card" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-leadership__card-img" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="about-leadership__card-body">
+              <h4>[TBC]</h4>
+              <p class="about-leadership__role">رئيس العمليات</p>
+              <p>[TBC — في انتظار بيانات العميل]</p>
+            </div>
+          </div>
+
+          <div class="about-leadership__card" data-az-reveal data-az-reveal-delay="160">
+            <div class="about-leadership__card-img" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="about-leadership__card-body">
+              <h4>[TBC]</h4>
+              <p class="about-leadership__role">رئيس قسم QHSE</p>
+              <p>[TBC — في انتظار بيانات العميل]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 13 — GOVERNMENT PARTNERS & CLIENTS
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="section__head section__head--center" data-az-reveal>
+          <span class="eyebrow">الشركاء والعملاء</span>
+          <hr class="rule-accent" aria-hidden="true">
+          <h2 id="partners-heading">تثق بنا الهيئات التي تبني الوطن.</h2>
+          <p class="lead">نعمل مع الوزارات والجهات الحكومية المسؤولة عن برامج الطرق والكباري والبنية التحتية المدنية في مصر.</p>
+        </div>
+
+        <div class="about-partners__grid">
+
+          <div class="about-partners__tile" data-az-reveal data-az-reveal-delay="0">
+            <div class="about-partners__tile-logo" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--az-gray-600)"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12.01"/><path d="M8 12h8"/></svg>
+            </div>
+            <p class="about-partners__tile-name">وزارة الإسكان</p>
+            <p class="about-partners__tile-sub">الجهاز المركزي للتعمير</p>
+          </div>
+
+          <div class="about-partners__tile" data-az-reveal data-az-reveal-delay="80">
+            <div class="about-partners__tile-logo" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--az-gray-600)"><path d="M3 17l4-8 4 4 4-6 4 8"/><path d="M3 20h18"/></svg>
+            </div>
+            <p class="about-partners__tile-name">وزارة النقل</p>
+            <p class="about-partners__tile-sub">الهيئة العامة للطرق والكباري</p>
+          </div>
+
+          <div class="about-partners__tile" data-az-reveal data-az-reveal-delay="160">
+            <div class="about-partners__tile-logo" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--az-gray-600)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <p class="about-partners__tile-name">وزارة الدفاع</p>
+            <p class="about-partners__tile-sub">الهيئة الهندسية للقوات المسلحة</p>
+          </div>
+
+        </div>
+        <p class="about-partners__note" data-az-reveal>علاقات حكومية إضافية متاحة عند الطلب.</p>
+        <!-- TODO(content): DO NOT publish additional partners until client confirms in writing -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SECTION 14 — CTA BAND
+    ════════════════════════════════════════════════════════ -->
+    <div class="cta-band" role="complementary" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading" data-az-reveal>لديك مشروع؟ دعنا نتحدث.</h2>
+        <p class="lead" data-az-reveal>طرق وكباري وأعمال مدنية — من التخطيط حتى التسليم. نرحّب بالتواصل.</p>
+        <div class="cta-band__actions" data-az-reveal>
+          <a href="/pages/ar/contact-us/" class="btn btn-accent btn--lg">
+            تواصل معنا
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="/pages/ar/our-projects/" class="btn btn-ghost btn-ghost--invert btn--lg">استعرض مشاريعنا</a>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <div id="site-footer" data-partial="footer"></div>

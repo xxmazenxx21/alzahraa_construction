@@ -57,3 +57,4 @@
 /* Page CSS processed through Tailwind so @apply works */
 @import "../../pages/en/home/home.css";
 @import "../../pages/en/our-services/our-services.css";
+@import "../../pages/en/about-us/about-us.css";
