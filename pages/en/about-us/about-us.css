@@ -978,6 +978,13 @@ html[lang="ar"] .page-about .about-leadership__card-body .about-leadership__role
   @apply flex items-center justify-center;
 }
 
+.page-about .about-partners__tile-logo--placeholder {
+  background-color: var(--az-gray-100);
+  border: 2px dashed var(--az-gray-200);
+  border-radius: var(--radius-sm);
+  width: 160px;
+}
+
 .page-about .about-partners__tile-logo img {
   max-height: 72px;
   max-width: 160px;
