@@ -25,7 +25,10 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   background-color: transparent;
   border-block-end-color: transparent;
 }
-.navbar.is-scrolled { box-shadow: var(--shadow-md); }
+
+.navbar.is-scrolled {
+  box-shadow: var(--shadow-md);
+}
 
 /* -------------------------------------------------------------
    Bar layout
@@ -41,7 +44,10 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   padding-inline: var(--gutter);
   transition: height var(--dur-base) var(--ease-out);
 }
-.navbar.is-scrolled .navbar__bar { height: var(--navbar-h-scrolled); }
+
+.navbar.is-scrolled .navbar__bar {
+  height: var(--navbar-h-scrolled);
+}
 
 /* -------------------------------------------------------------
    Brand / logo
@@ -52,10 +58,18 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   gap: var(--space-3);
   flex-shrink: 0;
 }
+
 .navbar__brand img,
-.navbar__brand svg { height: 76px; width: auto; }
+.navbar__brand svg {
+  height: 200px;
+  width: auto;
+}
+
 .navbar.is-scrolled .navbar__brand img,
-.navbar.is-scrolled .navbar__brand svg { height: 58px; }
+.navbar.is-scrolled .navbar__brand svg {
+  height: 180px;
+}
+
 .navbar__brand-text {
   display: none;
   font-family: var(--font-heading);
@@ -65,7 +79,12 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   line-height: 1;
   letter-spacing: var(--ls-tight);
 }
-@media (min-width: 480px) { .navbar__brand-text { display: inline-block; } }
+
+@media (min-width: 480px) {
+  .navbar__brand-text {
+    display: inline-block;
+  }
+}
 
 /* -------------------------------------------------------------
    NAV — desktop: inline row · mobile: slide-in drawer
@@ -93,6 +112,7 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   white-space: nowrap;
   transition: color var(--dur-fast) var(--ease-out);
 }
+
 .navbar__link::after {
   content: "";
   position: absolute;
@@ -105,10 +125,19 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   transform-origin: inline-start;
   transition: transform var(--dur-base) var(--ease-out);
 }
-.navbar__link:hover { color: var(--color-accent); }
+
+.navbar__link:hover {
+  color: var(--color-accent);
+}
+
 .navbar__link:hover::after,
-.navbar__item.is-active .navbar__link::after { transform: scaleX(1); }
-.navbar__item.is-active .navbar__link { color: var(--color-accent); }
+.navbar__item.is-active .navbar__link::after {
+  transform: scaleX(1);
+}
+
+.navbar__item.is-active .navbar__link {
+  color: var(--color-accent);
+}
 
 /* Right-hand actions (lang switch + CTA) */
 .navbar__nav-actions {
@@ -125,15 +154,25 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   font-size: var(--fs-sm);
   font-weight: 700;
 }
+
 .lang-switch a {
   padding: var(--space-1) var(--space-2);
   color: var(--az-gray-400);
   border-radius: var(--radius-sm);
   transition: color var(--dur-fast) var(--ease-out);
 }
-.lang-switch a:hover { color: var(--color-accent); }
-.lang-switch a[aria-current="true"] { color: var(--color-text-invert); }
-.lang-switch__sep { color: rgba(255, 255, 255, 0.25); }
+
+.lang-switch a:hover {
+  color: var(--color-accent);
+}
+
+.lang-switch a[aria-current="true"] {
+  color: var(--color-text-invert);
+}
+
+.lang-switch__sep {
+  color: rgba(255, 255, 255, 0.25);
+}
 
 /* -------------------------------------------------------------
    Hamburger toggle (hidden on desktop)
@@ -149,6 +188,7 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   background: none;
   border: none;
 }
+
 .navbar__toggle-bar {
   display: block;
   width: 100%;
@@ -156,11 +196,20 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   background-color: var(--color-text-invert);
   border-radius: 2px;
   transition: transform var(--dur-base) var(--ease-out),
-              opacity var(--dur-fast) var(--ease-out);
+    opacity var(--dur-fast) var(--ease-out);
 }
-.navbar.is-open .navbar__toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.navbar.is-open .navbar__toggle-bar:nth-child(2) { opacity: 0; }
-.navbar.is-open .navbar__toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.navbar.is-open .navbar__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar.is-open .navbar__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar.is-open .navbar__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 /* -------------------------------------------------------------
    MOBILE (< lg): drawer
@@ -182,9 +231,12 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
     transform: translateX(100%);
     visibility: hidden;
     transition: transform var(--dur-base) var(--ease-out),
-                visibility 0s linear var(--dur-base);
+      visibility 0s linear var(--dur-base);
   }
-  html[dir="rtl"] .navbar__nav { transform: translateX(-100%); }
+
+  html[dir="rtl"] .navbar__nav {
+    transform: translateX(-100%);
+  }
 
   .navbar.is-open .navbar__nav {
     transform: translateX(0);
@@ -199,12 +251,17 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
     gap: 0;
     width: 100%;
   }
-  .navbar__item { border-block-end: 1px solid rgba(255, 255, 255, 0.08); }
+
+  .navbar__item {
+    border-block-end: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
   .navbar__link {
     display: block;
     padding: var(--space-4) var(--space-2);
     font-size: var(--fs-lead);
   }
+
   .navbar__link::after {
     inset-block-end: auto;
     inset-inline: 0;
@@ -216,8 +273,11 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
     transform: scaleY(0);
     transform-origin: center;
   }
+
   .navbar__item.is-active .navbar__link::after,
-  .navbar__link:hover::after { transform: scaleY(1); }
+  .navbar__link:hover::after {
+    transform: scaleY(1);
+  }
 
   .navbar__nav-actions {
     flex-direction: column;
@@ -225,8 +285,14 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
     gap: var(--space-5);
     margin-block-start: var(--space-4);
   }
-  .navbar__nav-actions .btn { width: 100%; }
-  .lang-switch { justify-content: flex-start; }
+
+  .navbar__nav-actions .btn {
+    width: 100%;
+  }
+
+  .lang-switch {
+    justify-content: flex-start;
+  }
 
   /* Backdrop behind the drawer */
   .navbar__backdrop {
@@ -237,8 +303,9 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--dur-base) var(--ease-out),
-                visibility 0s linear var(--dur-base);
+      visibility 0s linear var(--dur-base);
   }
+
   .navbar.is-open .navbar__backdrop {
     opacity: 1;
     visibility: visible;
@@ -250,6 +317,9 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
    DESKTOP (>= lg): no drawer, no hamburger, no backdrop
    ------------------------------------------------------------- */
 @media (min-width: 1024px) {
+
   .navbar__toggle,
-  .navbar__backdrop { display: none; }
+  .navbar__backdrop {
+    display: none;
+  }
 }
