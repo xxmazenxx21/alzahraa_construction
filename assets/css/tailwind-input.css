@@ -10,6 +10,9 @@
     tools\tailwindcss.exe -i assets/css/tailwind-input.css -o assets/css/tailwind.css --watch
 */
 
+/* Theme variables (font weights, spacing scale, etc.) without preflight */
+@import "tailwindcss/theme";
+
 /* Utilities only — skip preflight so it doesn't conflict with reset.css */
 @import "tailwindcss/utilities";
 
@@ -50,3 +53,7 @@
   --width-container-wide: 1520px;
   --width-container-text: 760px;
 }
+
+/* Page CSS processed through Tailwind so @apply works */
+@import "../../pages/en/home/home.css";
+@import "../../pages/en/our-services/our-services.css";

@@ -10,6 +10,9 @@
 [dir="rtl"] .icon-arrow,
 [dir="rtl"] [data-flip-rtl] { transform: scaleX(-1); }
 
+/* Flip inline arrow icons inside buttons so they point left in Arabic */
+[dir="rtl"] .btn svg { transform: scaleX(-1); }
+
 /* Hamburger toggle rotations already work symmetrically; the
    drawer slide direction is handled in navbar.css via
    html[dir="rtl"] .navbar__nav. Nothing extra needed here. */

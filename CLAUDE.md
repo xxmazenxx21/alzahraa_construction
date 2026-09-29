@@ -45,8 +45,8 @@ The old WordPress site has been **compromised with SEO spam**. The "Our Latest A
 
 1. **No UI frameworks except Tailwind CSS.** No React, Vue, Bootstrap, jQuery, or any CDN UI library.
    - **Tailwind CSS** is allowed via the **standalone CLI only** (`tools/tailwindcss.exe`). No npm, no PostCSS, no node_modules.
-   - Tailwind sits **alongside** the existing custom CSS — it does not replace `variables.css`, `reset.css`, `global.css`, or any existing page CSS.
-   - Use Tailwind utility classes only on **new pages or new sections**. Do not rewrite existing CSS with Tailwind.
+   - Tailwind is the **primary styling approach** for page-specific CSS. Page CSS files (e.g. `home.css`, `our-services.css`) use `@apply` directives and are imported into `tailwind-input.css` so Tailwind processes them. The compiled `tailwind.css` replaces per-page CSS `<link>` tags in the HTML `<head>`.
+   - The shared global files — `variables.css`, `reset.css`, `global.css`, `typography.css`, `utilities.css`, `components.css`, `navbar.css`, `footer.css` — remain separate and are still linked in every page's `<head>`. Only page-specific CSS is processed through `tailwind-input.css`.
    - Compile command: `tools\tailwindcss.exe -i assets/css/tailwind-input.css -o assets/css/tailwind.css --minify`
    - Watch mode (dev): `tools\tailwindcss.exe -i assets/css/tailwind-input.css -o assets/css/tailwind.css --watch`
    - The compiled `assets/css/tailwind.css` is the file you link in pages (`<link rel="stylesheet" href="/assets/css/tailwind.css">`).
