@@ -72,24 +72,22 @@
     <section id="home-hero" class="home-hero" aria-labelledby="home-hero-title">
       <div class="home-hero__media">
         <!-- TODO(media): convert to <picture> + webp/jpg after local download -->
-        <!-- TODO(media): download hero-roadwork-aerial.mp4 (Pexels 9431639, HD 1920x1080 24fps,
-             https://videos.pexels.com/video-files/9431639/9431639-hd_1920_1080_24fps.mp4) into
-             /pages/en/home/videos/ and swap the data-src to the local path. -->
+        <!-- shared with EN home — video stored once in /pages/en/home/videos/ -->
         <img class="home-hero__poster"
-             src="https://images.pexels.com/photos/681347/pexels-photo-681347.jpeg?auto=compress&cs=tinysrgb&w=1920"
-             data-az-asset="hero-highway-interchange-aerial.webp"
-             alt="منظر جوي لتقاطع طرق سريعة متعدّد المستويات وقت الغروب"
-             width="1920" height="1079" loading="eager" fetchpriority="high">
+             src="https://images.pexels.com/videos/30810385/free-video-30810385.jpg?auto=compress&cs=tinysrgb&dpr=1&h=1080&w=1920"
+             data-az-asset="hero-construction-site-aerial.webp"
+             alt="منظر جوي بالطائرة المسيّرة لموقع بناء كبير"
+             width="1920" height="1080" loading="eager" fetchpriority="high">
         <!-- Video src is deferred to home.js so it is skipped under reduced-motion
              or Save-Data; the poster is the no-JS / data-saver fallback. -->
         <video class="home-hero__video"
                autoplay muted loop playsinline preload="metadata"
-               poster="https://images.pexels.com/photos/681347/pexels-photo-681347.jpeg?auto=compress&cs=tinysrgb&w=1920"
-               data-az-asset="hero-roadwork-aerial.mp4"
+               poster="https://images.pexels.com/videos/30810385/free-video-30810385.jpg?auto=compress&cs=tinysrgb&dpr=1&h=1080&w=1920"
+               data-az-asset="construction-site-aerial.mp4"
                aria-hidden="true">
-          <source data-src="https://videos.pexels.com/video-files/9431639/9431639-hd_1920_1080_24fps.mp4"
+          <source data-src="https://videos.pexels.com/video-files/30810385/13177903_1920_1080_60fps.mp4"
                   type="video/mp4"
-                  data-az-asset="hero-roadwork-aerial.mp4">
+                  data-az-asset="construction-site-aerial.mp4">
         </video>
       </div>
 
