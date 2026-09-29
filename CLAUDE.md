@@ -16,7 +16,7 @@
 | **Old website**        | `https://alzahraa.construction` (WordPress + Elementor — being replaced)            |
 | **New website**        | `https://alzahraa-construction.com`                                                 |
 | **Languages**          | English (default) + Arabic (RTL)                                                    |
-| **Stack**              | Plain HTML5 + CSS3 + Vanilla JavaScript. **No frameworks, no build tools, no npm.** |
+| **Stack**              | Plain HTML5 + CSS3 + Vanilla JavaScript + Tailwind CSS (standalone CLI, no npm). **No other frameworks.** |
 | **Hosting**            | Hostinger (static upload / Git deploy)                                              |
 | **Team**               | Ahmed + Mazen, working in parallel on different pages                               |
 
@@ -43,9 +43,15 @@ The old WordPress site has been **compromised with SEO spam**. The "Our Latest A
 
 ## 2. Non-Negotiable Technical Rules
 
-1. **No frameworks.** No React, Vue, Bootstrap, Tailwind, jQuery, or any CDN UI library.
+1. **No UI frameworks except Tailwind CSS.** No React, Vue, Bootstrap, jQuery, or any CDN UI library.
+   - **Tailwind CSS** is allowed via the **standalone CLI only** (`tools/tailwindcss.exe`). No npm, no PostCSS, no node_modules.
+   - Tailwind sits **alongside** the existing custom CSS — it does not replace `variables.css`, `reset.css`, `global.css`, or any existing page CSS.
+   - Use Tailwind utility classes only on **new pages or new sections**. Do not rewrite existing CSS with Tailwind.
+   - Compile command: `tools\tailwindcss.exe -i assets/css/tailwind-input.css -o assets/css/tailwind.css --minify`
+   - Watch mode (dev): `tools\tailwindcss.exe -i assets/css/tailwind-input.css -o assets/css/tailwind.css --watch`
+   - The compiled `assets/css/tailwind.css` is the file you link in pages (`<link rel="stylesheet" href="/assets/css/tailwind.css">`).
    - Allowed external resources: Google Fonts, and **only if explicitly approved**: AOS (scroll animations), Swiper (sliders), Lucide/Feather SVG icons. Prefer writing these by hand.
-2. **No build step.** The folder you edit is the folder you upload.
+2. **No build step beyond Tailwind CLI.** The folder you edit is the folder you upload. Running `tailwindcss.exe` is the only allowed compile step.
 3. **Every page owns its assets.** Page-specific CSS/JS/images/videos live _inside that page's own folder_. Never dump page styles into a global file.
 4. **Only the navbar and footer are shared.** They are written once and injected by JS on every page.
 5. **All asset paths are root-absolute** (`/assets/css/reset.css`, `/pages/en/about-us/`). Never use `../../../`. This is what makes a page movable and what keeps the shared partials working from any depth.

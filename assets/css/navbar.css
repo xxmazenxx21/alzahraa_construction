@@ -53,9 +53,9 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   flex-shrink: 0;
 }
 .navbar__brand img,
-.navbar__brand svg { height: 40px; width: auto; }
+.navbar__brand svg { height: 76px; width: auto; }
 .navbar.is-scrolled .navbar__brand img,
-.navbar.is-scrolled .navbar__brand svg { height: 34px; }
+.navbar.is-scrolled .navbar__brand svg { height: 58px; }
 .navbar__brand-text {
   display: none;
   font-family: var(--font-heading);

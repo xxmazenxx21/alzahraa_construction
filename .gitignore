@@ -8,3 +8,9 @@ node_modules/
 *.psd
 *.ai
 *.zip
+
+# Tailwind — binary is large; devs download it themselves via:
+# Invoke-WebRequest -Uri "https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-windows-x64.exe" -OutFile "tools\tailwindcss.exe"
+tools/tailwindcss.exe
+# Compiled output IS committed so it deploys correctly without a build step
+# assets/css/tailwind.css  <-- intentionally NOT ignored

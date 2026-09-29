@@ -96,12 +96,13 @@
 
 .page-services .services-hero {
   position: relative;
-  min-height: 65vh;
+  min-height: 100vh;       /* fallback */
+  min-height: 100svh;      /* small-viewport-aware */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-block-end: var(--space-20);
-  padding-block-start: calc(var(--navbar-h) + var(--space-16));
+  padding-block-start: var(--navbar-h); /* safe-zone so text can't hide under navbar */
+  padding-block-end: clamp(3rem, 7vh, 6rem);
   padding-inline: var(--gutter);
   overflow: hidden;
   background-color: var(--az-navy-900);

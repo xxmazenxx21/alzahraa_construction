@@ -63,7 +63,7 @@ html[lang="ar"] .footer__heading { text-transform: none; }
    Brand column
    ------------------------------------------------------------- */
 .footer__brand img,
-.footer__brand svg { height: 44px; width: auto; margin-block-end: var(--space-5); }
+.footer__brand svg { height: 160px; width: auto; margin-block-end: var(--space-5); }
 .footer__blurb { max-width: 34ch; margin-block-end: var(--space-6); line-height: var(--lh-base); }
 
 /* -------------------------------------------------------------

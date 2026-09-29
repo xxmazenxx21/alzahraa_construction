@@ -1,0 +1,52 @@
+/*
+  Tailwind CSS v4 — input file
+  Only utilities are imported — no preflight/base reset,
+  because the project already has reset.css and global.css.
+
+  Compile (production):
+    tools\tailwindcss.exe -i assets/css/tailwind-input.css -o assets/css/tailwind.css --minify
+
+  Watch (dev):
+    tools\tailwindcss.exe -i assets/css/tailwind-input.css -o assets/css/tailwind.css --watch
+*/
+
+/* Utilities only — skip preflight so it doesn't conflict with reset.css */
+@import "tailwindcss/utilities";
+
+/*
+  Brand colour tokens — keep in sync with /assets/css/variables.css
+  These register as Tailwind colour utilities:
+    text-az-navy-900  bg-az-amber-500  border-az-gray-200  etc.
+*/
+@theme {
+  --color-az-navy-900: #0a1a2f;
+  --color-az-navy-800: #0f2742;
+  --color-az-navy-700: #163457;
+  --color-az-navy-600: #1e4d7b;
+
+  --color-az-amber-600: #c98900;
+  --color-az-amber-500: #f2a900;
+  --color-az-amber-400: #ffc33d;
+  --color-az-amber-100: #fff3d6;
+
+  --color-az-gray-700: #3a424c;
+  --color-az-gray-600: #6b7480;
+  --color-az-gray-400: #a9b1bc;
+  --color-az-gray-200: #e3e6eb;
+  --color-az-gray-100: #f2f4f7;
+  --color-az-gray-50:  #f7f8fa;
+
+  --color-az-sand-100: #f5f1ea;
+  --color-az-ink-900:  #11161c;
+
+  /* Font families */
+  --font-heading:    "Barlow Condensed", "Archivo", system-ui, sans-serif;
+  --font-body:       "Inter", system-ui, -apple-system, sans-serif;
+  --font-ar-heading: "Cairo", "Tajawal", system-ui, sans-serif;
+  --font-ar-body:    "Tajawal", "Cairo", system-ui, sans-serif;
+
+  /* Max widths */
+  --width-container:      1280px;
+  --width-container-wide: 1520px;
+  --width-container-text: 760px;
+}

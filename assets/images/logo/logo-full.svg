@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- PLACEHOLDER logo (navy, for light backgrounds) — replace with client's official mark before launch (CLAUDE.md §4.1). -->
-<svg xmlns="http://www.w3.org/2000/svg" width="220" height="48" viewBox="0 0 220 48" role="img" aria-label="Al Zahraa">
-  <rect x="0" y="4" width="40" height="40" rx="4" fill="#0F2742"/>
-  <path d="M8 36 L20 12 L32 36 M13 29 H27" fill="none" stroke="#F2A900" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter"/>
-  <text x="52" y="24" font-family="'Barlow Condensed','Archivo',sans-serif" font-size="21" font-weight="700" letter-spacing="0.5" fill="#0A1A2F">AL ZAHRAA</text>
-  <text x="52" y="40" font-family="'Inter',sans-serif" font-size="9.5" font-weight="600" letter-spacing="2.6" fill="#6B7480">GENERAL CONTRACTING</text>
-</svg>

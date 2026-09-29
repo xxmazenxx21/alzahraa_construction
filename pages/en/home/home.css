@@ -307,42 +307,6 @@ html[lang="ar"] .page-home .home-hero__cue { text-transform: none; letter-spacin
   50% { transform: translateY(6px); }
 }
 
-/* Marquee CTA */
-.page-home .home-marquee {
-  position: absolute;
-  inset-block-start: 45%;
-  inset-inline: 0;
-  z-index: 3;
-  overflow: hidden;
-  display: block;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-}
-.page-home .home-marquee__track {
-  display: inline-flex;
-  gap: var(--space-8);
-  white-space: nowrap;
-  animation: home-marquee 22s linear infinite;
-}
-.page-home .home-marquee:hover .home-marquee__track { animation-play-state: paused; }
-.page-home .home-marquee__item {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 1rem + 5vw, 4.5rem);
-  font-weight: 700;
-  letter-spacing: var(--ls-tight);
-  color: rgba(255, 255, 255, 0.08);
-  text-transform: uppercase;
-}
-html[lang="ar"] .page-home .home-marquee__item { text-transform: none; letter-spacing: 0; }
-@keyframes home-marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-html[dir="rtl"] .page-home .home-marquee__track { animation-name: home-marquee-rtl; }
-@keyframes home-marquee-rtl {
-  from { transform: translateX(0); }
-  to   { transform: translateX(50%); }
-}
 
 /* =============================================================
    3. SECTION 02 — WHO WE ARE  (#home-intro)
@@ -1049,7 +1013,6 @@ html[lang="ar"] .page-home .home-news__date { text-transform: none; letter-spaci
   .page-home.has-js .home-frame > img { opacity: 1; transform: none; }
   .page-home.has-js .section-rule { transform: scaleX(1); }
   .page-home.has-js .home-frame::after { transform: scaleX(0); }
-  .page-home .home-marquee__track,
   .page-home .home-hero__cue svg,
   .page-home.has-js .home-hero__poster,
   .page-home.has-js .home-video__ring { animation: none; }
