@@ -60,10 +60,12 @@ function initScrollCue() {
 }
 
 /* ── 3. Count-up for the KPI band ──────────────────────────
-   A stat only animates when [data-az-count] carries a numeric
-   target. KPI values are still [TBC] pending client sign-off
-   (CLAUDE.md §15 rule 3), so those render as-is — the helper is
-   in place for the moment the real figures arrive.
+   A stat animates when [data-az-count] carries a numeric target.
+   Handles thousands separators ("4,850,000"), decimals ("0.42")
+   and a trailing unit ("94%"), and finishes on the authored string
+   so the rendered value always matches the markup exactly.
+   The KPI figures themselves are placeholders pending client
+   sign-off — see the PLACEHOLDER comments in the markup.
    ---------------------------------------------------------- */
 const COUNT_DURATION = 1800;
 
@@ -71,8 +73,8 @@ function animateCount(el) {
   const raw = (el.dataset.azCount || "").trim();
   const target = parseFloat(raw.replace(/[^0-9.]/g, ""));
 
-  /* No numeric target ([TBC], empty, or non-numeric): leave the
-     authored text exactly as written. */
+  /* No numeric target (empty or non-numeric): leave the authored
+     text exactly as written. */
   if (!raw || Number.isNaN(target)) return;
 
   const suffix = raw.replace(/[0-9.,\s]/g, "");

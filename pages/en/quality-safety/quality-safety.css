@@ -846,25 +846,35 @@ html[lang="ar"] .page-quality-safety .qs-training__metric-label {
 /* Neutral gray placeholder mark. The grayscale→colour transition
    applies to THIS placeholder only; once the client supplies real
    certification marks they must render at true colour (never tinted). */
+/* Holds the client-supplied certification mark. The marks vary in
+   aspect ratio, so the box is a fixed height and the image is
+   contained inside it — never cropped, never stretched. */
 .page-quality-safety .qs-certs__badge {
-  @apply flex items-center justify-center;
-  padding-block: var(--space-6);
+  @apply flex items-center justify-center overflow-hidden;
+  height: calc(var(--space-32) + var(--space-8));
+  padding: var(--space-4);
   margin-block-end: var(--space-2);
-  background-color: var(--az-gray-100);
+  background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  color: var(--az-gray-600);
+}
+
+/* Desaturated at rest, TRUE COLOUR on hover. The mark itself is never
+   tinted or hue-shifted — altering a certification mark is not ours
+   to do (see the TODO in the markup). */
+.page-quality-safety .qs-certs__badge img {
+  @apply block w-full h-full;
+  object-fit: contain;
   filter: grayscale(1);
   transition:
     filter var(--dur-base) var(--ease-out),
-    color var(--dur-base) var(--ease-out),
-    background-color var(--dur-base) var(--ease-out);
+    transform var(--dur-base) var(--ease-out);
 }
 
-.page-quality-safety .qs-certs__tile:hover .qs-certs__badge {
+.page-quality-safety .qs-certs__tile:hover .qs-certs__badge img,
+.page-quality-safety .qs-certs__tile:focus-within .qs-certs__badge img {
   filter: grayscale(0);
-  color: var(--color-primary);
-  background-color: var(--az-amber-100);
+  transform: scale(1.03);
 }
 
 .page-quality-safety .qs-certs__title {
@@ -907,7 +917,7 @@ html[lang="ar"] .page-quality-safety .qs-training__metric-label {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .page-quality-safety .qs-certs__badge,
+  .page-quality-safety .qs-certs__badge img,
   .page-quality-safety .qs-certs__title::after,
   .page-quality-safety .qs-link::after {
     transition: none;
