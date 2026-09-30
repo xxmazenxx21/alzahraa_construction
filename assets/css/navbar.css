@@ -225,7 +225,7 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
     position: fixed;
     inset-block: 0;
     inset-inline-end: 0;
-    z-index: var(--z-overlay);
+    z-index: var(--z-modal);
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
