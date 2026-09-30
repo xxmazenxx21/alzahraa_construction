@@ -37,19 +37,19 @@
   --color-az-gray-400: #a9b1bc;
   --color-az-gray-200: #e3e6eb;
   --color-az-gray-100: #f2f4f7;
-  --color-az-gray-50:  #f7f8fa;
+  --color-az-gray-50: #f7f8fa;
 
   --color-az-sand-100: #f5f1ea;
-  --color-az-ink-900:  #11161c;
+  --color-az-ink-900: #11161c;
 
   /* Font families */
-  --font-heading:    "Barlow Condensed", "Archivo", system-ui, sans-serif;
-  --font-body:       "Inter", system-ui, -apple-system, sans-serif;
+  --font-heading: "Barlow Condensed", "Archivo", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
   --font-ar-heading: "Cairo", "Tajawal", system-ui, sans-serif;
-  --font-ar-body:    "Tajawal", "Cairo", system-ui, sans-serif;
+  --font-ar-body: "Tajawal", "Cairo", system-ui, sans-serif;
 
   /* Max widths */
-  --width-container:      1280px;
+  --width-container: 1280px;
   --width-container-wide: 1520px;
   --width-container-text: 760px;
 }
@@ -58,3 +58,15 @@
 @import "../../pages/en/home/home.css";
 @import "../../pages/en/our-services/our-services.css";
 @import "../../pages/en/about-us/about-us.css";
+
+
+
+
+
+
+
+
+
+
+
+@import "../../pages/en/quality-safety/quality-safety.css";

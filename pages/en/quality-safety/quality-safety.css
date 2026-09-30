@@ -1,10 +1,1100 @@
 /* =============================================================
-   QUALITY SAFETY — page styles
+   QUALITY & SAFETY — page styles
    Scope : .page-quality-safety
-   Owner : TBD
+   Owner : Mazen
+   Processed via assets/css/tailwind-input.css (@import)
    Depends on: variables.css, global.css, components.css
    ============================================================= */
 
+/* Page-local derived token: the amber numeral tile used by the QC
+   process row (§5) and the improvement flow (§11). Derived from the
+   spacing scale so the connector lines can centre on it without a
+   magic pixel value. */
 .page-quality-safety {
-  /* TODO: page sections */
+  --qs-numeral: var(--space-10);
+}
+
+/* ── HERO ─────────────────────────────────────────────────── */
+
+.page-quality-safety .qs-hero {
+  @apply relative flex flex-col justify-end overflow-hidden;
+  min-height: clamp(520px, 70vh, 720px);
+  background-color: var(--az-navy-900);
+  color: var(--color-text-invert);
+}
+
+.page-quality-safety .qs-hero__media {
+  @apply absolute inset-0;
+}
+
+/* Poster and video stack in the same box: the poster is the LCP
+   element and stays underneath, the video fades in on top. */
+.page-quality-safety .qs-hero__video,
+.page-quality-safety .qs-hero__poster {
+  @apply absolute inset-0 w-full h-full object-cover block;
+}
+
+/* Cross-fade the video in once it can play through (JS adds
+   .is-video-ready); until then the poster carries the frame. */
+.page-quality-safety .qs-hero__video {
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-in-out);
+}
+
+.page-quality-safety .qs-hero.is-video-ready .qs-hero__video {
+  opacity: 1;
+}
+
+/* Slow zoom on the poster fallback only */
+@media (prefers-reduced-motion: no-preference) {
+  .page-quality-safety .qs-hero__poster {
+    animation: qs-hero-zoom 20s var(--ease-in-out) infinite alternate;
+  }
+}
+
+@keyframes qs-hero-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-quality-safety .qs-hero__poster {
+    animation: none;
+  }
+
+  /* Keep the poster visible — the video stays paused */
+  .page-quality-safety .qs-hero__video {
+    opacity: 0;
+    transition: none;
+  }
+}
+
+.page-quality-safety .qs-hero__overlay {
+  @apply absolute inset-0;
+  background: var(--overlay-hero);
+  z-index: var(--z-base);
+}
+
+.page-quality-safety .qs-hero__content {
+  @apply relative flex flex-col justify-between;
+  z-index: calc(var(--z-base) + 1);
+  padding-block: var(--space-8);
+  padding-block-start: calc(var(--navbar-h) + var(--space-8));
+  gap: var(--space-10);
+}
+
+.page-quality-safety .qs-hero__breadcrumb {
+  margin-block-end: var(--space-4);
+}
+
+/* .breadcrumb in components.css makes the <nav> a flex row but leaves
+   the <ol> a block, so the crumbs stack. Corrected page-locally rather
+   than editing a shared file (CLAUDE.md §12). */
+.page-quality-safety .qs-hero__breadcrumb ol {
+  @apply flex flex-wrap items-center;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-quality-safety .qs-hero__breadcrumb a,
+.page-quality-safety .qs-hero__breadcrumb li + li::before {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.page-quality-safety .qs-hero__headline h1,
+.page-quality-safety .qs-hero__sub {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+}
+
+.page-quality-safety .qs-hero__sub {
+  transition-delay: 120ms;
+}
+
+.page-quality-safety .qs-hero.is-loaded .qs-hero__headline h1,
+.page-quality-safety .qs-hero.is-loaded .qs-hero__sub {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-quality-safety .qs-hero__headline h1,
+  .page-quality-safety .qs-hero__sub {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.page-quality-safety .qs-hero h1 {
+  font-size: var(--fs-display);
+  color: var(--color-text-invert);
+  max-width: 24ch;
+  margin-block-end: var(--space-4);
+}
+
+.page-quality-safety .qs-hero__sub {
+  font-size: var(--fs-lead);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 58ch;
+  margin-block-end: var(--space-8);
+}
+
+.page-quality-safety .qs-hero__ctas {
+  @apply flex flex-wrap;
+  gap: var(--space-4);
+}
+
+.page-quality-safety .qs-hero__scroll-cue {
+  @apply flex flex-col items-center self-end;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-block-end: var(--space-4);
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-quality-safety .qs-hero__scroll-cue {
+    animation: qs-scroll-bounce 2s var(--ease-in-out) infinite;
+  }
+}
+
+@keyframes qs-scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+html[lang="ar"] .page-quality-safety .qs-hero__scroll-cue {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ── SHARED PAGE BITS ─────────────────────────────────────── */
+
+/* Amber-underline text link used for the policy PDF rows */
+.page-quality-safety .qs-link {
+  @apply inline-flex items-center relative;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--az-navy-600);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.page-quality-safety .qs-link::after {
+  content: "";
+  position: absolute;
+  inset-block-end: -4px;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-link:hover::after,
+.page-quality-safety .qs-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.page-quality-safety .qs-link:hover {
+  color: var(--color-accent-hover);
+}
+
+.page-quality-safety .qs-policy__download {
+  margin-block-start: var(--space-10);
+  text-align: end;
+}
+
+/* ── SECTION 2 — OUR APPROACH ─────────────────────────────── */
+
+.page-quality-safety .qs-approach__grid {
+  @apply grid items-start;
+  gap: var(--space-10);
+}
+
+@media (min-width: 1024px) {
+  .page-quality-safety .qs-approach__grid {
+    grid-template-columns: 6fr 4fr;
+    gap: var(--space-16);
+  }
+}
+
+.page-quality-safety .qs-approach__prose p {
+  max-width: none;
+}
+
+.page-quality-safety .qs-approach__prose strong {
+  color: var(--color-primary);
+}
+
+.page-quality-safety .qs-approach__figure {
+  @apply relative overflow-hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--az-navy-900);
+}
+
+.page-quality-safety .qs-approach__figure img {
+  @apply w-full h-full object-cover block;
+  aspect-ratio: 4 / 5;
+  transition:
+    transform var(--dur-slow) var(--ease-out),
+    opacity var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-approach__figure:hover img {
+  transform: scale(1.04);
+  opacity: 0.86;
+}
+
+.page-quality-safety .qs-approach__pills {
+  @apply flex flex-wrap;
+  gap: var(--space-3);
+  margin-block-start: var(--space-10);
+  padding-block-start: var(--space-8);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.page-quality-safety .qs-approach__pill {
+  @apply inline-flex items-center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-surface);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.page-quality-safety .qs-approach__pill svg {
+  color: var(--color-accent);
+  flex: none;
+}
+
+.page-quality-safety .qs-approach__pill:hover {
+  background-color: var(--az-amber-100);
+  border-color: var(--color-accent);
+  color: var(--az-navy-900);
+}
+
+/* ── SECTION 3 — KPI BAND ─────────────────────────────────── */
+
+.page-quality-safety .qs-kpi__grid {
+  margin-block-start: var(--space-4);
+}
+
+.page-quality-safety .qs-kpi .stat {
+  padding-block-start: var(--space-6);
+  border-block-start: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.page-quality-safety .qs-kpi .stat__num {
+  font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+  position: relative;
+  padding-block-end: var(--space-3);
+}
+
+.page-quality-safety .qs-kpi .stat__num::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  width: var(--space-10);
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.page-quality-safety .qs-kpi .stat__label {
+  margin-block-start: var(--space-4);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: var(--lh-snug);
+  color: var(--az-gray-400);
+}
+
+html[lang="ar"] .page-quality-safety .qs-kpi .stat__label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.page-quality-safety .qs-kpi__note {
+  margin-block-start: var(--space-12);
+  padding-block-start: var(--space-6);
+  border-block-start: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: var(--fs-xs);
+  color: var(--az-gray-400);
+  text-align: center;
+}
+
+/* ── SECTION 4 & 7 — POLICY ACCORDION ─────────────────────── */
+
+.page-quality-safety .qs-accordion {
+  border-block-start: 1px solid var(--color-border);
+}
+
+.page-quality-safety .qs-accordion__item {
+  border-block-end: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  transition: background-color var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-accordion__item.is-open {
+  background-color: var(--color-bg);
+}
+
+.page-quality-safety .qs-accordion__heading {
+  font-size: var(--fs-body);
+  margin: 0;
+}
+
+.page-quality-safety .qs-accordion__trigger {
+  @apply flex items-center w-full text-start;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-4);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.page-quality-safety .qs-accordion__trigger:hover {
+  color: var(--az-navy-600);
+}
+
+.page-quality-safety .qs-accordion__num {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-accent);
+  flex: none;
+}
+
+.page-quality-safety .qs-accordion__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  flex: 1;
+}
+
+html[lang="ar"] .page-quality-safety .qs-accordion__title {
+  letter-spacing: 0;
+}
+
+.page-quality-safety .qs-accordion__chevron {
+  flex: none;
+  color: var(--color-accent);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-accordion__item.is-open .qs-accordion__chevron {
+  transform: rotate(180deg);
+}
+
+/* grid-template-rows 0fr → 1fr: deterministic height, no CLS */
+.page-quality-safety .qs-accordion__panel {
+  @apply grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-accordion__item.is-open .qs-accordion__panel {
+  grid-template-rows: 1fr;
+}
+
+.page-quality-safety .qs-accordion__panel-inner {
+  @apply overflow-hidden;
+  visibility: hidden;
+  transition: visibility 0s linear var(--dur-base);
+}
+
+.page-quality-safety .qs-accordion__item.is-open .qs-accordion__panel-inner {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.page-quality-safety .qs-accordion__panel-inner p {
+  padding-inline: var(--space-4);
+  padding-inline-start: calc(var(--space-4) + var(--space-10));
+  padding-block-end: var(--space-6);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  max-width: 78ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-quality-safety .qs-accordion__panel,
+  .page-quality-safety .qs-accordion__panel-inner,
+  .page-quality-safety .qs-accordion__chevron {
+    transition: none;
+  }
+}
+
+/* ── SECTION 5 — QC PROCESS ───────────────────────────────── */
+
+.page-quality-safety .qs-process__track {
+  @apply relative;
+  margin-block-start: var(--space-4);
+}
+
+.page-quality-safety .qs-process__line-wrap {
+  @apply hidden;
+}
+
+.page-quality-safety .qs-process__steps {
+  @apply grid;
+  gap: var(--space-8);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .page-quality-safety .qs-process__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-10);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* The connector runs from the centre of the first numeral to the
+     centre of the last, so it never trails past step 05. With five
+     equal columns and one gap between each, the last column starts at
+     80% + 0.8 × gap — hence the offsets below. */
+  .page-quality-safety .qs-process__line-wrap {
+    @apply block absolute;
+    inset-inline-start: calc(var(--qs-numeral) / 2);
+    inset-inline-end: calc(20% - (var(--space-6) * 0.8) - (var(--qs-numeral) / 2));
+    inset-block-start: calc(var(--qs-numeral) / 2 - 1px);
+    height: 2px;
+  }
+
+  .page-quality-safety .qs-process__steps {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+.page-quality-safety .qs-process__line {
+  @apply block w-full;
+  height: 2px;
+}
+
+.page-quality-safety .qs-process__line path {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset var(--dur-slow) var(--ease-in-out);
+}
+
+.page-quality-safety .qs-process__track.is-drawn .qs-process__line path {
+  stroke-dashoffset: 0;
+}
+
+/* RTL: draw the connector from the right edge instead of the left.
+   Page-scoped here rather than in rtl.css so page styles stay in the
+   page's own file (CLAUDE.md §3 / §15 rule 6). */
+[dir="rtl"] .page-quality-safety .qs-process__line path {
+  stroke-dashoffset: -1;
+}
+
+[dir="rtl"] .page-quality-safety .qs-process__track.is-drawn .qs-process__line path {
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-quality-safety .qs-process__line path {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+}
+
+.page-quality-safety .qs-process__step {
+  @apply relative flex flex-col;
+  gap: var(--space-3);
+  padding-block-start: var(--space-2);
+}
+
+.page-quality-safety .qs-process__num {
+  @apply inline-flex items-center justify-center;
+  width: var(--qs-numeral);
+  height: var(--qs-numeral);
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 1.1rem + 1vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--az-navy-900);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+.page-quality-safety .qs-process__title {
+  font-size: var(--fs-h4);
+  color: var(--color-primary);
+  margin-block-start: var(--space-2);
+}
+
+.page-quality-safety .qs-process__step p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.page-quality-safety .qs-process__note {
+  margin-block-start: var(--space-12);
+  padding-block-start: var(--space-6);
+  border-block-start: 1px solid var(--color-border);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+/* ── SECTION 6 — TESTING & LABORATORY ─────────────────────── */
+
+.page-quality-safety .qs-lab__grid {
+  @apply grid items-start;
+  gap: var(--space-10);
+}
+
+@media (min-width: 1024px) {
+  .page-quality-safety .qs-lab__grid {
+    grid-template-columns: 45fr 55fr;
+    gap: var(--space-12);
+  }
+}
+
+.page-quality-safety .qs-lab__figure {
+  @apply relative overflow-hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--az-navy-900);
+}
+
+.page-quality-safety .qs-lab__figure img {
+  @apply w-full h-full object-cover block;
+  aspect-ratio: 3 / 4;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.page-quality-safety .qs-lab__figure:hover img {
+  transform: scale(1.04);
+}
+
+.page-quality-safety .qs-lab__catalogue {
+  @apply grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .page-quality-safety .qs-lab__catalogue {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.page-quality-safety .qs-lab__panel {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-inline-start: 3px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  transition:
+    box-shadow var(--dur-base) var(--ease-out),
+    border-inline-start-color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-lab__panel:hover {
+  box-shadow: var(--shadow-lg);
+  border-inline-start-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.page-quality-safety .qs-lab__panel-title {
+  @apply flex items-center;
+  gap: var(--space-3);
+  font-size: var(--fs-h4);
+  color: var(--color-primary);
+  margin-block-end: var(--space-3);
+}
+
+.page-quality-safety .qs-lab__panel-title svg {
+  color: var(--color-accent);
+  flex: none;
+}
+
+.page-quality-safety .qs-lab__panel p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.page-quality-safety .qs-lab__note,
+.page-quality-safety .qs-certs__note,
+.page-quality-safety .qs-env__note {
+  margin-block-start: var(--space-10);
+  padding-block-start: var(--space-6);
+  border-block-start: 1px solid var(--color-border);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+/* ── SECTIONS 7 & 9 — POLICY / ENVIRONMENT CARD GRIDS ─────── */
+
+.page-quality-safety .qs-cards {
+  @apply grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .page-quality-safety .qs-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-quality-safety .qs-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .page-quality-safety .qs-cards--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.page-quality-safety .qs-card {
+  @apply flex flex-col;
+  gap: var(--space-4);
+  padding: var(--space-8) var(--space-6);
+  border: 1px solid var(--color-border);
+  border-block-start: 3px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  transition:
+    box-shadow var(--dur-base) var(--ease-out),
+    border-block-start-color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-block-start-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.page-quality-safety .qs-card__icon {
+  color: var(--color-accent);
+  line-height: 0;
+}
+
+.page-quality-safety .qs-card h3 {
+  font-size: var(--fs-h4);
+  color: var(--color-primary);
+}
+
+.page-quality-safety .qs-card p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── SECTION 8 — TRAINING & CULTURE ───────────────────────── */
+
+.page-quality-safety .qs-training__grid {
+  @apply grid items-start;
+  gap: var(--space-10);
+}
+
+@media (min-width: 1024px) {
+  .page-quality-safety .qs-training__grid {
+    grid-template-columns: 55fr 45fr;
+    gap: var(--space-12);
+  }
+}
+
+.page-quality-safety .qs-training__prose p {
+  max-width: none;
+}
+
+.page-quality-safety .qs-training__prose strong {
+  color: var(--color-primary);
+}
+
+.page-quality-safety .qs-training__figure {
+  @apply relative overflow-hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--az-navy-900);
+}
+
+.page-quality-safety .qs-training__figure img {
+  @apply w-full h-full object-cover block;
+  aspect-ratio: 4 / 5;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.page-quality-safety .qs-training__figure:hover img {
+  transform: scale(1.04);
+}
+
+.page-quality-safety .qs-training__strip {
+  @apply grid;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin-block-start: var(--space-12);
+  padding-block-start: var(--space-8);
+  border-block-start: 1px solid var(--color-border);
+}
+
+@media (min-width: 640px) {
+  .page-quality-safety .qs-training__strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-quality-safety .qs-training__strip {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.page-quality-safety .qs-training__metric {
+  @apply flex flex-col;
+  gap: var(--space-2);
+  padding-inline-start: var(--space-4);
+  border-inline-start: 2px solid var(--color-accent);
+}
+
+.page-quality-safety .qs-training__metric-label {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: var(--lh-snug);
+}
+
+html[lang="ar"] .page-quality-safety .qs-training__metric-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.page-quality-safety .qs-training__metric-value {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+/* ── SECTION 10 — CERTIFICATIONS ──────────────────────────── */
+
+.page-quality-safety .qs-certs__grid {
+  @apply grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .page-quality-safety .qs-certs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-quality-safety .qs-certs__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.page-quality-safety .qs-certs__tile {
+  @apply flex flex-col;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  transition:
+    box-shadow var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-certs__tile:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Neutral gray placeholder mark. The grayscale→colour transition
+   applies to THIS placeholder only; once the client supplies real
+   certification marks they must render at true colour (never tinted). */
+.page-quality-safety .qs-certs__badge {
+  @apply flex items-center justify-center;
+  padding-block: var(--space-6);
+  margin-block-end: var(--space-2);
+  background-color: var(--az-gray-100);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--az-gray-600);
+  filter: grayscale(1);
+  transition:
+    filter var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-certs__tile:hover .qs-certs__badge {
+  filter: grayscale(0);
+  color: var(--color-primary);
+  background-color: var(--az-amber-100);
+}
+
+.page-quality-safety .qs-certs__title {
+  @apply relative inline-block;
+  font-size: var(--fs-h4);
+  color: var(--color-primary);
+  padding-block-end: var(--space-2);
+}
+
+.page-quality-safety .qs-certs__title::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-certs__tile:hover .qs-certs__title::after {
+  transform: scaleX(1);
+}
+
+.page-quality-safety .qs-certs__desc {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.page-quality-safety .qs-certs__status {
+  margin: 0;
+  margin-block-start: auto;
+  padding-block-start: var(--space-4);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-accent-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-quality-safety .qs-certs__badge,
+  .page-quality-safety .qs-certs__title::after,
+  .page-quality-safety .qs-link::after {
+    transition: none;
+  }
+}
+
+/* ── SECTION 11 — REPORTING & IMPROVEMENT ─────────────────── */
+
+.page-quality-safety .qs-improve__flow {
+  @apply relative grid;
+  gap: var(--space-8);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-inline-start: var(--space-2);
+}
+
+/* Vertical amber connector, drawn in on entry */
+.page-quality-safety .qs-improve__flow::before {
+  content: "";
+  position: absolute;
+  inset-block: var(--space-6);
+  inset-inline-start: calc(var(--space-2) + var(--qs-numeral) / 2 - 1px);
+  width: 2px;
+  background-color: var(--color-accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--dur-slow) var(--ease-in-out);
+}
+
+.page-quality-safety .qs-improve__flow.is-drawn::before {
+  transform: scaleY(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-quality-safety .qs-improve__flow::before {
+    transform: scaleY(1);
+    transition: none;
+  }
+}
+
+.page-quality-safety .qs-improve__step {
+  @apply relative flex items-start;
+  gap: var(--space-5);
+}
+
+.page-quality-safety .qs-improve__num {
+  @apply inline-flex items-center justify-center;
+  position: relative;
+  z-index: var(--z-base);
+  width: var(--qs-numeral);
+  height: var(--qs-numeral);
+  flex: none;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--az-navy-900);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+.page-quality-safety .qs-improve__body h3 {
+  font-size: var(--fs-h4);
+  color: var(--color-primary);
+  margin-block-end: var(--space-2);
+}
+
+.page-quality-safety .qs-improve__body p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 80ch;
+}
+
+/* ── SECTION 12 — RELATED ─────────────────────────────────── */
+
+.page-quality-safety .qs-related__grid {
+  @apply grid;
+  gap: var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .page-quality-safety .qs-related__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.page-quality-safety .qs-related__card {
+  @apply flex flex-col h-full;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  transition:
+    box-shadow var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-related__card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.page-quality-safety .qs-related__icon {
+  color: var(--color-accent);
+  line-height: 0;
+}
+
+.page-quality-safety .qs-related__card h3 {
+  font-size: var(--fs-h4);
+  color: var(--color-primary);
+}
+
+.page-quality-safety .qs-related__card p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.page-quality-safety .qs-related__arrow {
+  margin-block-start: auto;
+  padding-block-start: var(--space-5);
+  color: var(--color-accent);
+  line-height: 0;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.page-quality-safety .qs-related__card:hover .qs-related__arrow,
+.page-quality-safety .qs-related__card:focus-visible .qs-related__arrow {
+  opacity: 1;
+  transform: none;
+}
+
+/* RTL: the arrow slides in from the opposite side. Page-scoped so
+   page styles stay in this file (CLAUDE.md §3 / §15 rule 6). */
+[dir="rtl"] .page-quality-safety .qs-related__arrow {
+  transform: translateX(8px);
+}
+
+[dir="rtl"] .page-quality-safety .qs-related__card:hover .qs-related__arrow,
+[dir="rtl"] .page-quality-safety .qs-related__card:focus-visible .qs-related__arrow {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-quality-safety .qs-related__arrow {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ── SECTION 13 — CTA BAND ────────────────────────────────── */
+
+.page-quality-safety .qs-cta__rule {
+  margin-inline: auto;
+  margin-block-end: var(--space-6);
+}
+
+.page-quality-safety .qs-cta .lead {
+  margin-inline: auto;
+  max-width: 62ch;
+}
+
+/* ── RTL: direction-dependent transforms ──────────────────────
+   transform-origin has no logical keyword, so the two amber
+   underline slides need an explicit flip in Arabic. Kept in this
+   page file (not rtl.css) so page styles stay page-owned —
+   CLAUDE.md §3 / §15 rule 6.
+   ------------------------------------------------------------- */
+
+[dir="rtl"] .page-quality-safety .qs-link::after,
+[dir="rtl"] .page-quality-safety .qs-certs__title::after {
+  transform-origin: right center;
+}
+
+/* Scroll cue retires once the visitor starts scrolling */
+.page-quality-safety .qs-hero__scroll-cue.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
