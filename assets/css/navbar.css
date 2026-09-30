@@ -221,6 +221,10 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
    MOBILE (< lg): drawer
    ------------------------------------------------------------- */
 @media (max-width: 1023.98px) {
+  .navbar__toggle {
+    position: relative;
+    z-index: calc(var(--z-modal) + 1);
+  }
   .navbar__nav {
     position: fixed;
     inset-block: 0;
