@@ -356,8 +356,8 @@ html[lang="ar"] {
   --z-modal: 900;
   --z-toast: 1000;
 
-  --navbar-h: 84px;
-  --navbar-h-scrolled: 64px;
+  --navbar-h: 150px;
+  --navbar-h-scrolled: 130px;
 }
 ```
 
@@ -475,14 +475,60 @@ Behaviour: transparent over hero → solid navy on scroll; shrinks from `--navba
 
 ### 6.3 Footer contents — **exact data, do not alter**
 
-**Phones**
+Al Zahraa operates two offices. The footer's primary contact block is the Cairo Head Office; the Sharqia Branch gets a compact summary line linking to its full details on the Contact Us page (see §7.12).
+
+**Cairo — Head Office**
+
+**Mobiles**
 
 ```
 01031764534
 01080005220
 ```
 
-Render as `tel:+201031764534` and `tel:+201080005220`.
+**Landline / Fax**
+
+```
+Landline: 0223337276
+Fax: 0223337277
+```
+
+**Address (EN)**
+
+```
+127 Mohamed Farid St. – Al-Bustan Building – Apartment 53, 5th Floor – Abdin – Cairo
+```
+
+**Address (AR)**
+
+```
+١٢٧ شارع محمد فريد – عمارة البستان – شقة ٥٣، الدور الخامس – عابدين – القاهرة
+```
+
+Render mobiles as `tel:+201031764534` and `tel:+201080005220`. Render the landline as `tel:+20223337276`. Never render the fax number as a `tel:` link — display it as plain LTR text labelled "Fax".
+
+**Sharqia Branch**
+
+**Landline / Fax**
+
+```
+Landline: 0554442522
+Fax: 0553316266
+```
+
+**Address (EN)**
+
+```
+Hesham Zidan Street, off Zagazig–Ismailia Road (36 Military), next to the Psychiatric Hospital, Al-Qurain, Sharqia
+```
+
+**Address (AR)**
+
+```
+شارع هشام زيدان – متفرع من طريق الزقازق – الإسماعيلية (36 عسكري) – بجوار مستشفى الأمراض النفسية – القرين – الشرقية
+```
+
+Render the landline as `tel:+20554442522`. Never render the fax number as a `tel:` link.
 
 **Emails**
 
@@ -494,17 +540,7 @@ sarah.idris@alzahraa-construction.com
 morad.talaat@alzahraa-construction.com
 ```
 
-**Head office address (EN)**
-
-```
-127 Mohamed Farid St. – Al-Bustan Building – Apartment 53, 5th Floor – Abdin – Cairo
-```
-
-**Head office address (AR)**
-
-```
-١٢٧ شارع محمد فريد – عمارة البستان – شقة ٥٣، الدور الخامس – عابدين – القاهرة
-```
+The footer shows all five mailboxes. The Contact Us page (§7.12) additionally groups them by purpose with a description for each.
 
 Footer layout: 4 columns → (1) logo + short company blurb + social icons, (2) Quick Links, (3) Services links, (4) Contact block (address, both phones, primary emails) + newsletter stub. Bottom bar: `© <current year> Al Zahraa General Contracting. All rights reserved.` The year is injected by `footer.js`, never hard-coded.
 
@@ -529,6 +565,34 @@ Every page follows this skeleton, then adds its own sections:
 ```
 
 Home uses a **full-height (100vh)** hero with looping muted background video instead.
+
+### §8.1 Placeholder Numbers (Temporary Data)
+
+Do NOT use `[TBC]` as visible text on the page — it looks unfinished 
+and unprofessional if a stakeholder previews the site before real 
+data arrives.
+
+Instead, use a realistic-looking placeholder number, and mark it 
+with an HTML comment immediately after it so it stays traceable:
+
+```html
+<span class="stat-number">42</span>
+<!-- PLACEHOLDER: confirm real fleet count with client -->
+```
+
+Rules for placeholder numbers:
+- The number must look plausible for the context (a "Rollers & Compactors" 
+  count should be a realistic small number, not 9999 or 1).
+- Every placeholder number MUST have a `<!-- PLACEHOLDER: ... -->` comment 
+  right after it, describing what needs confirming.
+- Never place a placeholder number without its comment — the comment is 
+  what makes it findable later.
+- Before any page is marked "done" (§14 Definition of Done), run a 
+  project-wide search for `PLACEHOLDER` and confirm zero results remain, 
+  or list any remaining ones explicitly to the client/owner.
+- This applies to fleet counts, spec-table values, percentages, hours, 
+  capacities, model numbers — any figure not explicitly confirmed by 
+  the client.
 
 ### 7.1 Home — `/index.html`
 

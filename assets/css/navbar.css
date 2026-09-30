@@ -57,6 +57,12 @@ body[data-transparent-nav] .navbar:not(.is-scrolled) {
   align-items: center;
   gap: var(--space-3);
   flex-shrink: 0;
+  /* The logo PNG carries ~18.6% transparent padding above and below the
+     artwork, so its 200px/180px box is taller than the bar. Clip that
+     invisible padding to the bar so it can't overlap the hero or catch
+     clicks; the visible lockup always fits inside --navbar-h(-scrolled). */
+  height: 100%;
+  overflow: hidden;
 }
 
 .navbar__brand img,

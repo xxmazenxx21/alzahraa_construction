@@ -49,11 +49,34 @@ function fillContact(root, lang) {
 
   const emails = root.querySelector("[data-az-emails]");
   if (emails) {
-    // Footer shows the general-purpose mailboxes only.
-    const primary = [SITE.emails.info, SITE.emails.service, SITE.emails.support];
+    // Footer shows all five mailboxes.
+    const primary = [SITE.emails.info, SITE.emails.service, SITE.emails.support, SITE.emails.sarah, SITE.emails.morad];
     emails.innerHTML = primary
       .map((mail) => `<a href="mailto:${mail}" class="ltr-inline">${mail}</a>`)
       .join("");
+  }
+
+  // Office lines from SITE.branches. Fax numbers are plain text, never tel: links.
+  const branch = (id) => (SITE.branches || []).find((b) => b.id === id);
+  const setTel = (el, line) => {
+    if (!el || !line) return;
+    el.href = `tel:${line.tel}`;
+    el.textContent = line.display;
+    el.classList.add("ltr-inline");
+  };
+  const setText = (el, text) => { if (el && text) el.textContent = text; };
+
+  const hq = branch("cairo-hq");
+  if (hq) {
+    setTel(root.querySelector("[data-az-hq-landline]"), hq.landline);
+    setText(root.querySelector("[data-az-hq-fax]"), hq.fax && hq.fax.display);
+  }
+
+  const sharqia = branch("sharqia");
+  if (sharqia) {
+    setText(root.querySelector("[data-az-sharqia-name]"), sharqia[lang]);
+    setTel(root.querySelector("[data-az-sharqia-landline]"), sharqia.landline);
+    setText(root.querySelector("[data-az-sharqia-fax]"), sharqia.fax && sharqia.fax.display);
   }
 }
 

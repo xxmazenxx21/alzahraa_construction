@@ -12,7 +12,7 @@ html {
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: var(--navbar-h, 84px);
+  scroll-padding-top: var(--navbar-h, 150px);
   -webkit-tap-highlight-color: transparent;
 }
 

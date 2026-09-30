@@ -1,10 +1,118 @@
 /* =============================================================
    MEDIA CENTER — page styles
    Scope : .page-media-center
-   Owner : TBD
-   Depends on: variables.css, global.css, components.css
+   Owner : Ahmed
+   Depends on: variables.css, global.css, components.css, tailwind.css
+   This page is styled with Tailwind utility classes in the markup.
+   This file holds ONLY what utilities can't express: keyframes,
+   the <dialog> lightbox states, and the play-button pulse.
+   Plain CSS — not imported into tailwind-input.css, no @apply.
    ============================================================= */
 
 .page-media-center {
-  /* TODO: page sections */
+  --mc-white-85: color-mix(in srgb, var(--az-white) 85%, transparent);
+  --mc-white-40: color-mix(in srgb, var(--az-white) 40%, transparent);
+}
+
+/* ── Gallery filter: fade/scale-in (mirrors our-projects) ──── */
+.page-media-center .filter-enter {
+  animation: media-filter var(--dur-slow) var(--ease-out) both;
+}
+
+@keyframes media-filter {
+  from { opacity: 0; transform: translateY(var(--space-4)) scale(0.985); }
+  to   { opacity: 1; transform: none; }
+}
+
+.page-media-center .media-gallery [data-category][hidden] { display: none; }
+
+/* ── Lightbox (adapted from equipment .eq-lightbox) ────────── */
+.page-media-center .media-lightbox {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: var(--space-16) var(--gutter);
+  border: 0;
+  background: var(--overlay-hero), var(--az-navy-900);
+  color: var(--color-text-invert);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.page-media-center .media-lightbox[open] { display: grid; place-items: center; }
+.page-media-center .media-lightbox::backdrop { background: transparent; }
+.page-media-center .media-lightbox.is-visible { opacity: 1; }
+
+.page-media-center .media-lightbox__figure {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: center;
+  max-width: var(--container);
+  transform: scale(0.96);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.page-media-center .media-lightbox.is-visible .media-lightbox__figure { transform: scale(1); }
+
+.page-media-center .media-lightbox__img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xl);
+}
+
+.page-media-center .media-lightbox__caption {
+  font-size: var(--fs-sm);
+  color: var(--mc-white-85);
+  text-align: center;
+}
+.page-media-center .media-lightbox__count { color: var(--color-accent); font-weight: 700; }
+
+.page-media-center .media-lightbox__btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-12);
+  height: var(--space-12);
+  color: var(--color-text-invert);
+  background-color: color-mix(in srgb, var(--az-navy-800) 80%, transparent);
+  border: 1px solid var(--mc-white-40);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.page-media-center .media-lightbox__btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.page-media-center .media-lightbox__close { inset-block-start: var(--space-4); inset-inline-end: var(--space-4); }
+.page-media-center .media-lightbox__prev,
+.page-media-center .media-lightbox__next { inset-block-start: 50%; translate: 0 -50%; }
+.page-media-center .media-lightbox__prev { inset-inline-start: var(--space-4); }
+.page-media-center .media-lightbox__next { inset-inline-end: var(--space-4); }
+
+/* ── Click-to-play (adapted from home .home-video__play) ───── */
+.page-media-center .media-video__play.is-hidden { opacity: 0; visibility: hidden; }
+
+.page-media-center.has-js .media-video__ring {
+  animation: media-pulse 2.4s var(--ease-out) infinite;
+}
+.page-media-center .media-video__play:hover .media-video__ring,
+.page-media-center .media-video__play:focus-visible .media-video__ring { animation-play-state: paused; }
+
+@keyframes media-pulse {
+  0%   { transform: scale(1); opacity: 0.9; }
+  70%  { transform: scale(1.7); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .page-media-center .filter-enter,
+  .page-media-center.has-js .media-video__ring { animation: none; }
+  .page-media-center .media-lightbox,
+  .page-media-center .media-lightbox__figure { transition: none; }
 }

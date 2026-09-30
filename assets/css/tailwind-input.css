@@ -26,6 +26,7 @@
   --color-az-navy-800: #0f2742;
   --color-az-navy-700: #163457;
   --color-az-navy-600: #1e4d7b;
+  --color-az-navy-100: #e6edf5;
 
   --color-az-amber-600: #c98900;
   --color-az-amber-500: #f2a900;
@@ -58,15 +59,5 @@
 @import "../../pages/en/home/home.css";
 @import "../../pages/en/our-services/our-services.css";
 @import "../../pages/en/about-us/about-us.css";
-
-
-
-
-
-
-
-
-
-
-
+@import "../../pages/en/equipment/equipment.css";
 @import "../../pages/en/quality-safety/quality-safety.css";
