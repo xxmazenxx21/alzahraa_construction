@@ -1,7 +1,7 @@
 /* =============================================================
    FOOTER — binds after "partials:loaded". Populates the footer
    from site-data.js (contact data lives ONLY there), injects the
-   current year, and wires the newsletter stub.
+   current year, and renders working contact links.
    SHARED FILE — coordinate before editing (see CLAUDE.md §12).
    ============================================================= */
 
@@ -10,12 +10,12 @@ import { SITE } from "/assets/js/site-data.js";
 /* Navigation-structure data (labels, not contact data). Quick links
    mirror the primary nav; services point at the 6 detail pages. */
 const SERVICES = [
-  { slug: "road-and-bridge-construction", en: "Road & Bridge Construction", ar: "إنشاء الطرق والكباري" },
-  { slug: "project-management",           en: "Project Management",          ar: "إدارة المشاريع" },
-  { slug: "strategic-planning",           en: "Strategic Planning",          ar: "التخطيط الاستراتيجي" },
-  { slug: "project-execution",            en: "Project Execution",           ar: "تنفيذ المشاريع" },
-  { slug: "quality-assurance",            en: "Quality Assurance",           ar: "ضمان الجودة" },
-  { slug: "machinery-and-equipment",      en: "Machinery & Equipment",       ar: "الآليات والمعدات" },
+  { section: "services-road-bridge", slug: "road-and-bridge-construction", en: "Road & Bridge Construction", ar: "إنشاء الطرق والكباري" },
+  { section: "services-management", slug: "project-management",           en: "Project Management",          ar: "إدارة المشاريع" },
+  { section: "services-planning", slug: "strategic-planning",           en: "Strategic Planning",          ar: "التخطيط الاستراتيجي" },
+  { section: "services-execution", slug: "project-execution",            en: "Project Execution",           ar: "تنفيذ المشاريع" },
+  { section: "services-quality", slug: "quality-assurance",            en: "Quality Assurance",           ar: "ضمان الجودة" },
+  { section: "services-machinery", slug: "machinery-and-equipment",      en: "Machinery & Equipment",       ar: "الآليات والمعدات" },
 ];
 
 function hrefFor(slug, lang) {
@@ -27,7 +27,7 @@ function fillLinks(el, items, lang, base) {
   if (!el) return;
   el.innerHTML = items
     .map((item) => {
-      const href = base ? `${base}${item.slug}/` : hrefFor(item.slug, lang);
+      const href = base ? `${base}#${item.section}` : hrefFor(item.slug, lang);
       return `<li><a href="${href}">${item[lang]}</a></li>`;
     })
     .join("");
@@ -80,20 +80,6 @@ function fillContact(root, lang) {
   }
 }
 
-function wireNewsletter(root) {
-  const form = root.querySelector("[data-az-newsletter]");
-  if (!form) return;
-  form.addEventListener("submit", (e) => {
-    e.preventDefault(); // stub — no backend yet (static site)
-    const input = form.querySelector('input[type="email"]');
-    const note = form.parentElement.querySelector("[data-az-newsletter-note]");
-    if (note) {
-      note.hidden = false;
-      note.textContent = form.dataset.thanks || "Thank you — we'll be in touch.";
-    }
-    if (input) input.value = "";
-  });
-}
 
 /* -------------------------------------------------------------
    Public init — called from main.js after "partials:loaded".
@@ -112,5 +98,4 @@ export function initFooter() {
     `/pages/${lang}/our-services/`
   );
   fillContact(footer, lang);
-  wireNewsletter(footer);
 }

@@ -206,13 +206,23 @@ function initVideos() {
     const video = frame && frame.querySelector(".media-video__el");
     const source = video && video.querySelector("source[data-src]");
     if (!video) return;
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
       if (source && !source.src) { source.src = source.dataset.src; video.load(); }
       video.setAttribute("controls", "");
-      const p = video.play();
-      if (p && typeof p.catch === "function") p.catch(() => {});
-      btn.classList.add("is-hidden");
-      video.focus();
+      try {
+        await video.play();
+        btn.classList.add("is-hidden");
+        video.focus();
+      } catch {
+        let note = frame.parentElement.querySelector('[data-az-playback-status]');
+        if (!note) {
+          note = document.createElement('p');
+          note.dataset.azPlaybackStatus = '';
+          note.setAttribute('role', 'status');
+          frame.after(note);
+        }
+        note.textContent = lang === 'ar' ? 'تعذر تشغيل الفيديو. حاول مرة أخرى لاحقاً.' : 'The video could not play. Please try again later.';
+      }
     });
   });
 }

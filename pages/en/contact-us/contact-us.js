@@ -1,9 +1,21 @@
+function openInquiryDraft(form) {
+  const ar = document.documentElement.lang === "ar";
+  const body = [...new FormData(form).entries()]
+    .filter(([name]) => name !== "website")
+    .map(([name, value]) => `${name}: ${value}`).join("\n");
+  const subject = ar ? "استفسار من الموقع" : "Website inquiry";
+  window.location.href = `mailto:${SITE.emails.info}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return ar
+    ? "افتح تطبيق البريد وأرسل المسودة لإكمال الاستفسار. إذا لم يفتح التطبيق، استخدم رابط البريد أو الهاتف أعلاه."
+    : "An email draft was requested in your email app. Send it there to complete your inquiry. If no app opens, use the email or phone link above.";
+}
+
 /* =============================================================
    CONTACT US — page script
    Shared by /pages/en/contact-us/ and /pages/ar/contact-us/.
    - Fills phones / emails / address from site-data.js (the single
      source of truth — CLAUDE.md §6.4) into [data-az-*] mounts.
-   - Form validation (no backend yet).
+   - Form validation and email draft.
    - FAQ accordion, map overlays, WhatsApp float button.
    Reveal-on-scroll is handled globally by animations.js via
    [data-az-reveal] / [data-az-reveal-delay].
@@ -20,14 +32,12 @@ const TEXT = {
     email: "Please enter a valid email address.",
     phone: "Please enter a valid phone number.",
     summary: (n) => `Please check the ${n === 1 ? "highlighted field" : `${n} highlighted fields`}.`,
-    success: (name) => `Thank you${name ? `, ${name}` : ""} — your message has been received. Our team will be in touch shortly.`,
   },
   ar: {
     required: "يُرجى تعبئة هذا الحقل.",
     email: "يُرجى إدخال بريد إلكتروني صحيح.",
     phone: "يُرجى إدخال رقم هاتف صحيح.",
     summary: (n) => (n === 1 ? "يُرجى مراجعة الحقل المُشار إليه." : `يُرجى مراجعة الحقول المُشار إليها (${n}).`),
-    success: (name) => `شكراً لك${name ? ` يا ${name}` : ""} — تم استلام رسالتك، وسيتواصل معك فريقنا قريباً.`,
   },
 }[lang];
 
@@ -88,7 +98,7 @@ function injectLocalBusiness() {
   document.head.appendChild(script);
 }
 
-/* ── Form validation (no backend) ─────────────────────────── */
+/* ── Form validation and email draft ─────────────────────────── */
 function initForm() {
   const form = document.querySelector("[data-az-contact-form]");
   if (!form) return;
@@ -117,7 +127,7 @@ function initForm() {
   });
 
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // TODO(backend): post to the form endpoint once configured
+    e.preventDefault();
 
     const fields = [...form.querySelectorAll("input, select, textarea")];
     const invalid = fields.filter((f) => {
@@ -133,10 +143,8 @@ function initForm() {
       return;
     }
 
-    const name = form.querySelector("[name='name']").value.trim().split(/\s+/)[0];
-    status.textContent = TEXT.success(name);
-    status.dataset.state = "success";
-    form.reset();
+    status.textContent = openInquiryDraft(form);
+    status.dataset.state = "draft";
   });
 }
 

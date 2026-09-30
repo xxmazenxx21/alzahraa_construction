@@ -1,3 +1,15 @@
+function openInquiryDraft(form) {
+  const ar = document.documentElement.lang === "ar";
+  const body = [...new FormData(form).entries()]
+    .filter(([name]) => name !== "website")
+    .map(([name, value]) => `${name}: ${value}`).join("\n");
+  const subject = ar ? "استفسار من الموقع" : "Website inquiry";
+  window.location.href = `mailto:${SITE.emails.info}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return ar
+    ? "افتح تطبيق البريد وأرسل المسودة لإكمال الاستفسار. إذا لم يفتح التطبيق، استخدم رابط البريد أو الهاتف أعلاه."
+    : "An email draft was requested in your email app. Send it there to complete your inquiry. If no app opens, use the email or phone link above.";
+}
+
 /* =============================================================
    HOME — page interactions & motion (§G motion pass)
    Scope: .page-home  ·  Owner: Mazen
@@ -237,12 +249,24 @@ function setupVideos() {
     const video = frame && frame.querySelector(".home-video__el");
     const source = video && video.querySelector("source[data-src]");
     if (!video) return;
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
       if (source && !source.src) { source.src = source.dataset.src; video.load(); }
       video.setAttribute("controls", "");
-      const p = video.play();
-      if (p && typeof p.catch === "function") p.catch(() => {});
-      btn.classList.add("is-hidden");
+      try {
+        await video.play();
+        btn.classList.add("is-hidden");
+      } catch {
+        let note = frame.parentElement.querySelector('[data-az-playback-status]');
+        if (!note) {
+          note = document.createElement('p');
+          note.dataset.azPlaybackStatus = '';
+          note.setAttribute('role', 'status');
+          frame.after(note);
+        }
+        note.textContent = document.documentElement.lang === 'ar'
+          ? 'تعذر تشغيل الفيديو. حاول مرة أخرى لاحقاً.'
+          : 'The video could not play. Please try again later.';
+      }
     });
   });
 }
@@ -327,7 +351,7 @@ function setupForm() {
   const status = form.querySelector("[data-az-form-status]");
 
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // TODO(backend): no endpoint configured yet
+    e.preventDefault();
     let ok = true;
 
     form.querySelectorAll("[required]").forEach((field) => {
@@ -344,9 +368,7 @@ function setupForm() {
     // Localised messages come from the form's data-* attributes (English fallback),
     // so the shared handler serves both the EN and AR pages.
     if (ok) {
-      status.textContent = form.dataset.thanks ||
-        "Thank you — your inquiry has been received. Our team will be in touch shortly.";
-      form.reset();
+      status.textContent = openInquiryDraft(form);
     } else {
       status.textContent = form.dataset.error ||
         "Please complete the required fields with a valid email address.";

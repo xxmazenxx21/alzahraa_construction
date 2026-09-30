@@ -67,6 +67,7 @@ function setupDrawer(navbar) {
     lastFocused = document.activeElement;
     navbar.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", document.documentElement.lang === "ar" ? "إغلاق القائمة" : "Close menu");
     document.body.classList.add("no-scroll");
     const first = nav.querySelector(FOCUSABLE);
     if (first) first.focus();
@@ -75,6 +76,7 @@ function setupDrawer(navbar) {
   const close = () => {
     navbar.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", document.documentElement.lang === "ar" ? "فتح القائمة" : "Open menu");
     document.body.classList.remove("no-scroll");
     if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
   };
@@ -96,7 +98,7 @@ function setupDrawer(navbar) {
     if (e.key === "Escape") { close(); return; }
 
     if (e.key === "Tab") {
-      const items = [...nav.querySelectorAll(FOCUSABLE)].filter((el) => el.offsetParent !== null);
+      const items = [toggle, ...nav.querySelectorAll(FOCUSABLE)].filter((el) => el.offsetParent !== null);
       if (!items.length) return;
       const first = items[0];
       const last = items[items.length - 1];

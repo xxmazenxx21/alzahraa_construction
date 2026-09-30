@@ -10,6 +10,7 @@ const STORAGE_KEY = "az_lang";
 
 /** Map any page path to its equivalent in `target` language. */
 export function counterpartUrl(path, target) {
+  if (path === "/404.html" || path === "/pages/ar/404.html") return target === "ar" ? "/pages/ar/404.html" : "/404.html";
   if (target === "en") {
     if (/^\/pages\/ar\/home\/?(index\.html)?$/.test(path)) return "/";
     if (path.includes("/pages/ar/")) return path.replace("/pages/ar/", "/pages/en/");
@@ -39,7 +40,7 @@ export function initLangSwitch() {
   document.querySelectorAll("[data-lang-switch]").forEach((widget) => {
     widget.querySelectorAll("a[data-lang]").forEach((link) => {
       const target = link.dataset.lang === "ar" ? "ar" : "en";
-      link.setAttribute("href", counterpartUrl(path, target));
+      link.setAttribute("href", counterpartUrl(path, target) + window.location.search + window.location.hash);
 
       if (target === currentLang) {
         link.setAttribute("aria-current", "true");

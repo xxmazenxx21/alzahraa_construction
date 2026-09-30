@@ -126,17 +126,29 @@
 
     if (!card || !video || !overlay || !playBtn) return;
 
-    function play() {
+    async function play() {
       video.muted = false;
-      video.play().then(function () {
+      try {
+        await video.play();
         card.classList.add("is-playing");
-        /* Re-enable muted loop so pause/replay works cleanly */
-      }).catch(function () {
-        /* Autoplay policy: fall back to muted play */
+        video.controls = true;
+      } catch {
         video.muted = true;
-        video.play();
-        card.classList.add("is-playing");
-      });
+        try {
+          await video.play();
+          video.controls = true;
+          card.classList.add("is-playing");
+        } catch {
+          let note = card.parentElement.querySelector('[data-az-playback-status]');
+          if (!note) {
+            note = document.createElement('p');
+            note.dataset.azPlaybackStatus = '';
+            note.setAttribute('role', 'status');
+            card.after(note);
+          }
+          note.textContent = document.documentElement.lang === 'ar' ? 'تعذر تشغيل الفيديو. حاول مرة أخرى لاحقاً.' : 'The video could not play. Please try again later.';
+        }
+      }
     }
 
     playBtn.addEventListener("click", play);
