@@ -750,10 +750,10 @@
 
 /* ── LINK UNDERLINE GROW ─────────────────────────────────────── */
 
-.page-services a:not(.btn-primary):not(.btn-accent):not(.btn-ghost):not(.service-card):not(.service-card__link) {
+.page-services main a:not(.btn-primary):not(.btn-accent):not(.btn-ghost):not(.service-card):not(.service-card__link) {
   @apply relative;
 }
-.page-services a:not(.btn-primary):not(.btn-accent):not(.btn-ghost):not(.service-card):not(.service-card__link)::after {
+.page-services main a:not(.btn-primary):not(.btn-accent):not(.btn-ghost):not(.service-card):not(.service-card__link)::after {
   content: "";
   @apply absolute;
   inset-inline-start: 0;
@@ -763,6 +763,13 @@
   background: var(--color-accent);
   transition: width var(--dur-base) var(--ease-out);
 }
-.page-services a:not(.btn-primary):not(.btn-accent):not(.btn-ghost):not(.service-card):not(.service-card__link):hover::after {
+.page-services main a:not(.btn-primary):not(.btn-accent):not(.btn-ghost):not(.service-card):not(.service-card__link):hover::after {
   width: 100%;
+}
+
+/* Keep the hero photo behind the fixed header, including its top edge. */
+body.page-services #content { padding-block-start: 0; }
+body.page-services .navbar:not(.is-scrolled) {
+  background-color: transparent;
+  border-block-end-color: transparent;
 }
