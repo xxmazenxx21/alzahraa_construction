@@ -1,10 +1,8 @@
 /* =============================================================
-   CAREERS — page styles
+   CAREERS — page styles (AR)
    Scope : .page-careers
-   Owner : TBD
-   Depends on: variables.css, global.css, components.css
+   Owner : rebuilt in page HTML <style> (see index.html)
+   Depends on: variables.css, global.css, components.css, rtl.css, tailwind.css
+   Note: Do not add @apply here for merge safety; page-owned CSS
+         lives in the careers index.html <style> block.
    ============================================================= */
-
-.page-careers {
-  /* TODO: page sections */
-}

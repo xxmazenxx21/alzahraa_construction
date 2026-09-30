@@ -1,40 +1,581 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAGE TITLE — Al Zahraa Construction</title>
-  <meta name="description" content="">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Al Zahraa General Contracting</title><meta name="description" content="Explore Al Zahraa’s road, bridge and civil infrastructure projects across Egypt. Engineering discipline and reliable delivery since 1995.">
+<link rel="canonical" href="https://alzahraa-construction.com/pages/en/our-projects/">
+<link rel="alternate" hreflang="en" href="https://alzahraa-construction.com/pages/en/our-projects/">
+<link rel="alternate" hreflang="ar" href="https://alzahraa-construction.com/pages/ar/our-projects/">
+<link rel="alternate" hreflang="x-default" href="https://alzahraa-construction.com/">
+<meta property="og:type" content="website"><meta property="og:title" content="Projects | Al Zahraa General Contracting"><meta property="og:description" content="Explore Al Zahraa’s road, bridge and civil infrastructure projects across Egypt. Engineering discipline and reliable delivery since 1995.">
+<meta property="og:url" content="https://alzahraa-construction.com/pages/en/our-projects/">
+<!-- SOURCE: https://www.pexels.com/photo/industrial-cranes-at-a-construction-site-13832413/ -->
+<meta property="og:image" content="https://alzahraa-construction.com/pages/en/our-projects/images/hero-projects-poster.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Projects | Al Zahraa General Contracting"><meta name="twitter:description" content="Explore Al Zahraa’s road, bridge and civil infrastructure projects across Egypt. Engineering discipline and reliable delivery since 1995.">
+<!-- SOURCE: https://www.pexels.com/photo/industrial-cranes-at-a-construction-site-13832413/ -->
+<meta name="twitter:image" content="https://alzahraa-construction.com/pages/en/our-projects/images/hero-projects-poster.jpg">
+<link rel="icon" href="/assets/images/logo/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/reset.css"><link rel="stylesheet" href="/assets/css/variables.css"><link rel="stylesheet" href="/assets/css/typography.css"><link rel="stylesheet" href="/assets/css/global.css"><link rel="stylesheet" href="/assets/css/utilities.css"><link rel="stylesheet" href="/assets/css/components.css"><link rel="stylesheet" href="/assets/css/navbar.css"><link rel="stylesheet" href="/assets/css/footer.css"><link rel="stylesheet" href="/assets/css/tailwind.css">
+<style>
+/* PROJECTS — page-owned effects and media treatments. Layout uses existing Tailwind utilities. */
+/* The documented standalone CLI is absent. These scoped utility fallbacks cover
+   only utilities missing from the committed output, without changing shared CSS. */
+.page-projects .grid-cols-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.page-projects .mb-3 { margin-block-end:var(--space-3); }
+.page-projects .mb-4 { margin-block-end:var(--space-4); }
+.page-projects .mb-8 { margin-block-end:var(--space-8); }
+.page-projects .text-az-gray-200 { color:var(--az-gray-200); }
+.page-projects .text-az-gray-700 { color:var(--az-gray-700); }
+.page-projects .text-az-navy-800 { color:var(--az-navy-800); }
+.page-projects :focus-visible { outline: solid var(--space-1) var(--color-focus); outline-offset: var(--space-1); }
+.page-projects .projects-hero { min-height: 100svh; padding-block-start: calc(var(--navbar-h) + var(--space-12)); display: flex; flex-direction: column; justify-content: flex-end; }
+.page-projects .hero-copy { max-width: var(--container-text); padding-block: var(--space-12); }
+.page-projects .hero-copy h1 { font-size: var(--fs-display); color: var(--color-text-invert); }
+.page-projects .hero-copy .lead { color: var(--az-gray-200); }
+.page-projects .media-frame { background: linear-gradient(135deg,var(--az-navy-800),var(--az-navy-900) 60%,var(--az-navy-700)); }
+.page-projects .media-frame picture { display: block; width: 100%; height: 100%; }
+.page-projects .media-frame img { transition: transform var(--dur-slow) var(--ease-out); }
+.page-projects img.is-missing { visibility: hidden; }
+.page-projects .hero-layer,.page-projects .band-layer { position: absolute; inset: 0; }
+.page-projects .hero-layer { overflow: hidden; }
+.page-projects .hero-layer picture,.page-projects .hero-layer video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.page-projects .hero-shade { position: absolute; inset: 0; background: var(--overlay-hero); }
+.page-projects .hero-glass { border-block-start: thin solid var(--az-gray-600); background: color-mix(in srgb,var(--az-navy-900) 80%,transparent); backdrop-filter: blur(var(--space-3)); }
+.page-projects .hero-fact { padding-block: var(--space-6); }
+.page-projects .hero-fact small { display:block; color:var(--az-gray-400); }
+.page-projects .hero-fact strong { color:var(--color-text-invert); font-weight:500; }
+.page-projects .hero-controls { position:relative; padding-block-end:var(--space-6); }
+.page-projects .projects-hero ol,.page-projects .timeline { list-style:none; }
+.page-projects .scroll-cue span { display:inline-block; animation: projects-scroll 1.6s var(--ease-out) infinite; }
+.page-projects .project-link { display:inline-flex; align-items:center; gap:var(--space-3); padding-block:var(--space-3); border-block-end:thin solid currentColor; font-weight:600; }
+.page-projects .project-link span { transition:transform var(--dur-slow) var(--ease-out); }
+.page-projects .project-link:hover span { transform:translateX(var(--space-2)); }
+.page-projects .intro-media { min-height:calc(var(--space-32) * 3); }
+.page-projects .image-caption { position:absolute; inset-inline:var(--space-6); inset-block-end:var(--space-6); color:var(--color-text-invert); font-size:var(--fs-xs); z-index:var(--z-base); }
+.page-projects .stat-number { font-family:var(--font-heading); font-size:var(--fs-display); line-height:var(--lh-tight); color:var(--color-accent); }
+.page-projects .stat-cell { border-inline-start:thin solid var(--az-navy-700); padding-inline-start:var(--space-6); }
+.page-projects .filter-bar { position:sticky; top:var(--navbar-h-scrolled); z-index:var(--z-sticky); background:var(--color-bg-warm); padding-block:var(--space-5); border-block:thin solid var(--color-border); }
+.page-projects #projects { scroll-margin-block-start:calc(var(--navbar-h-scrolled) + var(--space-8)); }
+.page-projects .filter-pill { border:thin solid var(--color-border); border-radius:var(--radius-pill); padding:var(--space-2) var(--space-5); background:var(--color-surface); color:var(--color-primary); cursor:pointer; font-size:var(--fs-sm); transition:background var(--dur-slow) var(--ease-out),color var(--dur-slow) var(--ease-out); }
+.page-projects .filter-pill[aria-pressed="true"] { background:var(--color-primary); color:var(--color-on-primary); border-color:var(--color-primary); }
+.page-projects .filter-pill:hover { border-color:var(--color-primary); }
+.page-projects .project-card { border-block-end:thin solid var(--color-border); padding-block:var(--space-12); transition:transform var(--dur-slow) var(--ease-out),box-shadow var(--dur-slow) var(--ease-out); }
+.page-projects .project-card[hidden] { display:none; }
+.page-projects .project-card:hover { box-shadow:var(--shadow-md); transform:translateY(calc(var(--space-1) * -1)); }
+.page-projects .project-media { width:100%; min-width:0; aspect-ratio:4/3; }
+.page-projects .project-media:hover img,.page-projects .gallery-item:hover img { transform:scale(1.05); }
+.page-projects .media-cue { position:absolute; inset-block-end:var(--space-6); inset-inline-end:var(--space-6); color:var(--color-text-invert); padding:var(--space-2) var(--space-4); background:var(--color-primary); opacity:0; transform:translateY(var(--space-2)); transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out); }
+.page-projects .project-media:hover .media-cue,.page-projects .project-media:focus-visible .media-cue,.page-projects .gallery-item:hover .media-cue,.page-projects .gallery-item:focus-visible .media-cue { opacity:1; transform:none; }
+.page-projects .project-index { font-family:var(--font-heading); font-size:var(--fs-h3); color:var(--az-gray-600); }
+.page-projects .snapshot { background:var(--color-bg-alt); border-inline-start:solid var(--space-1) var(--color-accent); padding:var(--space-5); }
+.page-projects .snapshot dt { color:var(--az-gray-700); font-size:var(--fs-xs); }
+.page-projects .snapshot dd { font-weight:600; }
+.page-projects .service-icon { display:inline-flex; align-items:center; justify-content:center; width:var(--space-12); height:var(--space-12); color:var(--color-primary); border:thin solid var(--color-border); border-radius:var(--radius-sm); background:var(--color-bg-warm); }
+.page-projects .service-icon svg { width:var(--space-6); height:var(--space-6); }
+.page-projects .delivery-card { transition:transform var(--dur-slow) var(--ease-out),box-shadow var(--dur-slow) var(--ease-out); }
+.page-projects .delivery-card:hover { transform:translateY(calc(var(--space-2) * -1)); box-shadow:var(--shadow-lg); }
+.page-projects .timeline { position:relative; }
+.page-projects .timeline::before { content:''; position:absolute; inset-inline-start:var(--space-5); inset-block:0; width:1px; background:var(--color-border); }
+.page-projects .timeline-step { position:relative; padding-inline-start:var(--space-16); padding-block-end:var(--space-8); }
+.page-projects .step-number { position:absolute; inset-inline-start:0; top:0; display:grid; place-items:center; width:var(--space-10); height:var(--space-10); border:thin solid var(--color-accent); border-radius:50%; background:var(--color-bg); color:var(--color-primary); }
+.page-projects .gallery-item { position:relative; aspect-ratio:4/3; border:0; cursor:zoom-in; text-align:start; }
+.page-projects .gallery-item .image-caption { padding-inline-end:var(--space-16); }
+.page-projects .quality-band { isolation:isolate; }
+.page-projects .quality-panel { border:thin solid var(--az-navy-600); background:color-mix(in srgb,var(--color-bg-dark) 85%,transparent); backdrop-filter:blur(var(--space-2)); }
+.page-projects .film-frame { aspect-ratio:16/9; }
+.page-projects .film-frame video { width:100%; height:100%; object-fit:cover; position:relative; }
+.page-projects .film-play { position:absolute; inset:0; width:100%; color:var(--color-text-invert); background:var(--overlay-card); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:var(--space-3); cursor:pointer; }
+.page-projects .film-play[hidden] { display:none; }
+.page-projects .play-disc { width:var(--space-16); height:var(--space-16); border:thin solid var(--color-accent); border-radius:50%; display:grid; place-items:center; color:var(--color-accent); background:var(--color-bg-dark); }
+.page-projects .film-message { position:absolute; inset-inline:var(--space-4); inset-block-end:var(--space-4); color:var(--color-text-invert); background:var(--color-bg-dark); padding:var(--space-2); }
+.page-projects .partner-logo { height:var(--space-24); display:flex; justify-content:center; align-items:center; background:linear-gradient(135deg,var(--az-navy-800),var(--az-navy-900)); padding:var(--space-4); }
+.page-projects .partner-logo img { max-width:100%; width:auto; height:100%; object-fit:contain; filter:grayscale(1); transition:filter var(--dur-slow) var(--ease-out); }
+.page-projects .partner-card:hover img { filter:grayscale(0); }
+.page-projects .closing-copy { max-width:var(--container-text); }
+.page-projects .closing-copy h2 { font-size:var(--fs-h1); }
+.page-projects .page-reveal { opacity:1; }
+.page-projects.has-motion .page-reveal:not(.is-revealed) { opacity:0; transform:translateY(var(--space-6)); }
+.page-projects .page-reveal { transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out); }
+.page-projects .filter-enter { animation:projects-filter var(--dur-slow) var(--ease-out) both; }
+.page-projects .projects-lightbox { width:min(90vw,var(--container)); max-height:90svh; border:thin solid var(--az-gray-600); padding:var(--space-6); background:var(--color-bg-dark); color:var(--color-text-invert); }
+.page-projects .projects-lightbox::backdrop { background:color-mix(in srgb,var(--color-bg-dark) 90%,transparent); }
+.page-projects .lightbox-media { height:60svh; }
+.page-projects .lightbox-media img { object-fit:contain; }
+.page-projects .projects-lightbox button { color:var(--color-text-invert); }
+.page-projects .sr-only-local { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@keyframes projects-scroll { 0%,100% {transform:translateY(0);} 50% {transform:translateY(var(--space-2));} }
+@keyframes projects-filter { from {opacity:0;transform:translateY(var(--space-4)) scale(.985);} to {opacity:1;transform:none;} }
+@media(min-width:768px) {
+ .page-projects .md\:grid-cols-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .page-projects .hero-fact:not(:first-child) { border-inline-start:thin solid var(--az-gray-600); padding-inline-start:var(--space-8); }
+ .page-projects .gallery-item:first-child { grid-column:span 2; grid-row:span 2; }
+}
+@media(min-width:1024px) {
+ .page-projects .lg\:grid-cols-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+ .page-projects .project-card:nth-child(even) .project-media { order:2; }
+ .page-projects .timeline { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:var(--space-6); }
+ .page-projects .timeline::before { inset-inline:0; inset-block-start:var(--space-5); height:1px; width:auto; transform:scaleX(0); transform-origin:left; transition:transform .8s var(--ease-out); background:var(--color-accent); }
+ .page-projects .timeline.is-revealed::before { transform:scaleX(1); }
+ .page-projects .timeline-step { padding-inline-start:0; padding-block-start:var(--space-16); }
+}
+@media(hover:none) { .page-projects .media-cue { opacity:1; transform:none; } }
+@media(prefers-reduced-motion:reduce) {
+ html:has(.page-projects) { scroll-behavior:auto; }
+ .page-projects.has-motion .page-reveal:not(.is-revealed) { opacity:1; transform:none; }
+ .page-projects .page-reveal,.page-projects .media-frame img,.page-projects .project-card,.page-projects .delivery-card,.page-projects .project-link span,.page-projects .media-cue,.page-projects .timeline::before,.page-projects .btn,.page-projects .filter-pill,.page-projects .partner-logo img { transition:none; }
+ .page-projects .scroll-cue span,.page-projects .filter-enter { animation:none; }
+ .page-projects .project-card:hover,.page-projects .delivery-card:hover,.page-projects .project-media:hover img,.page-projects .gallery-item:hover img,.page-projects .btn:hover { transform:none; }
+ .page-projects .timeline::before { transform:none; }
+}
 
-  <link rel="canonical" href="https://alzahraa-construction.com/pages/en/our-projects/">
-  <link rel="alternate" hreflang="en" href="https://alzahraa-construction.com/pages/en/our-projects/">
-  <link rel="alternate" hreflang="ar" href="https://alzahraa-construction.com/pages/ar/our-projects/">
-  <link rel="alternate" hreflang="x-default" href="https://alzahraa-construction.com/">
+/* Searchable portfolio: compact cards and page-owned controls. */
+.page-projects #project-list { display:grid; grid-template-columns:minmax(0,1fr); gap:var(--space-6); padding-block:var(--space-8); }
+.page-projects #project-list .project-card { display:flex; flex-direction:column; align-items:stretch; padding:0; border:thin solid var(--color-border); background:var(--color-surface); min-width:0; border-radius:var(--radius-sm); overflow:hidden; }
+.page-projects #project-list .project-card[hidden] { display:none; }
+.page-projects #project-list .project-media { order:0; aspect-ratio:16/10; flex:none; }
+.page-projects #project-list .project-body { display:flex; flex-direction:column; flex:1; padding:var(--space-6); }
+.page-projects #project-list .project-body > .project-link { align-self:flex-start; margin-block-start:auto; }
+.page-projects #project-list .project-card h3 { font-size:var(--fs-h3); }
+.page-projects #project-list .snapshot { padding:var(--space-4); }
+.page-projects .filter-bar { position:relative; top:auto; }
+.page-projects .portfolio-toolbar { display:flex; flex-direction:column; gap:var(--space-5); }
+.page-projects .portfolio-controls { display:flex; flex-wrap:wrap; align-items:flex-end; gap:var(--space-4); }
+.page-projects .portfolio-search { flex:1 1 auto; min-width:0; }
+.page-projects .portfolio-search label,.page-projects .portfolio-page-size label { display:block; font-size:var(--fs-xs); color:var(--color-primary); margin-block-end:var(--space-2); }
+.page-projects .portfolio-search input,.page-projects .portfolio-page-size select { width:100%; border:thin solid var(--color-border); border-radius:var(--radius-sm); padding:var(--space-3) var(--space-4); background:var(--color-surface); color:var(--color-text); }
+.page-projects .portfolio-search input::placeholder { color:var(--az-gray-700); }
+.page-projects .filter-count { margin-inline-start:var(--space-2); font-size:var(--fs-xs); opacity:.8; }
+.page-projects .portfolio-pagination { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:var(--space-5); padding-block:var(--space-6); border-block-start:thin solid var(--color-border); }
+.page-projects .portfolio-pagination[hidden],.page-projects .portfolio-empty[hidden] { display:none; }
+.page-projects .page-buttons { display:flex; flex-wrap:wrap; gap:var(--space-2); }
+.page-projects .page-buttons button { border:thin solid var(--color-border); background:var(--color-surface); color:var(--color-primary); padding:var(--space-2) var(--space-4); border-radius:var(--radius-sm); }
+.page-projects .page-buttons button[aria-current="page"] { background:var(--color-primary); color:var(--color-on-primary); }
+.page-projects .page-buttons button:disabled { color:var(--az-gray-700); background:var(--color-bg-alt); cursor:default; }
+.page-projects .portfolio-empty { padding-block:var(--space-16); text-align:center; }
+.page-projects .archive-media-label { display:grid; place-items:center; height:100%; color:var(--az-gray-200); font-family:var(--font-heading); font-size:var(--fs-h2); }
+@media(min-width:768px) { .page-projects #project-list { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(min-width:1024px) { .page-projects #project-list { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 
-  <link rel="icon" href="/assets/images/logo/favicon.png" type="image/png">
-
-  <link rel="stylesheet" href="/assets/css/reset.css">
-  <link rel="stylesheet" href="/assets/css/variables.css">
-  <link rel="stylesheet" href="/assets/css/typography.css">
-  <link rel="stylesheet" href="/assets/css/global.css">
-  <link rel="stylesheet" href="/assets/css/utilities.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/navbar.css">
-  <link rel="stylesheet" href="/assets/css/footer.css">
-  <link rel="stylesheet" href="/pages/en/our-projects/our-projects.css">
-
-  <script type="module" src="/assets/js/main.js" defer></script>
-  <script type="module" src="/pages/en/our-projects/our-projects.js" defer></script>
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://alzahraa-construction.com/"}, {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://alzahraa-construction.com/pages/en/our-projects/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["Organization", "LocalBusiness"], "@id": "https://alzahraa-construction.com/#organization", "name": "Al Zahraa General Contracting", "url": "https://alzahraa-construction.com/", "foundingDate": "1995", "address": {"@type": "PostalAddress", "streetAddress": "127 Mohamed Farid St., Al-Bustan Building, Apt. 53, 5th Floor", "addressLocality": "Abdin, Cairo", "addressCountry": "EG"}}</script>
+<script type="module" src="/assets/js/main.js" defer></script>
 </head>
-<body class="page-our-projects">
-  <a class="skip-link" href="#content">Skip to content</a>
+<body class="page-projects" data-transparent-nav>
+<a class="skip-link" href="#content">Skip to content</a>
+<div id="site-navbar" data-partial="navbar"></div>
+<main id="content">
+<section class="projects-hero relative overflow-hidden section--dark" aria-labelledby="projects-title">
+ <div class="hero-layer media-frame" aria-hidden="true">
+  <picture class="">
+      <!-- SOURCE: https://www.pexels.com/photo/industrial-cranes-at-a-construction-site-13832413/ -->
+      <source srcset="/pages/en/our-projects/images/hero-projects-poster.webp" type="image/webp">
+      <!-- SOURCE: https://www.pexels.com/photo/industrial-cranes-at-a-construction-site-13832413/ -->
+      <img src="/pages/en/our-projects/images/hero-projects-poster.jpg" alt="Tower cranes over a construction site" width="1920" height="1080" loading="eager" fetchpriority="high" class="w-full h-full object-cover">
+    </picture>
+  <!-- SOURCE: https://www.pexels.com/video/aerial-view-of-construction-site-with-heavy-machinery-29623330/ -->
+  <!-- SOURCE (poster): https://www.pexels.com/photo/industrial-cranes-at-a-construction-site-13832413/ -->
+  <video data-az-background-video muted autoplay loop playsinline preload="metadata" poster="/pages/en/our-projects/images/hero-projects-poster.jpg" tabindex="-1" data-az-parallax>
+   <!-- SOURCE: https://www.pexels.com/video/aerial-view-of-construction-site-with-heavy-machinery-29623330/ -->
+   <source src="/pages/en/our-projects/videos/hero-projects.mp4" type="video/mp4">
+   <!-- SOURCE: https://www.pexels.com/video/aerial-view-of-construction-site-with-heavy-machinery-29623330/ -->
+   <source src="/pages/en/our-projects/videos/hero-projects.webm" type="video/webm">
+  </video>
+ </div><div class="hero-shade" aria-hidden="true"></div>
+ <div class="container relative">
+  <nav aria-label="Breadcrumb" class="text-sm text-az-gray-200"><ol class="flex gap-3"><li><a href="/">Home</a></li><li aria-hidden="true">/</li><li aria-current="page">Projects</li></ol></nav>
+  <div class="hero-copy"><p class="eyebrow text-az-amber-500 mb-4">PROJECTS</p>
+   <h1 id="projects-title">Built to Last.<br>Delivered with Precision.</h1>
+   <p class="lead mt-6 mb-8">From strategic planning to final handover, our roads, bridges and civil works connect people, cities and economies across Egypt.</p>
+   <div class="flex flex-wrap gap-4"><a class="btn btn-accent btn--lg" href="#projects">Explore Our Projects <span aria-hidden="true">↗</span></a><a class="btn btn-ghost btn-ghost--invert btn--lg" href="/pages/en/contact-us/">Talk to Our Team</a></div>
+  </div>
+  <div class="hero-controls flex flex-wrap items-center justify-between gap-4"><a class="scroll-cue text-sm" href="#track-record">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a><button class="text-sm" data-az-motion-toggle aria-pressed="false" type="button" hidden>Pause background motion</button></div>
+ </div>
+ <div class="hero-glass relative"><div class="container grid md:grid-cols-3 gap-6">
+  <div class="hero-fact"><small>OUR FOUNDATION</small><strong>Since 1995</strong></div>
+  <div class="hero-fact"><small>OUR EXPERTISE</small><strong>Roads & Bridges Specialists</strong></div>
+  <div class="hero-fact"><small>OUR RELATIONSHIPS</small><strong>Trusted by Government Authorities</strong></div>
+ </div></div>
+</section>
+<section id="track-record" class="section" aria-labelledby="intro-title"><div class="container grid lg:grid-cols-2 gap-12 items-center">
+ <div class="page-reveal"><p class="eyebrow mb-4">OUR TRACK RECORD</p><h2 id="intro-title">Infrastructure that moves<br>a nation forward</h2><hr class="rule-accent">
+ <p class="lead mb-6">Since 1995, Al Zahraa General Contracting has helped strengthen Egypt’s road and bridge networks, supporting movement, trade and the communities along each route. Three decades on, discipline, technical excellence and integrity continue to guide our work.</p>
+ <p class="text-az-gray-700 mb-6">Our approach is consistent: careful planning, controlled execution and close attention to quality, from the first survey stake to the finished surface. The projects below show that commitment in practice.</p>
+ <a class="project-link text-az-navy-800" href="#projects">See our work <span aria-hidden="true">↗</span></a></div>
+ <figure class="intro-media media-frame relative overflow-hidden page-reveal"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/IMG-20240826-WA0012.jpg -->
+      <source srcset="/pages/en/our-projects/images/al-masoura-bridge.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/IMG-20240826-WA0012.jpg -->
+      <img src="/pages/en/our-projects/images/al-masoura-bridge.jpg" alt="Structural elements at Al-Masoura Bridge" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture>
+ <div class="hero-shade" aria-hidden="true"></div><figcaption class="image-caption">PRECISION IN EVERY STRUCTURE / AL-MASOURA BRIDGE</figcaption></figure>
+</div></section>
+<section class="section--sm section--dark" aria-labelledby="stats-title" data-az-stats><div class="container">
+ <header class="section__head page-reveal"><p class="eyebrow">EXPERIENCE, IN PERSPECTIVE</p><h2 id="stats-title">A foundation of trust</h2><hr class="rule-accent"><p class="lead">Three decades of focus. One consistent standard of delivery.</p></header>
+ <!-- TODO(client): add km of roads delivered, number of bridges, fleet size, team size when confirmed -->
+ <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="stat-cell"><p class="stat-number" dir="ltr"><span data-az-count="31">31</span>+</p><p class="text-az-gray-200 mt-3">Years of Experience</p></div><div class="stat-cell"><p class="stat-number" dir="ltr"><span data-az-count="3">3</span></p><p class="text-az-gray-200 mt-3">Government Authority Partners</p></div><div class="stat-cell"><p class="stat-number" dir="ltr"><span data-az-count="6">6</span></p><p class="text-az-gray-200 mt-3">Core Service Lines</p></div><div class="stat-cell"><p class="stat-number" dir="ltr"><span data-az-count="8" data-az-portfolio-count>8</span></p><p class="text-az-gray-200 mt-3">Projects in This Portfolio</p></div></div></div></section>
+<section id="projects" class="section section--warm" aria-labelledby="portfolio-title">
+ <div class="container"><header class="section__head page-reveal"><p class="eyebrow">OUR PROJECT PORTFOLIO</p><h2 id="portfolio-title">Engineering, made tangible.</h2><hr class="rule-accent"><p class="lead">Explore roads, bridges and civil works by name or category. Different settings, one commitment to dependable infrastructure.</p></header></div>
+ <div class="filter-bar"><div class="container portfolio-toolbar"><div class="portfolio-controls"><div class="portfolio-search"><label for="project-search">Search projects</label><input id="project-search" type="search" data-az-project-search placeholder="Project name, type or keyword…" autocomplete="off" aria-controls="project-list"></div><div class="portfolio-page-size"><label for="project-page-size">Projects per page</label><select id="project-page-size" data-az-page-size aria-controls="project-list"><option value="12">12</option><option value="24">24</option><option value="all">All</option></select></div><button type="button" class="btn btn-ghost" data-az-clear-search>Clear search</button></div><div class="flex flex-wrap gap-3" role="group" aria-label="Filter projects by category">
+<button class="filter-pill" data-az-filter="all" aria-pressed="true" aria-controls="project-list" type="button">All<span class="filter-count" data-az-filter-count aria-hidden="true"></span></button><button class="filter-pill" data-az-filter="bridges" aria-pressed="false" aria-controls="project-list" type="button">Bridges<span class="filter-count" data-az-filter-count aria-hidden="true"></span></button><button class="filter-pill" data-az-filter="roads" aria-pressed="false" aria-controls="project-list" type="button">Roads<span class="filter-count" data-az-filter-count aria-hidden="true"></span></button><button class="filter-pill" data-az-filter="ring-roads" aria-pressed="false" aria-controls="project-list" type="button">Ring Roads<span class="filter-count" data-az-filter-count aria-hidden="true"></span></button><button class="filter-pill" data-az-filter="urban-works" aria-pressed="false" aria-controls="project-list" type="button">Urban Works<span class="filter-count" data-az-filter-count aria-hidden="true"></span></button><button class="filter-pill" data-az-filter="other" aria-pressed="false" aria-controls="project-list" type="button">Other Projects<span class="filter-count" data-az-filter-count aria-hidden="true"></span></button></div><p class="text-sm text-az-gray-700" data-az-result-count role="status" aria-live="polite" aria-atomic="true">Showing 1–8 of 8 projects</p></div></div><div id="project-list" class="container grid md:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Project results"><article class="project-card page-reveal" data-category="bridges" aria-labelledby="project-1" data-az-search="Al-Masoura Bridge كوبري الماسورة">
+ <a class="project-media media-frame relative overflow-hidden" href="/pages/en/our-projects/al-masoura-bridge/" aria-label="View project: Al-Masoura Bridge">
+  <div class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/IMG-20240826-WA0012.jpg -->
+      <source srcset="/pages/en/our-projects/images/al-masoura-bridge.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/IMG-20240826-WA0012.jpg -->
+      <img src="/pages/en/our-projects/images/al-masoura-bridge.jpg" alt="Al-Masoura Bridge structural works at km 10+160" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture></div><span class="media-cue">View project ↗</span>
+ </a>
+ <div class="project-body p-6"><div class="flex items-center justify-between gap-4 mb-6"><span class="project-index" dir="ltr">01 <small>/ 08</small></span><span class="text-sm text-az-navy-800">Bridges</span></div>
+ <!-- TODO(client): status, year, location; confirm client. No unverified status chip is rendered. -->
+ <h3 id="project-1" class="mb-4">Al-Masoura Bridge <span class="block text-az-gray-600 text-sm" dir="ltr">km 10+160</span></h3>
+ <p class="text-az-gray-700 mb-6">A bridge structure at km 10+160, contributing to a safe, durable transport corridor. Its structural works demand careful coordination from foundations to deck, with precision and quality control throughout.</p>
+ <aside class="snapshot mb-6" aria-label="Project Snapshot"><p class="eyebrow mb-3">PROJECT SNAPSHOT</p><dl class="grid grid-cols-2 gap-4"><div><dt>Type</dt><dd>Bridge</dd></div><div><dt>Scope</dt><dd>Structural works</dd></div></dl><!-- TODO(client): Client / Status / Year --></aside>
+ <a class="project-link text-az-navy-800" href="/pages/en/our-projects/al-masoura-bridge/">View Project <span aria-hidden="true">↗</span></a></div></article><article class="project-card page-reveal" data-category="roads" aria-labelledby="project-2" data-az-search="Al-Mehwar المحور">
+ <a class="project-media media-frame relative overflow-hidden" href="/pages/en/our-projects/al-mehwar/" aria-label="View project: Al-Mehwar">
+  <div class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/WhatsApp-Image-2019-03-09-at-12.56.09-PM5.jpeg -->
+      <source srcset="/pages/en/our-projects/images/al-mehwar.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/WhatsApp-Image-2019-03-09-at-12.56.09-PM5.jpeg -->
+      <img src="/pages/en/our-projects/images/al-mehwar.jpg" alt="Road construction on the Al-Mehwar axis" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture></div><span class="media-cue">View project ↗</span>
+ </a>
+ <div class="project-body p-6"><div class="flex items-center justify-between gap-4 mb-6"><span class="project-index" dir="ltr">02 <small>/ 08</small></span><span class="text-sm text-az-navy-800">Roads</span></div>
+ <!-- TODO(client): status, year, location; confirm client. No unverified status chip is rendered. -->
+ <h3 id="project-2" class="mb-4">Al-Mehwar</h3>
+ <p class="text-az-gray-700 mb-6">A strategic road axis that supports connectivity and more efficient journeys. Earthworks and paving are approached as one coordinated process, with attention to each layer and the quality of the finished surface.</p>
+ <aside class="snapshot mb-6" aria-label="Project Snapshot"><p class="eyebrow mb-3">PROJECT SNAPSHOT</p><dl class="grid grid-cols-2 gap-4"><div><dt>Type</dt><dd>Road</dd></div><div><dt>Scope</dt><dd>Road works</dd></div></dl><!-- TODO(client): Client / Status / Year --></aside>
+ <a class="project-link text-az-navy-800" href="/pages/en/our-projects/al-mehwar/">View Project <span aria-hidden="true">↗</span></a></div></article><article class="project-card page-reveal" data-category="ring-roads" aria-labelledby="project-3" data-az-search="Regional Ring Road الطريق الدائري الإقليمي">
+ <a class="project-media media-frame relative overflow-hidden" href="/pages/en/our-projects/regional-ring-road/" aria-label="View project: Regional Ring Road">
+  <div class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/Screenshot-2025-02-23-150658-e1741524693256.png -->
+      <source srcset="/pages/en/our-projects/images/regional-ring-road.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/Screenshot-2025-02-23-150658-e1741524693256.png -->
+      <img src="/pages/en/our-projects/images/regional-ring-road.jpg" alt="Regional Ring Road corridor from the company project archive" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture></div><span class="media-cue">View project ↗</span>
+ </a>
+ <div class="project-body p-6"><div class="flex items-center justify-between gap-4 mb-6"><span class="project-index" dir="ltr">03 <small>/ 08</small></span><span class="text-sm text-az-navy-800">Ring Roads</span></div>
+ <!-- TODO(client): status, year, location; confirm client. No unverified status chip is rendered. -->
+ <h3 id="project-3" class="mb-4">Regional Ring Road</h3>
+ <p class="text-az-gray-700 mb-6">Part of the ring-road network supporting the movement of freight and commuters around urban centres. These road works contribute to regional connections and the wider transport network across Egypt.</p>
+ <aside class="snapshot mb-6" aria-label="Project Snapshot"><p class="eyebrow mb-3">PROJECT SNAPSHOT</p><dl class="grid grid-cols-2 gap-4"><div><dt>Type</dt><dd>Ring road</dd></div><div><dt>Scope</dt><dd>Road works</dd></div></dl><!-- TODO(client): Client / Status / Year --></aside>
+ <a class="project-link text-az-navy-800" href="/pages/en/our-projects/regional-ring-road/">View Project <span aria-hidden="true">↗</span></a></div></article><article class="project-card page-reveal" data-category="urban-works" aria-labelledby="project-4" data-az-search="Tanta طنطا">
+ <a class="project-media media-frame relative overflow-hidden" href="/pages/en/our-projects/tanta/" aria-label="View project: Tanta">
+  <div class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/DJI_0293-scaled.jpg -->
+      <source srcset="/pages/en/our-projects/images/tanta-drone-overview.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/DJI_0293-scaled.jpg -->
+      <img src="/pages/en/our-projects/images/tanta-drone-overview.jpg" alt="Aerial overview of infrastructure works in Tanta" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture></div><span class="media-cue">View project ↗</span>
+ </a>
+ <div class="project-body p-6"><div class="flex items-center justify-between gap-4 mb-6"><span class="project-index" dir="ltr">04 <small>/ 08</small></span><span class="text-sm text-az-navy-800">Urban Works</span></div>
+ <!-- TODO(client): status, year, location; confirm client. No unverified status chip is rendered. -->
+ <h3 id="project-4" class="mb-4">Tanta</h3>
+ <p class="text-az-gray-700 mb-6">Infrastructure works in Tanta that support local mobility and the development of the urban network. Coordinated site teams and machinery bring a disciplined approach to civil works in an active city environment.</p>
+ <aside class="snapshot mb-6" aria-label="Project Snapshot"><p class="eyebrow mb-3">PROJECT SNAPSHOT</p><dl class="grid grid-cols-2 gap-4"><div><dt>Type</dt><dd>Infrastructure</dd></div><!-- TODO(client): confirm Tanta scope --></dl><!-- TODO(client): Client / Status / Year --></aside>
+ <a class="project-link text-az-navy-800" href="/pages/en/our-projects/tanta/">View Project <span aria-hidden="true">↗</span></a></div></article><article class="project-card page-reveal" data-category="roads" data-az-search="Al-Hussania الحسينية" aria-labelledby="project-5">
+  <!-- SOURCE (project name / classification): CLAUDE.md section 7.4. TODO(client): confirm Abo-Hammad category; client, status, year, location, scope and photo source. -->
+  <a class="project-media media-frame relative overflow-hidden" href="/pages/en/our-projects/al-hussania/" aria-label="View project: Al-Hussania"><span class="archive-media-label" aria-hidden="true">Al-Hussania</span><span class="media-cue">View project ↗</span></a>
+  <div class="project-body p-6"><div class="flex items-center justify-between gap-4 mb-6"><span class="project-index" dir="ltr">05 / 08</span><span class="text-sm text-az-navy-800">Roads</span></div><h3 class="mb-4" id="project-5">Al-Hussania</h3><p class="text-az-gray-700 mb-6">Road works included in the Al Zahraa project portfolio.</p><a class="project-link text-az-navy-800" href="/pages/en/our-projects/al-hussania/">View Project <span aria-hidden="true">↗</span></a></div></article><article class="project-card page-reveal" data-category="other" data-az-search="Abo-Hammad أبو حماد" aria-labelledby="project-6">
+  <!-- SOURCE (project name / classification): CLAUDE.md section 7.4. TODO(client): confirm Abo-Hammad category; client, status, year, location, scope and photo source. -->
+  <a class="project-media media-frame relative overflow-hidden" href="/pages/en/our-projects/abo-hammad/" aria-label="View project: Abo-Hammad"><span class="archive-media-label" aria-hidden="true">Abo-Hammad</span><span class="media-cue">View project ↗</span></a>
+  <div class="project-body p-6"><div class="flex items-center justify-between gap-4 mb-6"><span class="project-index" dir="ltr">06 / 08</span><span class="text-sm text-az-navy-800">Other Projects</span></div><h3 class="mb-4" id="project-6">Abo-Hammad</h3><p class="text-az-gray-700 mb-6">A project in the Al Zahraa portfolio. Further scope details will be added after confirmation.</p><a class="project-link text-az-navy-800" href="/pages/en/our-projects/abo-hammad/">View Project <span aria-hidden="true">↗</span></a></div></article><article class="project-card page-reveal" data-category="roads" data-az-search="Al-Nofaa النفعة" aria-labelledby="project-7">
+  <!-- SOURCE (project name / classification): CLAUDE.md section 7.4. TODO(client): confirm Abo-Hammad category; client, status, year, location, scope and photo source. -->
+  <a class="project-media media-frame relative overflow-hidden" href="/pages/en/our-projects/al-nofaa/" aria-label="View project: Al-Nofaa"><span class="archive-media-label" aria-hidden="true">Al-Nofaa</span><span class="media-cue">View project ↗</span></a>
+  <div class="project-body p-6"><div class="flex items-center justify-between gap-4 mb-6"><span class="project-index" dir="ltr">07 / 08</span><span class="text-sm text-az-navy-800">Roads</span></div><h3 class="mb-4" id="project-7">Al-Nofaa</h3><p class="text-az-gray-700 mb-6">Road works included in the Al Zahraa project portfolio.</p><a class="project-link text-az-navy-800" href="/pages/en/our-projects/al-nofaa/">View Project <span aria-hidden="true">↗</span></a></div></article><article class="project-card page-reveal" data-category="roads" data-az-search="Al-Salhia الصالحية" aria-labelledby="project-8">
+  <!-- SOURCE (project name / classification): CLAUDE.md section 7.4. TODO(client): confirm Abo-Hammad category; client, status, year, location, scope and photo source. -->
+  <a class="project-media media-frame relative overflow-hidden" href="/pages/en/our-projects/al-salhia/" aria-label="View project: Al-Salhia"><span class="archive-media-label" aria-hidden="true">Al-Salhia</span><span class="media-cue">View project ↗</span></a>
+  <div class="project-body p-6"><div class="flex items-center justify-between gap-4 mb-6"><span class="project-index" dir="ltr">08 / 08</span><span class="text-sm text-az-navy-800">Roads</span></div><h3 class="mb-4" id="project-8">Al-Salhia</h3><p class="text-az-gray-700 mb-6">Road works included in the Al Zahraa project portfolio.</p><a class="project-link text-az-navy-800" href="/pages/en/our-projects/al-salhia/">View Project <span aria-hidden="true">↗</span></a></div></article></div><div class="container"><div class="portfolio-empty" data-az-empty-state hidden><h3 class="mb-4">No projects found</h3><p class="text-az-gray-700 mb-6">Try another keyword or choose a different category.</p><button type="button" class="btn btn-primary" data-az-reset-search>Reset search and filters</button></div><nav class="portfolio-pagination" data-az-pagination hidden aria-label="Project pagination"><p class="text-sm text-az-gray-700" data-az-page-label></p><div class="page-buttons" data-az-page-buttons></div></nav></div>
+<!-- TODO(client): 40-project portfolio requested. Eight confirmed names are published; supply the remaining 32 via PORTFOLIO-IMPORT.csv. Never publish fabricated project cards. --></section><section class="section" aria-labelledby="delivery-title"><div class="container"><header class="section__head page-reveal"><p class="eyebrow">WHAT WE DELIVER</p><h2 id="delivery-title">The capability behind every project</h2><hr class="rule-accent"><p class="lead">Six connected disciplines bring clarity, control and continuity to complex civil works.</p></header><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><article class="delivery-card card p-8 page-reveal"><div class="flex items-center justify-between mb-6"><span class="service-icon"><!-- SOURCE: original inline line icon, drawn for this page; no download required. --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M5 20V8l7-5 7 5v12M8 12h8M8 16h8"></path></svg></span><span class="text-sm text-az-gray-600" dir="ltr">01</span></div><h3 class="mb-4">Road & Bridge Construction</h3><p class="text-az-gray-700">Coordinated delivery, from planning and design to construction, handover and ongoing support.</p></article><article class="delivery-card card p-8 page-reveal"><div class="flex items-center justify-between mb-6"><span class="service-icon"><!-- SOURCE: original inline line icon, drawn for this page; no download required. --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h12V9H3v8ZM15 12h3l3 4v1h-6M7 9V5h6v4M6 17v3M18 17v3"></path></svg></span><span class="text-sm text-az-gray-600" dir="ltr">02</span></div><h3 class="mb-4">Heavy Machinery Fleet</h3><p class="text-az-gray-700">Paving, earthmoving and lifting equipment, coordinated to maintain site momentum and consistent workmanship.</p></article><article class="delivery-card card p-8 page-reveal"><div class="flex items-center justify-between mb-6"><span class="service-icon"><!-- SOURCE: original inline line icon, drawn for this page; no download required. --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v4H8zM6 6H4v15h16V6h-2M8 12h8M8 16h5"></path></svg></span><span class="text-sm text-az-gray-600" dir="ltr">03</span></div><h3 class="mb-4">Project Management</h3><p class="text-az-gray-700">Clear reporting, coordinated teams and proactive risk management through every phase.</p></article><article class="delivery-card card p-8 page-reveal"><div class="flex items-center justify-between mb-6"><span class="service-icon"><!-- SOURCE: original inline line icon, drawn for this page; no download required. --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4h16v16H4ZM8 16l4-8 4 8M10 13h4"></path></svg></span><span class="text-sm text-az-gray-600" dir="ltr">04</span></div><h3 class="mb-4">Strategic Planning</h3><p class="text-az-gray-700">Long-term objectives shaped into practical phases, realistic programmes and cost-aware plans.</p></article><article class="delivery-card card p-8 page-reveal"><div class="flex items-center justify-between mb-6"><span class="service-icon"><!-- SOURCE: original inline line icon, drawn for this page; no download required. --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l6-6M8 4l12 12-4 4L4 8l4-4ZM14 6l4-4 4 4-4 4"></path></svg></span><span class="text-sm text-az-gray-600" dir="ltr">05</span></div><h3 class="mb-4">Project Execution</h3><p class="text-az-gray-700">Engineering intent translated into durable infrastructure through precision and site discipline.</p></article><article class="delivery-card card p-8 page-reveal"><div class="flex items-center justify-between mb-6"><span class="service-icon"><!-- SOURCE: original inline line icon, drawn for this page; no download required. --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3ZM8 12l3 3 5-6"></path></svg></span><span class="text-sm text-az-gray-600" dir="ltr">06</span></div><h3 class="mb-4">Quality Assurance</h3><p class="text-az-gray-700">Material testing and documented inspections that keep the work aligned with its specifications.</p></article></div></div></section><section class="section section--alt" aria-labelledby="process-title"><div class="container"><header class="section__head page-reveal"><p class="eyebrow">HOW WE BUILD</p><h2 id="process-title">A clear path. From ground to handover.</h2><hr class="rule-accent"><p class="lead">A coordinated sequence keeps each stage connected to the next, with quality considered throughout.</p></header><ol class="timeline page-reveal"><li class="timeline-step"><span class="step-number" dir="ltr">01</span><h3 class="mb-4">Survey & Design</h3><p class="text-sm text-az-gray-700">Accurate surveys and engineering studies establish a clear baseline.</p></li><li class="timeline-step"><span class="step-number" dir="ltr">02</span><h3 class="mb-4">Earthworks & Foundations</h3><p class="text-sm text-az-gray-700">Ground preparation and foundations create a stable starting point.</p></li><li class="timeline-step"><span class="step-number" dir="ltr">03</span><h3 class="mb-4">Structure & Paving</h3><p class="text-sm text-az-gray-700">Coordinated structural works and paving turn the design into reality.</p></li><li class="timeline-step"><span class="step-number" dir="ltr">04</span><h3 class="mb-4">Testing & Quality Control</h3><p class="text-sm text-az-gray-700">Inspections and testing verify the work against project requirements.</p></li><li class="timeline-step"><span class="step-number" dir="ltr">05</span><h3 class="mb-4">Handover & Support</h3><p class="text-sm text-az-gray-700">A documented handover provides clarity for operation and future care.</p></li></ol></div></section><section class="section" aria-labelledby="gallery-title"><div class="container"><header class="section__head page-reveal"><p class="eyebrow">ON THE GROUND</p><h2 id="gallery-title">The people. The machinery. The detail.</h2><hr class="rule-accent"><p class="lead">A closer look at the structures, equipment and teams behind the work. Select an image to explore.</p></header><div class="grid md:grid-cols-3 gap-4"><button class="gallery-item media-frame overflow-hidden page-reveal" type="button" data-az-expand aria-haspopup="dialog" aria-controls="projects-lightbox" aria-label="Expand: Heavy machinery / company fleet"><figure class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/Screenshot-2025-04-07-172921.png -->
+      <source srcset="/pages/en/our-projects/images/heavy-machinery.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/Screenshot-2025-04-07-172921.png -->
+      <img src="/pages/en/our-projects/images/heavy-machinery.jpg" alt="Heavy machinery / company fleet" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture><span class="hero-shade" aria-hidden="true"></span><figcaption class="image-caption">Heavy machinery / company fleet</figcaption><span class="media-cue" aria-hidden="true">Expand ↗</span></figure></button><button class="gallery-item media-frame overflow-hidden page-reveal" type="button" data-az-expand aria-haspopup="dialog" aria-controls="projects-lightbox" aria-label="Expand: Bridge structure / Al-Masoura"><figure class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/IMG-20240826-WA0012.jpg -->
+      <source srcset="/pages/en/our-projects/images/al-masoura-bridge.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/IMG-20240826-WA0012.jpg -->
+      <img src="/pages/en/our-projects/images/al-masoura-bridge.jpg" alt="Bridge structure / Al-Masoura" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture><span class="hero-shade" aria-hidden="true"></span><figcaption class="image-caption">Bridge structure / Al-Masoura</figcaption><span class="media-cue" aria-hidden="true">Expand ↗</span></figure></button><button class="gallery-item media-frame overflow-hidden page-reveal" type="button" data-az-expand aria-haspopup="dialog" aria-controls="projects-lightbox" aria-label="Expand: Lifting geometry / construction cranes"><figure class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://www.pexels.com/photo/construction-crane-on-a-building-site-5505125/ -->
+      <source srcset="/pages/en/our-projects/images/crane-site.webp" type="image/webp">
+      <!-- SOURCE: https://www.pexels.com/photo/construction-crane-on-a-building-site-5505125/ -->
+      <img src="/pages/en/our-projects/images/crane-site.jpg" alt="Lifting geometry / construction cranes" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture><span class="hero-shade" aria-hidden="true"></span><figcaption class="image-caption">Lifting geometry / construction cranes</figcaption><span class="media-cue" aria-hidden="true">Expand ↗</span></figure></button><button class="gallery-item media-frame overflow-hidden page-reveal" type="button" data-az-expand aria-haspopup="dialog" aria-controls="projects-lightbox" aria-label="Expand: Site teams / field coordination"><figure class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/IMG-20250223-WA0004-e1745056503451.jpg -->
+      <source srcset="/pages/en/our-projects/images/site-team.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/IMG-20250223-WA0004-e1745056503451.jpg -->
+      <img src="/pages/en/our-projects/images/site-team.jpg" alt="Site teams / field coordination" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture><span class="hero-shade" aria-hidden="true"></span><figcaption class="image-caption">Site teams / field coordination</figcaption><span class="media-cue" aria-hidden="true">Expand ↗</span></figure></button><button class="gallery-item media-frame overflow-hidden page-reveal" type="button" data-az-expand aria-haspopup="dialog" aria-controls="projects-lightbox" aria-label="Expand: Engineering teams / shared expertise"><figure class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/IMG-20250223-WA0008-e1744040717437.jpg -->
+      <source srcset="/pages/en/our-projects/images/engineering-team.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/IMG-20250223-WA0008-e1744040717437.jpg -->
+      <img src="/pages/en/our-projects/images/engineering-team.jpg" alt="Engineering teams / shared expertise" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture><span class="hero-shade" aria-hidden="true"></span><figcaption class="image-caption">Engineering teams / shared expertise</figcaption><span class="media-cue" aria-hidden="true">Expand ↗</span></figure></button><button class="gallery-item media-frame overflow-hidden page-reveal" type="button" data-az-expand aria-haspopup="dialog" aria-controls="projects-lightbox" aria-label="Expand: Site progress / Tanta from above"><figure class="w-full h-full"><picture class="">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/DJI_0293-scaled.jpg -->
+      <source srcset="/pages/en/our-projects/images/tanta-drone-overview.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/DJI_0293-scaled.jpg -->
+      <img src="/pages/en/our-projects/images/tanta-drone-overview.jpg" alt="Site progress / Tanta from above" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture><span class="hero-shade" aria-hidden="true"></span><figcaption class="image-caption">Site progress / Tanta from above</figcaption><span class="media-cue" aria-hidden="true">Expand ↗</span></figure></button></div><!-- TODO(client): supply dedicated paving-crew and surveying photographs; current captions describe only the supplied source subjects. --></div></section>
+<section class="quality-band section section--dark relative overflow-hidden" aria-labelledby="quality-title">
+ <div class="band-layer media-frame" aria-hidden="true"><picture class="">
+      <!-- SOURCE: https://www.pexels.com/photo/construction-crane-on-a-building-site-5505125/ -->
+      <source srcset="/pages/en/our-projects/images/crane-site.webp" type="image/webp">
+      <!-- SOURCE: https://www.pexels.com/photo/construction-crane-on-a-building-site-5505125/ -->
+      <img src="/pages/en/our-projects/images/crane-site.jpg" alt="Crane and scaffolding on an active construction site" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture><div class="hero-shade"></div></div>
+ <div class="container relative"><header class="section__head page-reveal"><p class="eyebrow">OUR STANDARD</p><h2 id="quality-title">Responsible at every stage.</h2><hr class="rule-accent"><p class="lead">Quality, safety and long-term performance shape the way we approach infrastructure.</p></header><div class="grid lg:grid-cols-3 gap-6"><article class="quality-panel p-8 page-reveal"><p class="text-az-amber-500 mb-6" dir="ltr">01</p><h3 class="mb-4">Quality First</h3><p class="text-az-gray-200">Testing, documented inspections and careful material selection support work that meets its specification.</p></article><article class="quality-panel p-8 page-reveal"><p class="text-az-amber-500 mb-6" dir="ltr">02</p><h3 class="mb-4">Safety on Every Site</h3><p class="text-az-gray-200">Structured planning, prepared crews and daily site discipline help protect people and keep work moving.</p></article><article class="quality-panel p-8 page-reveal"><p class="text-az-amber-500 mb-6" dir="ltr">03</p><h3 class="mb-4">Built for Tomorrow</h3><p class="text-az-gray-200">Responsible resource use and durable design choices support lasting value and lower lifetime impact.</p></article></div></div></section><section class="section section--alt" aria-labelledby="films-title"><div class="container"><header class="section__head page-reveal"><p class="eyebrow">WATCH OUR PROJECTS</p><h2 id="films-title">See the work in motion.</h2><hr class="rule-accent"><p class="lead">Original footage from the Al Zahraa project archive, offering a direct view of our work on site.</p></header><div class="grid md:grid-cols-2 gap-6"><article class="page-reveal"><div class="film-frame media-frame relative overflow-hidden" data-az-film>
+ <picture class="absolute inset-0">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/DJI_0293-scaled.jpg -->
+      <source srcset="/pages/en/our-projects/images/tanta-drone-overview.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/DJI_0293-scaled.jpg -->
+      <img src="/pages/en/our-projects/images/tanta-drone-overview.jpg" alt="Project film preview" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture>
+ <!-- SOURCE (poster): https://alzahraa.construction/wp-content/uploads/2025/02/DJI_0293-scaled.jpg -->
+ <video muted playsinline preload="none" poster="/pages/en/our-projects/images/tanta-drone-overview.jpg" tabindex="0" aria-label="Al Zahraa project film 1">
+ <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/VID-20221130-WA0043.mp4 --><source src="/pages/en/our-projects/videos/project-film-01.mp4" type="video/mp4">
+   <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/02/VID-20221130-WA0043.mp4 --><source src="/pages/en/our-projects/videos/project-film-01.webm" type="video/webm"></video>
+ <button type="button" class="film-play" aria-label="Play project film 1"><span class="play-disc" aria-hidden="true">▶</span><span>Play film</span></button><p class="film-message text-sm" role="status" hidden></p></div>
+ <div class="flex justify-between items-center gap-4 mt-4"><h3>From the project archive</h3><span class="text-sm text-az-gray-600" dir="ltr">01 / 02</span></div></article><article class="page-reveal"><div class="film-frame media-frame relative overflow-hidden" data-az-film>
+ <picture class="absolute inset-0">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/IMG-20240826-WA0012.jpg -->
+      <source srcset="/pages/en/our-projects/images/al-masoura-bridge.webp" type="image/webp">
+      <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2019/11/IMG-20240826-WA0012.jpg -->
+      <img src="/pages/en/our-projects/images/al-masoura-bridge.jpg" alt="Project film preview" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture>
+ <!-- SOURCE (poster): https://alzahraa.construction/wp-content/uploads/2019/11/IMG-20240826-WA0012.jpg -->
+ <video muted playsinline preload="none" poster="/pages/en/our-projects/images/al-masoura-bridge.jpg" tabindex="0" aria-label="Al Zahraa project film 2">
+ <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/05/WhatsApp-Video-2025-05-31-at-12.23.21_0f94d615.mp4 --><source src="/pages/en/our-projects/videos/project-film-02.mp4" type="video/mp4">
+   <!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/05/WhatsApp-Video-2025-05-31-at-12.23.21_0f94d615.mp4 --><source src="/pages/en/our-projects/videos/project-film-02.webm" type="video/webm"></video>
+ <button type="button" class="film-play" aria-label="Play project film 2"><span class="play-disc" aria-hidden="true">▶</span><span>Play film</span></button><p class="film-message text-sm" role="status" hidden></p></div>
+ <div class="flex justify-between items-center gap-4 mt-4"><h3>From the project archive</h3><span class="text-sm text-az-gray-600" dir="ltr">02 / 02</span></div></article></div></div></section><section class="section" aria-labelledby="partners-title"><div class="container"><header class="section__head page-reveal"><p class="eyebrow">TRUSTED BY</p><h2 id="partners-title">Shared ambition. Lasting relationships.</h2><hr class="rule-accent"><p class="lead">Working with government authorities to support the infrastructure Egypt depends on.</p></header><div class="grid md:grid-cols-3 gap-8"><article class="partner-card page-reveal"><div class="partner-logo mb-6"><!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/01/20231126092529_الجهاز_المركزي_للتعمير__مصر_-removebg-preview-1-8.png --><img src="/pages/en/our-projects/images/central-agency-reconstruction.png" alt="Central Agency for Reconstruction" width="600" height="600" loading="lazy"></div><h3 class="mb-3">Ministry of Housing</h3><p class="text-az-gray-700">Central Agency for Reconstruction</p></article><article class="partner-card page-reveal"><div class="partner-logo mb-6"><!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/01/الهيئة_العامة_للطرق_والكباري_مصر-1-7.png --><img src="/pages/en/our-projects/images/roads-bridges-authority.png" alt="General Authority for Roads and Bridges" width="600" height="600" loading="lazy"></div><h3 class="mb-3">Ministry of Transport</h3><p class="text-az-gray-700">General Authority for Roads and Bridges</p></article><article class="partner-card page-reveal"><div class="partner-logo mb-6"><!-- SOURCE: https://alzahraa.construction/wp-content/uploads/2025/01/dfb900ed-45b2-4576-8e22-a5994731b5d5-removebg-preview-1-4.png --><img src="/pages/en/our-projects/images/engineering-authority.png" alt="Engineering Authority" width="600" height="600" loading="lazy"></div><h3 class="mb-3">Ministry of Defense</h3><p class="text-az-gray-700">Engineering Authority</p></article></div></div></section><section class="section section--dark relative overflow-hidden" aria-labelledby="closing-title">
+ <div class="band-layer media-frame" aria-hidden="true"><picture class="">
+      <!-- SOURCE: https://www.pexels.com/photo/tower-crane-used-in-building-construction-4513940/ -->
+      <source srcset="/pages/en/our-projects/images/crane-at-dusk.webp" type="image/webp">
+      <!-- SOURCE: https://www.pexels.com/photo/tower-crane-used-in-building-construction-4513940/ -->
+      <img src="/pages/en/our-projects/images/crane-at-dusk.jpg" alt="Tower crane and steel frame at sunset" width="1200" height="900" loading="lazy"  class="w-full h-full object-cover">
+    </picture><div class="hero-shade"></div></div>
+ <div class="container relative"><div class="closing-copy page-reveal"><p class="eyebrow text-az-amber-500 mb-4">BUILD WITH AL ZAHRAA</p><h2 id="closing-title">Have a project in mind?<br>Let’s build it right.</h2><p class="text-az-gray-200 mt-6 mb-8">Tell us about your road, bridge or civil works project. Our team will help you take the next step.</p>
+ <!-- TODO(client): reconcile brief contact details with SITE data; shared footer is intentionally unchanged. -->
+ <div class="flex flex-wrap gap-4"><a class="btn btn-accent btn--lg" href="/pages/en/contact-us/">Contact Us</a><a class="btn btn-ghost btn-ghost--invert btn--lg" href="tel:+201003111302"><span dir="ltr">+20 100 311 1302</span></a></div>
+ <address class="text-az-gray-200 text-sm mt-6"><a href="mailto:info@alzahraa.construction" dir="ltr">info@alzahraa.construction</a><p class="text-sm mt-3">127 Mohamed Farid St., Al-Bustan Building, Apt. 53, 5th Floor, Abdin, Cairo.</p></address>
+ </div></div></section>
+</main><div id="site-footer" data-partial="footer"></div>
+<dialog class="projects-lightbox" id="projects-lightbox" aria-labelledby="lightbox-caption"><div class="flex justify-between items-center gap-4 mb-4"><p>SITE GALLERY</p><button type="button" class="btn btn-ghost btn-ghost--invert">Close ×</button></div><figure><div class="lightbox-media media-frame"><!-- SOURCE: selected from the gallery image source comments above; set locally by the lightbox script. --><img alt="" width="1200" height="900" class="w-full h-full"></div><figcaption id="lightbox-caption" class="mt-4"></figcaption></figure></dialog>
+<script>
+const isArabic = document.documentElement.lang === 'ar';
+const motionQuery = matchMedia('(prefers-reduced-motion: reduce)');
+const backgroundVideo = document.querySelector('[data-az-background-video]');
+const reduceMotion = () => motionQuery.matches;
+const cards = [...document.querySelectorAll('[data-category]')];
+const filters = [...document.querySelectorAll('[data-az-filter]')];
+const result = document.querySelector('[data-az-result-count]');
+const labels = isArabic ? { unavailable:'سيكون الفيديو متاحاً بعد إضافة الملف المحلي.', play:'تشغيل الفيديو', pause:'إيقاف حركة الخلفية', resume:'تشغيل حركة الخلفية' } : { unavailable:'This film will be available when its local file is added.', play:'Play film', pause:'Pause background motion', resume:'Resume background motion' };
+// Keep elegant empty frames while the client prepares the local media.
+document.querySelectorAll('img').forEach(img => {
+  const handleError = () => {
+    const picture = img.closest('picture');
+    const preferredSource = picture?.querySelector('source');
+    if (preferredSource) {
+      // Format support alone does not provide a fallback for a missing WebP.
+      // Removing its source lets the browser load the local JPG instead.
+      picture.querySelectorAll('source').forEach(source => source.remove());
+      return;
+    }
+    img.classList.add('is-missing');
+  };
+  img.addEventListener('error', handleError);
+  img.addEventListener('load', () => img.classList.remove('is-missing'));
+  if (img.getAttribute('src') && img.complete && img.naturalWidth === 0) handleError();
+});
 
-  <div id="site-navbar" data-partial="navbar"></div>
+const searchInput = document.querySelector('[data-az-project-search]');
+const pageSizeSelect = document.querySelector('[data-az-page-size]');
+const clearSearch = document.querySelector('[data-az-clear-search]');
+const resetSearch = document.querySelector('[data-az-reset-search]');
+const emptyState = document.querySelector('[data-az-empty-state]');
+const pagination = document.querySelector('[data-az-pagination]');
+const pageButtons = document.querySelector('[data-az-page-buttons]');
+const pageLabel = document.querySelector('[data-az-page-label]');
+const projectStat = document.querySelector('[data-az-portfolio-count]');
+let selectedCategory = 'all';
+let currentPage = 1;
+let currentMatches = [];
+// Strip Arabic diacritics/tatweel and normalise alef/ya for useful Arabic search.
+const normaliseSearch = value => value.normalize('NFKD').toLocaleLowerCase().replace(/[\u0300-\u036f\u064b-\u065f\u0670\u0640]/g,'').replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/\s+/g,' ').trim();
+const searchText = new Map(cards.map(card => [card,normaliseSearch(`${card.dataset.azSearch || ''} ${card.textContent}`)]));
+if (projectStat) { projectStat.dataset.azCount = String(cards.length); projectStat.textContent = String(cards.length); }
+cards.forEach((card,index) => {
+  const indexLabel = card.querySelector('.project-index');
+  if (indexLabel) indexLabel.textContent = `${String(index + 1).padStart(2,'0')} / ${String(cards.length).padStart(2,'0')}`;
+});
+function updatePortfolio(animate = true) {
+  const terms = normaliseSearch(searchInput.value).split(' ').filter(Boolean);
+  const searched = cards.filter(card => terms.every(term => searchText.get(card).includes(term)));
+  filters.forEach(button => {
+    const count = searched.filter(card => button.dataset.azFilter === 'all' || card.dataset.category === button.dataset.azFilter).length;
+    button.querySelector('[data-az-filter-count]').textContent = String(count);
+    button.setAttribute('aria-pressed', String(button.dataset.azFilter === selectedCategory));
+  });
+  currentMatches = searched.filter(card => selectedCategory === 'all' || card.dataset.category === selectedCategory);
+  const pageSize = pageSizeSelect.value === 'all' ? Math.max(1,currentMatches.length) : Number(pageSizeSelect.value);
+  const totalPages = Math.max(1,Math.ceil(currentMatches.length / pageSize));
+  currentPage = Math.min(currentPage,totalPages);
+  const start = (currentPage - 1) * pageSize;
+  const visible = new Set(currentMatches.slice(start,start + pageSize));
+  cards.forEach(card => {
+    const wasHidden = card.hidden;
+    card.hidden = !visible.has(card);
+    card.classList.remove('filter-enter');
+    if (!card.hidden) {
+      if (animate) card.classList.add('is-revealed');
+      if (animate && !reduceMotion() && wasHidden) { void card.offsetWidth; card.classList.add('filter-enter'); }
+    }
+  });
+  const count = currentMatches.length;
+  result.textContent = count ? (isArabic ? `عرض ${start + 1}–${Math.min(start + pageSize,count)} من ${count} مشروع` : `Showing ${start + 1}–${Math.min(start + pageSize,count)} of ${count} ${count === 1 ? 'project' : 'projects'}`) : (isArabic ? 'لا توجد مشاريع مطابقة' : 'No matching projects');
+  emptyState.hidden = count > 0;
+  clearSearch.disabled = searchInput.value.length === 0;
+  pagination.hidden = totalPages <= 1;
+  pageLabel.textContent = isArabic ? `الصفحة ${currentPage} من ${totalPages}` : `Page ${currentPage} of ${totalPages}`;
+  pageButtons.replaceChildren();
+  const makeButton = (label,target,disabled = false,current = false) => {
+    const button = document.createElement('button');
+    button.type = 'button'; button.textContent = label; button.disabled = disabled;
+    button.dataset.azPage = String(target); button.setAttribute('aria-controls','project-list');
+    if (current) button.setAttribute('aria-current','page');
+    if (typeof label === 'number') button.setAttribute('aria-label', isArabic ? `الصفحة ${label}` : `Page ${label}`);
+    pageButtons.append(button);
+  };
+  makeButton(isArabic ? 'السابق' : 'Previous',currentPage - 1,currentPage === 1);
+  for (let page = 1; page <= totalPages; page++) makeButton(page,page,false,page === currentPage);
+  makeButton(isArabic ? 'التالي' : 'Next',currentPage + 1,currentPage === totalPages);
+}
+filters.forEach(button => button.addEventListener('click', () => { selectedCategory = button.dataset.azFilter; currentPage = 1; updatePortfolio(); }));
+searchInput.addEventListener('input',() => { currentPage = 1; updatePortfolio(); });
+pageSizeSelect.addEventListener('change',() => { currentPage = 1; updatePortfolio(); });
+clearSearch.addEventListener('click',() => { searchInput.value = ''; currentPage = 1; updatePortfolio(); searchInput.focus(); });
+resetSearch.addEventListener('click',() => { searchInput.value = ''; selectedCategory = 'all'; currentPage = 1; updatePortfolio(); searchInput.focus(); });
+pageButtons.addEventListener('click',event => {
+  const button = event.target.closest('button[data-az-page]');
+  if (!button || button.disabled) return;
+  currentPage = Number(button.dataset.azPage); updatePortfolio();
+  pageButtons.querySelector('[aria-current="page"]')?.focus({preventScroll:true});
+  document.querySelector('#projects').scrollIntoView({behavior:reduceMotion() ? 'instant' : 'smooth',block:'start'});
+});
+updatePortfolio(false);
 
-  <main id="content">
-    <!-- TODO: page sections -->
-  </main>
-
-  <div id="site-footer" data-partial="footer"></div>
-</body>
-</html>
+const revealTargets = document.querySelectorAll('.page-reveal');
+if (!reduceMotion() && 'IntersectionObserver' in window) {
+  document.body.classList.add('has-motion');
+  const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('is-revealed');
+    revealObserver.unobserve(entry.target);
+  }), {threshold:0.08});
+  revealTargets.forEach((element,index) => { element.style.transitionDelay = `${(index % 3) * 80}ms`; revealObserver.observe(element); });
+}
+const counters = [...document.querySelectorAll('[data-az-count]')];
+let counterStarted = false;
+function startCounters() {
+  if (counterStarted) return;
+  counterStarted = true;
+  if (reduceMotion()) return;
+  const start = performance.now();
+  const tick = now => {
+    const progress = Math.min((now - start) / 800, 1);
+    const eased = 1 - Math.pow(1 - progress,3);
+    counters.forEach(counter => counter.textContent = Math.round(Number(counter.dataset.azCount) * eased));
+    if (progress < 1 && !reduceMotion()) requestAnimationFrame(tick);
+    else counters.forEach(counter => counter.textContent = counter.dataset.azCount);
+  };
+  counters.forEach(counter => counter.textContent = '0');
+  requestAnimationFrame(tick);
+}
+if ('IntersectionObserver' in window) {
+  const statsObserver = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) { startCounters(); statsObserver.disconnect(); }
+  }, {threshold:0.2});
+  statsObserver.observe(document.querySelector('[data-az-stats]'));
+}
+const motionButton = document.querySelector('[data-az-motion-toggle]');
+let userPaused = false;
+let videoReady = false;
+function syncBackground() {
+  const paused = reduceMotion() || userPaused || document.hidden;
+  if (paused) backgroundVideo.pause();
+  else if (videoReady) backgroundVideo.play().catch(() => {});
+  motionButton.textContent = paused ? labels.resume : labels.pause;
+  motionButton.setAttribute('aria-pressed',String(paused));
+  motionButton.disabled = reduceMotion() || !videoReady;
+}
+backgroundVideo.addEventListener('loadeddata', () => { videoReady = true; motionButton.hidden = false; syncBackground(); });
+backgroundVideo.addEventListener('error', () => { motionButton.hidden = true; });
+motionButton.addEventListener('click', () => { userPaused = !userPaused; syncBackground(); });
+document.addEventListener('visibilitychange',syncBackground);
+motionQuery.addEventListener('change',() => {
+  syncBackground();
+  if (reduceMotion()) {
+    document.body.classList.remove('has-motion');
+    revealTargets.forEach(el => el.classList.add('is-revealed'));
+    counters.forEach(el => el.textContent = el.dataset.azCount);
+    document.querySelectorAll('[data-az-parallax]').forEach(el => el.style.transform = '');
+  }
+});
+syncBackground();
+if (reduceMotion()) backgroundVideo.removeAttribute('autoplay');
+// Decorative parallax is capped and only runs for visible frames.
+let scrollFrame = false;
+function parallax() {
+  scrollFrame = false;
+  if (reduceMotion()) return;
+  document.querySelectorAll('[data-az-parallax]').forEach(el => {
+    const box = el.parentElement.getBoundingClientRect();
+    if (box.bottom < 0 || box.top > innerHeight) return;
+    const offset = Math.max(-12,Math.min(12,(innerHeight / 2 - (box.top + box.height / 2)) * .025));
+    el.style.transform = `translateY(${offset}px) scale(1.04)`;
+  });
+}
+addEventListener('scroll',() => { if (!scrollFrame && !reduceMotion()) { scrollFrame = true; requestAnimationFrame(parallax); } },{passive:true});
+document.querySelectorAll('[data-az-film]').forEach(frame => {
+  const video = frame.querySelector('video');
+  const play = frame.querySelector('button');
+  const message = frame.querySelector('[role="status"]');
+  let failed = false;
+  const showUnavailable = () => { failed = true; message.hidden = false; message.textContent = labels.unavailable; play.hidden = false; video.controls = false; };
+  video.addEventListener('error', showUnavailable);
+  const sources = [...video.querySelectorAll('source')];
+  const failedSources = new Set();
+  sources.forEach(source => source.addEventListener('error',() => {
+    failedSources.add(source);
+    if (failedSources.size === sources.length) showUnavailable();
+  }));
+  play.addEventListener('click',async () => {
+    if (failed || video.error) { showUnavailable(); return; }
+    video.controls = true;
+    try { await video.play(); play.hidden = true; video.focus(); }
+    catch { showUnavailable(); }
+  });
+  video.addEventListener('ended',() => { play.hidden = false; video.controls = false; });
+});
+const lightbox = document.querySelector('#projects-lightbox');
+const lightboxImage = lightbox.querySelector('img');
+let lightboxTrigger;
+document.querySelectorAll('[data-az-expand]').forEach(button => button.addEventListener('click',() => {
+  lightboxTrigger = button;
+  const image = button.querySelector('img');
+  lightboxImage.classList.remove('is-missing');
+  lightboxImage.src = image.currentSrc || image.src;
+  lightboxImage.alt = image.alt;
+  lightbox.querySelector('figcaption').textContent = button.querySelector('figcaption').textContent;
+  lightbox.showModal();
+}));
+lightbox.querySelector('button').addEventListener('click',() => lightbox.close());
+lightbox.addEventListener('click',event => { if (event.target === lightbox) { const rect = lightbox.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) lightbox.close(); } });
+lightbox.addEventListener('close',() => lightboxTrigger?.focus());
+// Native dialog supplies modal focus containment and Escape handling.
+</script>
+</body></html>
