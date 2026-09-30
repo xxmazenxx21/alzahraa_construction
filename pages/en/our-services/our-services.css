@@ -142,13 +142,13 @@
 }
 
 /* Button sweep */
-.page-services .btn-primary,
-.page-services .btn-accent,
-.page-services .btn-ghost { @apply relative overflow-hidden; z-index: 0; }
+.page-services main .btn-primary,
+.page-services main .btn-accent,
+.page-services main .btn-ghost { @apply relative overflow-hidden; z-index: 0; }
 
-.page-services .btn-primary::before,
-.page-services .btn-accent::before,
-.page-services .btn-ghost::before {
+.page-services main .btn-primary::before,
+.page-services main .btn-accent::before,
+.page-services main .btn-ghost::before {
   content: "";
   @apply absolute;
   inset-block: 0;
@@ -161,9 +161,9 @@
   z-index: -1;
 }
 
-.page-services .btn-primary:hover::before,
-.page-services .btn-accent:hover::before,
-.page-services .btn-ghost:hover::before { transform: scaleX(1); }
+.page-services main .btn-primary:hover::before,
+.page-services main .btn-accent:hover::before,
+.page-services main .btn-ghost:hover::before { transform: scaleX(1); }
 
 /* Scroll cue */
 .page-services .services-hero__scroll-cue {
