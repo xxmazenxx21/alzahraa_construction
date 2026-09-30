@@ -1,10 +1,13 @@
 /* =============================================================
-   MEDIA CENTER — page styles
-   Scope : .page-media-center
-   Owner : TBD
-   Depends on: variables.css, global.css, components.css
+   MEDIA CENTER (AR) — page styles
+   Scope : .page-media-center (Arabic)
+   Owner : Ahmed
+   Depends on: /pages/en/media-center/media-center.css (shared lightbox,
+               pulse and filter keyframes), tailwind.css, rtl.css
+   Intentionally empty: the Arabic page is covered by Tailwind's
+   logical utilities (start-/end-, ps-/pe-, text-start) and rtl:
+   variants, the shared rtl.css ([data-flip-rtl] on the lightbox
+   arrows), and Arabic-specific classes in the markup (font-ar-*,
+   no uppercase / tracking). Add a rule here only for an Arabic-only
+   override those genuinely can't express.
    ============================================================= */
-
-.page-media-center {
-  /* TODO: page sections */
-}
